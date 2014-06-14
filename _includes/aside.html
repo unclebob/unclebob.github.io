@@ -1,0 +1,11 @@
+<aside class="column one-fourth">
+  All Blogs
+<ul>
+  {% for post in site.posts %}
+   <li>
+     <a href="{{post.url}}">{{ post.title }}</a>
+     <div class="tiny-date">{{post.date | date: "%m-%d-%Y"}}</div>
+   </li>
+   {% endfor %}
+</ul>
+</aside>

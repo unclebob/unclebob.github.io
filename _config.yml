@@ -1,0 +1,5 @@
+markdown: rdiscount
+highlighter: pygments
+safe: false
+exclude: [README.md, Rakefile, Gemfile, Gemfile.lock]
+excerpt_separator: "\n\n\n\n"

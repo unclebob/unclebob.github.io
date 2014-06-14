@@ -1,0 +1,197 @@
+---
+layout: post
+title: A.T. FAIL!
+tags: ["Testing"]
+---
+Recently Kevin Liddle, a colleague of of mine at [8th Light](http://8thlight.com), wrote a blog entitled: [The Case Against Cucumber](http://blog.8thlight.com/kevin-liddle/2013/09/18/a-case-against-cucumber.html).  This blog fits in with a trend started by Jim Shore in 2010 and before.  Jim's position is well expressed in his blog: [The Problems with Acceptance Testing](http://www.jamesshore.com/Blog/The-Problems-With-Acceptance-Testing.html).
+
+My response to this is: 
+
+#*_WTF?_*
+
+>
+
+OK, before I rant further let me calm down, count to ten, take a few deep breaths and (sigh).  OK.  There.  That's better. 
+
+It's not that Kevin and James are wrong.  They're not.  But the implications of their conclusion are horrific!  _How did we get here?_
+
+So let's go back to the beginning.  Why did we think that acceptance tests were important in the first place.  Why were tools like [Fit](http://fit.c2.com/), [FitNesse](http://fitnesse.org), [JBehave](http://jbehave.org/), and [Cucumber](http://cukes.info/) written?  What were we trying to achieve?
+
+*Socratic Answer:* What is the single greatest cause of software failure?
+
+##Requirements!
+
+Right!  _Requirements!_  The most costly problems in software development are problems with the requirements.  The reason for that is self evident.  If the requirements don't address the true business need, then a tremendous amount of work will be wasted in building a system that nobody wants.
+
+Raise your hand if you've _been there; done that._
+
+So what is it that goes wrong with the requirements that causes systems to fail to meet the true business need?  Is it:
+
+1. The requirements are wrong.
+2. The requirements are badly written.
+3. The requirements are incomplete.
+4. The programmers and the specifiers understand the requirements differently.
+
+If you answered 1, then you are probably thinking of a start-up where people are trying to guess at a profitable business model.  There's really not much we can do about that on our end, so let's focus on the remaining answers.
+
+Answers 2, 3, and 4, are really all part of the same thing.  There's a miscommunication between the specifiers and the developers.   How can we improve that communication?  There are really just two solutions to this problem:
+
+1. Shorten the feedback loop between specification and execution.
+2. Formalize the specification.
+
+We addressed point 1 with _Agile_.  The reason we develop in short iterations is to make sure that any miscommunication in the requirements is caught before too much development is based on it.  The earlier we catch errors in requirements, the less waste there will be.  In the worst case, the most we'll lose is one iteration.
+
+##_ONE ITERATION!?!?!?!!!_
+You can do the math.  Losing an iteration is damned expensive.  Ok, it's a hell of a lot better than losing the whole friggin' project, but still; _nobody wants to lose a whole iteration just because requirements were communicated badly._
+
+Acceptance tests were meant to prevent this. The idea behind acceptance testing was to create a formal language that specifiers could use to unambiguously define requirements. Such formal and unambiguous requirements could not be misunderstood by developers.  So the goal of acceptance tests was to _eliminate the problem altogether_. 
+
+##Inconceivable!
+
+At first this goal sounds hyper-ambitious.  How can anyone specify a system so formally and unambiguously as to avoid all miscommunication?  That sounds impossible.
+
+But of course it's not. Indeed, we often specify systems so formally and unambiguously that moronic automatons understand them in their most intimate details.  Such specifications are called _programs_.  We weren't asking for _that_ much formality.  We just wanted a formalism that would eliminate ambiguity between _humans_.  
+
+Is such a human to human formalism possible?
+
+### A little history.
+
+In the late '90s and early '00s, Kent Beck and Ward Cunningham were working on this problem.  Kent had come up with some project specific formalisms for some of the projects he was coaching.  Ward, on the other hand, came up with a formalism that was general enough to apply to a large class of projects -- possibly a majority.  He called his idea _FIT_; and he backed it up with an executable framework.  (Framework for Integration Testing).  
+
+Ward demonstrated FIT to me in 2002, and I immediately realized that it needed a platform to run on.  So I, and the team at Object Mentor, created FitNesse.
+
+Meanwhile, and I think independently, Dan North started his explorations into BDD.  He and Chris Matts came up with the triplet: _Given, When, Then_; and work on the JBehave framework was started.
+
+David Chelimsky, who was working at Object Mentor at the time, got involved with the RSpec project for Ruby, and bumped into Aslak Hellesoy, who was creating Cucumber, a tool that implemented many of Dan's and Chris' ideas in the Ruby (and Rails) environment.
+
+### Tables
+All of these tools are based on tables.  Fit (and FitNesse) use HTML tables to contain test data.  Cucumber uses tables of Given/When/Then statements that bear an uncanny resemblance to State Transition Tables.  Of course the idea for using tables to describe requirements is not new.  It was David Lorge Parnas who first described, and used, the [technique](https://cs.uwaterloo.ca/~jmatlee/talks/parnas01.pdf) to great advantage.  
+
+### The Grand Goal
+
+Anyway, these acceptance testing tools were beautiful!  They were!  They still are!  Using these tools it is possible for _non-programmers_ to specify the behavior of a system and then automate the verification of that specification.  Using these tools it is possible for programmers to _know_ what needs to be done, and _know_ when they _are done_.  Using these tools it is possible to fully specify a system, and use that specification to automatically determine how much of that specification has been implemented, and how much remains unimplemented.  Using these tools it is possible to _know_ that the system is ready to be deployed.
+
+I could go on.  
+
+So, _how_ can you use these tools to do all those things?
+
+The idea is very simple.  You get the business to write the acceptance tests, and then the programmers can run them.  If they fail, the programmers have work to do.  If they all execute and pass, then the programmers are done.
+
+### Excuse me?
+
+_Ha haha ha ha hahahahaha!_  __Get...__ _ha ha ha ha_ __..the b-b-business...__ _ha ha hoooo hoooo hah hah hah hah_ __..to  wr-wr-wri-i-ite...__ _HA HA HA HA HA HA HA HA HA_ __...the...the...the...__ _HO HO ha ha ha ha ha_ __...Tests?__ _HAAAAAAH HA HA HA HA HO. AAAAHHHHH, ha ha ha ha ha ha ha,,,   AHHH HA HA HA HA HA HA ha ha ha ha ha ha ha ha._
+
+Yeah.  I know.  What _were_ we thinking?  I mean, _really_.  Business people are busy.  They've neither the time nor the inclination to write a bunch of tests.  No.  Not at all.  No.  What they do instead is... is... is...
+
+Hmmm.  What _do_ they do instead?  I mean, to make sure that the system works and can be deployed?  What do they do?
+
+###Q.A.
+
+They get _QA_ to do it!  Right?  I mean, they hire a zillion people in India, or South America, or Eastern Europe, and get _them_ to do it.  
+
+>Read that again, but this time use Gollum's voice as he's talking to himself about Shelob the spider, rubbing his hands together with an evil gleam in his eye:  "We'll get _her_ to do it."
+
+OK, so what is it that QA does?  Let's ask a QA manager?
+
+__Me:__  _"Hello Mr. QA Manager.  What is it that you guys do?_
+  
+__QA Manager:__ _"Well, we test the system."_
+
+__Me:__ _"I see.  But how?"  I mean, what is the process?"_
+
+__QA Manager:__ _"Well, the testers operate the system and observe the results."_
+
+__Me:__ _"OK, that makes sense.  But how do the testers know what to do and what to expect?"_
+
+__QA Manager:__ _"They follow the test plan."_
+
+__Me:__ _"The test plan?"_
+
+__QA Manager:__ _"Yes, the test plan."_
+
+__Me:__ _"And just what is this test plan?"_
+
+__QA Manager:__ _"The test plan is a document that describes how to execute the tests, and what outcomes to expect."_
+
+__Me:__ _"I see.  So, it must be unambiguous enough for humans to understand."_
+
+__QA Manager:__ _"Of course."_
+
+__Me:__ _"And so it must be rather formal."_
+
+__QA Manager:__ _"Naturally!"_
+
+__Me:__ _"And so, let me get this straight.  You write a formal, unambiguous suite of tests; and then get **Humans** to execute it?"_
+
+__QA Manager:__ _"Precisely!"_ 
+
+###Absurdities
+
+So it appears that the business already _does_ write the tests; they simply use the most inefficient execution platform possible: _Humans._
+
+Meanwhile, the programmers, cowed by the fact that the business didn't jump at the chance to write even more tests, skulked away into their hidey holes and, in a fit of passive aggression, decided to write the acceptance tests themselves.   "That'll show 'em!"
+
+Now this completely misses the point.  I mean, the point was to get the _business_ to provide a formal specification of the system so that the programmers could understand it.  What in the name of heaven is the point of having the _programmers_ write the formal specification so that the _programmers_ can then understand it?  Am I the only one who sees the logical contradiction here?
+
+But then, and for reasons that still completely elude me, the Cucumber folks decided to turn Cucumber into a _programmer tool!_  They integrated it with their development environments.  They made it easy to use a text editor.  They made rampant use of regular expressions.  They did everything they could to make it easy for _programmers_ to write these tests.
+
+And then they integrated it into the _development_ process.  So the process became:
+
+1. First write a failing acceptance test.
+2. Then write failing unit tests that fail for the same reasons and make them pass using a TDD cycle.
+3. When the acceptance test passes, you are done.
+
+It doesn't take long for a programmer trapped in that cycle to realize that there are certain inefficiencies and/or redundancies that don't make a lot of sense.  So most eventually abandon one of those two test streams.  Of course the most common option, and the _worst_ option, is to abandon the unit tests.   
+
+When you abandon the unit tests in favor of acceptance tests, you are abandoning the tests you are _supposed_ to write in favor of tests that you are _not supposed_ to write.
+
+The other option, which was chosen by James Shore, and Kevin Liddle, is better; but still bad.  At least the programmers are doing what they are supposed to do; but we still have the problem that requirements aren't being communicated properly.
+
+###Design Flaws.
+
+The other major mistake that the programmers made was to somehow conclude that tests aren't software and don't need to be designed.  Again, it was the Cucumber community that led the charge.  They integrated the use of [_Capybara_](http://jnicklas.github.io/capybara/) with Cucumber so they could tightly couple their systems into zillions of little tiny, impossible to untie, knots.
+
+> The First Rule of Software Engineering:  Don't depend on things that change a lot!
+
+What changes more than the UI?  Nothing!  So let's couple all our tests to the UI.  Oh, yes!  Lets!  What a good idea!
+
+Of course the problem with this is that, when the UI changes, a whole load of tests break.  And then you are stuck fixing a whole bunch of tests just because some marketing weenie decided they didn't like the arrangement of the buttons on a page.
+
+>Hey!  IOS 99 just came out.  They changed all the icons, and buttons, and text, and...  IT's really cool.  It doesn't actually do anything new or different, but it's much more modern now...  It only took the QA team 152 man years to rework all the tests too!
+
+###The Illogical Conclusion.
+
+So, now, what conclusion are programmers drawing from this cacophony of errors?  Simple.  _Acceptance Tests Suck!_
+
+And my response to that is:
+
+
+#*_WTF?_*
+
+>
+
+Hey!  I've got an idea!  Let's take all the effort that Q.A. is putting in to writing _and executing_ the manual test plan, and use that to write an _automated_ test plan instead.  Then, instead of being read by the testers, those tests would be executed by the _programmers_; and the _programmers_ could make them pass.  And then the _programmers_ would know when they were done with a story, or a feature.  And the _businenss_ would know, at the push of a button, that the system was ready to deploy.  And... and... and...
+>.
+
+>.
+
+>.
+
+##_Naaahhhhhh!_
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,985 @@
+---
+layout: post
+title: The Transformation Priority Premise
+tags: ["Coding"]
+---
+		<div class='post'>
+			<div class='post_header'>
+				<div class='post_info'>
+					<span class='post_time'>December 19 2010</span>
+				</div>
+			</div>
+			<div class='post_body'>
+				<p>
+					This blog poses a rather radical premise. It suggests that Refactorings have counterparts called <em>Transformations</em>. Refactorings are simple operations that change the structure of code without changing it’s behavior. <em>Transformations</em> are simple operations that change the behavior of code. Transformations can be used as the sole means for passing the currently failing test in the <code>red/green/refactor</code> cycle. <em>Transformations</em> have a priority, or a preferred ordering, which if maintained, by the ordering of the tests, will prevent impasses, or long outages in the <code>red/green/refactor</code> cycle.
+				</p>
+				<blockquote class="posterous_short_quote">
+					<p>
+						<strong>“As the tests get more specific, the code gets more generic.”</strong>
+					</p>
+				</blockquote>
+				<p>
+					Recently this mantra has taken on a new meaning for me.
+				</p>
+				<p>
+					I invented it as rule to prevent my TDD students from acquiring the nasty habit of writing production code that mirrored the tests:
+				</p>
+				<div class="CodeRay">
+					<div class="code">
+						<pre>
+<span class="annotation">@Test</span>
+<span class="directive">public</span> <span class="type">void</span> primeFactorsOfFour() {
+  assertEquals(asList(),    PrimeFactors.of(<span class="integer">1</span>));
+  assertEquals(asList(<span class="integer">2</span>),   PrimeFactors.of(<span class="integer">2</span>));
+  assertEquals(asList(<span class="integer">3</span>),   PrimeFactors.of(<span class="integer">3</span>));
+  assertEquals(asList(<span class="integer">2</span>,<span class="integer">2</span>), PrimeFactors.of(<span class="integer">4</span>));
+  ...
+}
+
+<span class="directive">public</span> <span class="type">class</span> <span class="class">PrimeFactors</span> {
+  <span class="directive">public</span> <span class="directive">static</span> of(<span class="type">int</span> n) {
+    <span class="keyword">if</span> (n == <span class="integer">1</span>)
+      <span class="keyword">return</span> asList();
+    <span class="keyword">else</span> <span class="keyword">if</span> (n == <span class="integer">2</span>)
+      <span class="keyword">return</span> asList(<span class="integer">2</span>);
+    <span class="keyword">else</span> <span class="keyword">if</span> (n == <span class="integer">3</span>)
+      <span class="keyword">return</span> asList(<span class="integer">3</span>);
+    <span class="keyword">else</span> <span class="keyword">if</span> (n == <span class="integer">4</span>)
+      <span class="keyword">return</span> asList(<span class="integer">2</span>,<span class="integer">2</span>);
+    ...
+</pre>
+					</div>
+				</div>
+				<p>
+					Newcomers to TDD often question why TDD does not lead this kind of code. I answer with the above rule. This explanation usually satisfies the students, especially when I demonstrate the idea with the <a href="http://butunclebob.com/ArticleS.UncleBob.ThePrimeFactorsKata">Prime Factors Kata</a>.
+				</p>
+				<h2>
+					Prime Factors
+				</h2>
+				<p>
+					I invented that Kata ten years ago when my son, Justin, came home from school with homework. He had to calculate the prime factors of several integers. I told him to do his homework, and that I would write a program that allowed him to check his work. (He’d have to enter his answer, and the program would simply tell him whether he was right or wrong).
+				</p>
+				<p>
+					I sat at my kitchen table and, using this new discipline named <em>TDD</em>, I wrote the algorithm in Ruby. It was one of those eye-opening events for me. As I went from test to test the algorithm assembled itself in a completely unexpected way. I was astounded that I could make the 3 case pass by changing just one character in the code from a ‘2’ to an ‘n’. I was thrilled when the 8 case was solved by changing the word ‘if’ to the word ‘while’. I could <em>feel</em> that there was something profound about that, but I couldn’t put my finger on exactly what it was. But now I think I know.
+				</p>
+				<h2>
+					Brainlessness
+				</h2>
+				<p>
+					Over the years I have written lots and lots of tests. What’s more I’ve executed the various Kata many hundreds of times. From time to time I make subtle improvements in a kata. I refine the tests or the code to make them smoother, simpler, and more elegant. With all that repetition and refinement I’ve begun to notice something. It has to do with another complaint that people have about TDD: <em>the brainlessness</em>.
+				</p>
+				<p>
+					Consider how the <a href="http://butunclebob.com/ArticleS.UncleBob.TheBowlingGameKata">Bowling Game Kata</a> begins with the test for the gutter game:
+				</p>
+				<div class="CodeRay">
+					<div class="code">
+						<pre>
+<span class="annotation">@Test</span>
+<span class="directive">public</span> <span class="type">void</span> gutterGame() {
+  <span class="keyword">for</span> (<span class="type">int</span> i=<span class="integer">0</span>; i&lt;<span class="integer">20</span>; i++)
+    game.roll(<span class="integer">0</span>);
+  assertEquals(<span class="integer">0</span>, game.score());
+}
+</pre>
+					</div>
+				</div>
+				<p>
+					When we teach TDD was ask: <em>“How should we make that pass?”</em> Newbies are often confused by the question because they are expecting that they have to write the bowling algorithm. But we surprise them by making it pass this way:
+				</p>
+				<div class="CodeRay">
+					<div class="code">
+						<pre>
+<span class="directive">public</span> <span class="type">int</span> score() {
+  <span class="keyword">return</span> <span class="integer">0</span>;
+}
+</pre>
+					</div>
+				</div>
+				<p>
+					At this point the programmers in the class roll their eyes and groan. They clearly think this is dumb and are frustrated that I would be telling them to write code that is clearly <em>wrong</em>.
+				</p>
+				<p>
+					I used to go along with the gag. I used to agree with them that this was brainless, and that we were just deferring decisions until we have more information. I told them that it was also a good way to test the tests, since by returning zero we can clearly see that the test is passing and that therefore the test is correct.
+				</p>
+				<h2>
+					A Sequence of Transformations.
+				</h2>
+				<p>
+					What I have begun to discover is that returning zero <em>is not nearly so brainless as it looks</em>. Not when you put it in the appropriate context.
+				</p>
+				<p>
+					When we use TDD, our production code goes through a sequence of transformations. I used to think it was a transformation from stupid to intelligent. But I’ve begun to see that this is not the case at all. Rather, the code goes through a sequence of transformation <em>from specific to generic</em>.
+				</p>
+				<p>
+					Returning zero from the <code>score</code> function is a specific case. But the case is in the correct form. It is an integer, and it has the right value. Therefore the <em>shape</em> of the algorithm is correct, it’s just hasn’t been generalized yet.
+				</p>
+				<p>
+					The next test in the bowling game is:
+				</p>
+				<div class="CodeRay">
+					<div class="code">
+						<pre>
+<span class="annotation">@Test</span>
+<span class="directive">public</span> <span class="type">void</span> allOnes() {
+  <span class="keyword">for</span> (<span class="type">int</span> i=<span class="integer">0</span>; i&lt;<span class="integer">20</span>; i++)
+    game.roll(<span class="integer">1</span>);
+  assertEquals(<span class="integer">20</span>, game.score());
+}
+</pre>
+					</div>
+				</div>
+				<p>
+					We make this pass by adding up all the pins in the <code>roll</code> function and storing the sum in a variable named <code>score</code>. Then we change the <code>score</code> function to return that value:
+				</p>
+				<div class="CodeRay">
+					<div class="code">
+						<pre>
+<span class="directive">public</span> <span class="type">int</span> score() {
+  <span class="keyword">return</span> score;
+}
+</pre>
+					</div>
+				</div>
+				<p>
+					Notice that we have transformed the constant <code>0</code> into the variable <code>score</code>. The algorithm has the same shape as before, (i.e. it returns an <code>int</code>) but it now has a more generic implementation. Why is this a more generic implementation? Because <em>a variable is a generalization of a constant</em>.
+				</p>
+				<p>
+					In other words, the transformation that has taken place is a simple alteration of some part of the solution from a more specific form, to a more generic form!
+				</p>
+				<p>
+					I used to think that this was merely interesting. I was titillated by the fact <em>sometimes</em> you could perform these simple transformations from specific to generic. Lately I’ve begun to suspect that it is a <em>rule</em>, that <em>every</em> change to the code is either a behavior changing transformation from specific to generic, or a refactoring. Indeed, I think this rule may provide some guidance in choosing the next test to write, and in the manner in which the production code should be implemented in order to pass that test.
+				</p>
+				<p>
+					But let’s not get ahead of ourselves. What about the next test in the Bowling Game?
+				</p>
+				<div class="CodeRay">
+					<div class="code">
+						<pre>
+<span class="annotation">@Test</span>
+<span class="directive">public</span> <span class="type">void</span> oneSpare() {
+  game.roll(<span class="integer">5</span>);
+  game.roll(<span class="integer">5</span>); <span class="comment">// spare</span>
+  game.roll(<span class="integer">3</span>);
+  rollMany(<span class="integer">20</span>,<span class="integer">0</span>);
+  assertEquals(<span class="integer">16</span>, g.score());
+}
+</pre>
+					</div>
+				</div>
+				<p>
+					This test forces us to abandon the simple implementation of <code>score</code> for a much more complex one. The instance variable <code>score</code> which was updated in the <code>roll</code> function is removed and the <code>score</code> function computes the score from an array of rolls.
+				</p>
+				<p>
+					Once again we have transformed a specific implementation (an instance variable that holds a pre-computed score) to a more general form (a loop that computes the score from an array).
+				</p>
+				<p>
+					Another common transformation can be seen in the prime factors kata where, in order to get the <code>2</code> case to pass, we insert an <code>if</code> statement into the implementation. The code transforms from
+				</p>
+				<div class="CodeRay">
+					<div class="code">
+						<pre>
+<span class="predefined-type">List</span> factors = <span class="keyword">new</span> <span class="predefined-type">ArrayList</span>();
+<span class="keyword">return</span> factors;
+</pre>
+					</div>
+				</div>
+				<p>
+					to
+				</p>
+				<div class="CodeRay">
+					<div class="code">
+						<pre>
+<span class="predefined-type">List</span> factors = <span class="keyword">new</span> <span class="predefined-type">ArrayList</span>();
+<span class="keyword">if</span> (n&gt;<span class="integer">1</span>)
+  factors.add(<span class="integer">2</span>);
+<span class="keyword">return</span> factors;
+</pre>
+					</div>
+				</div>
+				<p>
+					In this case we are making the code more general by conditionally splitting the execution into two paths. One path makes all the old tests pass, and the new path makes the new test pass.
+				</p>
+				<p>
+					The prime factors kata is interesting because that transformation happens again in the <code>4</code> case where an if statement is added to handle the case where the input variable is divisible by 2;
+				</p>
+				<div class="CodeRay">
+					<div class="code">
+						<pre>
+<span class="predefined-type">List</span> factors = <span class="keyword">new</span> <span class="predefined-type">ArrayList</span>();
+<span class="keyword">if</span> (n&gt;<span class="integer">1</span>) {
+  <span class="keyword">if</span> (n%<span class="integer">2</span> == <span class="integer">0</span>) {
+    factors.add(<span class="integer">2</span>);
+    n %= <span class="integer">2</span>;
+  }
+  <span class="keyword">if</span> (n&gt;<span class="integer">1</span>)
+    factors.add(n);
+}
+<span class="keyword">return</span> factors;
+</pre>
+					</div>
+				</div>
+				<p>
+					The new pathway handles the the <code>4</code> case by detecting that 4 is divisible by 2, adding 2 to <code>factors</code>, and adjusting <code>n</code> so that the paths can rejoin.
+				</p>
+				<p>
+					More interesting still is that at the <code>8</code> case, the inner <code>if</code> statement is transformed into a <code>while</code> statement. And then for the <code>9</code> case the outer <code>if</code> is transformed into a <code>while</code>. Clearly <code>while</code> is a general form of <code>if</code>.
+				</p>
+				<h2>
+					The Transformations
+				</h2>
+				<p>
+					So what are these transformations? Perhaps we can make a list of them:
+				</p>
+				<ul>
+					<li>
+						<strong>({}–&gt;nil)</strong> no code at all-&gt;code that employs nil
+					</li>
+					<li>
+						<strong>(nil-&gt;constant)</strong>
+					</li>
+					<li>
+						<strong>(constant-&gt;constant+)</strong> a simple constant to a more complex constant
+					</li>
+					<li>
+						<strong>(constant-&gt;scalar)</strong> replacing a constant with a variable or an argument
+					</li>
+					<li>
+						<strong>(statement-&gt;statements)</strong> adding more unconditional statements.
+					</li>
+					<li>
+						<strong>(unconditional-&gt;if)</strong> splitting the execution path
+					</li>
+					<li>
+						<strong>(scalar-&gt;array)</strong>
+					</li>
+					<li>
+						<strong>(array-&gt;container)</strong>
+					</li>
+					<li>
+						<strong>(statement-&gt;recursion)</strong>
+					</li>
+					<li>
+						<strong>(if-&gt;while)</strong>
+					</li>
+					<li>
+						<strong>(expression-&gt;function)</strong> replacing an expression with a function or algorithm
+					</li>
+					<li>
+						<strong>(variable-&gt;assignment)</strong> replacing the value of a variable.
+					</li>
+				</ul>
+				<p>
+					There are likely others.
+				</p>
+				<p>
+					Perhaps you noticed the resemblance that these transformations have to refactorings. However refactorings are used to transform the <em>structure</em> of code without altering its behavior. These transformations are used in order to change the <em>behavior</em> of code. In particular, we use these transformations to make failing tests pass.
+				</p>
+				<p>
+					It should be clear that each of the transformations has a direction. They all transform the behavior of the code from something specific to something more generic. In some cases it is a constant being transformed into a variable, or a variable being transformed into an array. In others it is an <code>if</code> statement being transformed into a <code>while</code> loop, or a simple sequence getting transformed into recursion.
+				</p>
+				<p>
+					It should also be clear that I have <em>roughly</em> ordered the transformations by their complexity. That is, the transformations at the top of the list are simpler, and less risky, than the transformations that are lower in the list.
+				</p>
+				<h2>
+					The Priority Premise
+				</h2>
+				<p>
+					So the thing that has piqued my interest lately is the idea that transformations on the top of the list should be preferred to those that are lower. It is better (or simpler) to change a constant into a variable than it is to add an <code>if</code> statement. So when making a test pass, you try to do so with transformations that are simpler (higher on the list) than those that are more complex.
+				</p>
+				<p>
+					What’s more, when you pose a test, you try to pose one that allows simpler transformations rather than complex transformations; since the more complexity required by the test the larger the risk you take to get that test to pass.
+				</p>
+				<h3>
+					The Impasse Problem
+				</h3>
+				<p>
+					It was the <a href="http://thecleancoder.blogspot.com/2010/10/craftsman-62-dark-path.html">word wrap kata</a> that got me thinking about this. The kata starts out simply, but you quickly face a dilemma. There is one sequence of tests and implementation choices that forces you into an impasse, where there is no way to get the next text to pass without rewriting the whole algorithm. A different sequence of tests allows the algorithm to come together in the stepwise fashion that TDDers prefer. How can you choose the right sequence?
+				</p>
+				<p>
+					This is a relatively common problem faced by TDDers. We pose a test only to find that we don’t know how to solve it without changing a large amount of code. The more code we change, the longer it will be before we get back to green; and the <code>red/green/refactor</code> cycle breaks down.
+				</p>
+				<p>
+					My premise is that if you choose the tests and implementations that employ transformations that are higher on the list, you will avoid the impasse.
+				</p>
+				<h3>
+					Case Study: Word Wrap.
+				</h3>
+				<p>
+					So let’s walk through the reasoning. First we’ll execute the word wrap kata and choose the path that leads to the impasse. Then we’ll do it again, but take the path that does not. In each case we’ll show the transformations.
+				</p>
+				<p>
+					The first test in the word wrap kata is pretty obviously the degenerate case. Note that this employs the very first transformation <strong>({}–&gt;nil)</strong>:
+				</p>
+				<div class="CodeRay">
+					<div class="code">
+						<pre>
+<span class="annotation">@Test</span>
+<span class="directive">public</span> <span class="type">void</span> WrapNullReturnsEmptyString() <span class="directive">throws</span> <span class="exception">Exception</span> {
+  assertThat(wrap(<span class="predefined-constant">null</span>, <span class="integer">10</span>), is(<span class="string"><span class="delimiter">"</span><span class="delimiter">"</span></span>));
+}
+</pre>
+					</div>
+				</div>
+				<p>
+					As we write this test, we also write the <em>failing</em> implementation which also employs <strong>({}–&gt;nil)</strong>
+				</p>
+				<div class="CodeRay">
+					<div class="code">
+						<pre>
+<span class="directive">public</span> <span class="directive">static</span> <span class="predefined-type">String</span> wrap(<span class="predefined-type">String</span> s, <span class="type">int</span> length) {
+  <span class="keyword">return</span> <span class="predefined-constant">null</span>;
+}
+</pre>
+					</div>
+				</div>
+				<p>
+					We can make it pass with <strong>(nil-&gt;constant)</strong>
+				</p>
+				<div class="CodeRay">
+					<div class="code">
+						<pre>
+<span class="directive">public</span> <span class="directive">static</span> <span class="predefined-type">String</span> wrap(<span class="predefined-type">String</span> s, <span class="type">int</span> length) {
+  <span class="keyword">return</span> <span class="string"><span class="delimiter">"</span><span class="delimiter">"</span></span>;
+}
+</pre>
+					</div>
+				</div>
+				<p>
+					The next test is the empty string case. Notice that this is just <strong>(nil-&gt;constant)</strong> applied to the first test. This test passes without any modification to the implementation. I always take that as an indication that things are going well.
+				</p>
+				<div class="CodeRay">
+					<div class="code">
+						<pre>
+<span class="annotation">@Test</span>
+<span class="directive">public</span> <span class="type">void</span> WrapEmptyStringReturnsEmptyString() <span class="directive">throws</span> <span class="exception">Exception</span> {
+  assertThat(wrap(<span class="string"><span class="delimiter">"</span><span class="delimiter">"</span></span>, <span class="integer">10</span>), is(<span class="string"><span class="delimiter">"</span><span class="delimiter">"</span></span>));
+}
+</pre>
+					</div>
+				</div>
+				<p>
+					The next test employs <strong>(constant-&gt;constant+)</strong>
+				</p>
+				<div class="CodeRay">
+					<div class="code">
+						<pre>
+<span class="annotation">@Test</span>
+<span class="directive">public</span> <span class="type">void</span> OneShortWordDoesNotWrap() <span class="directive">throws</span> <span class="exception">Exception</span> {
+  assertThat(wrap(<span class="string"><span class="delimiter">"</span><span class="content">word</span><span class="delimiter">"</span></span>, <span class="integer">5</span>), is(<span class="string"><span class="delimiter">"</span><span class="content">word</span><span class="delimiter">"</span></span>));
+}
+</pre>
+					</div>
+				</div>
+				<p>
+					Making this test pass forces us to use <strong>(unconditional-&gt;if)</strong> as well as <strong>(constant-&gt;scalar)</strong>
+				</p>
+				<div class="CodeRay">
+					<div class="code">
+						<pre>
+<span class="directive">public</span> <span class="directive">static</span> <span class="predefined-type">String</span> wrap(<span class="predefined-type">String</span> s, <span class="type">int</span> length) {
+  <span class="keyword">if</span> (s == <span class="predefined-constant">null</span>)
+    <span class="keyword">return</span> <span class="string"><span class="delimiter">"</span><span class="delimiter">"</span></span>;
+  <span class="keyword">return</span> s;
+}
+</pre>
+					</div>
+				</div>
+				<h3>
+					The Impasse
+				</h3>
+				<p>
+					At this point, if we were paying heed to the priority premise, we might wonder whether this was a wise step. After all, <strong>(unconditional-&gt;if)</strong> is pretty far down the list. But in this case I’m going to ignore the priority premise so that I can show you the impasse.
+				</p>
+				<p>
+					The next test once again employs <strong>(constant-&gt;constant+)</strong>
+				</p>
+				<div class="CodeRay">
+					<div class="code">
+						<pre>
+<span class="annotation">@Test</span>
+<span class="directive">public</span> <span class="type">void</span> TwoWordsLongerThanLimitShouldWrap() <span class="directive">throws</span> <span class="exception">Exception</span> {
+  assertThat(wrap(<span class="string"><span class="delimiter">"</span><span class="content">word word</span><span class="delimiter">"</span></span>, <span class="integer">6</span>), is(<span class="string"><span class="delimiter">"</span><span class="content">word</span><span class="char">\n</span><span class="content">word</span><span class="delimiter">"</span></span>));
+}
+</pre>
+					</div>
+				</div>
+				<p>
+					We can make this pass by using <strong>(expression-&gt;function)</strong>.
+				</p>
+				<div class="CodeRay">
+					<div class="code">
+						<pre>
+<span class="directive">public</span> <span class="directive">static</span> <span class="predefined-type">String</span> wrap(<span class="predefined-type">String</span> s, <span class="type">int</span> length) {
+  <span class="keyword">if</span> (s == <span class="predefined-constant">null</span>)
+    <span class="keyword">return</span> <span class="string"><span class="delimiter">"</span><span class="delimiter">"</span></span>;
+  <span class="keyword">return</span> s.replaceAll(<span class="string"><span class="delimiter">"</span><span class="content"> </span><span class="delimiter">"</span></span>, <span class="string"><span class="delimiter">"</span><span class="char">\n</span><span class="delimiter">"</span></span>);
+}
+</pre>
+					</div>
+				</div>
+				<p>
+					This is one of those moves that feels <em>clever</em>. We justify it by saying that we are doing the simplest thing that would work. But given the priority premise, this is no longer all that simple. The <strong>(expression-&gt;function)</strong> transformation is down at the bottom of the list.
+				</p>
+				<p>
+					The next test continues to employ <strong>(constant-&gt;constant+)</strong>
+				</p>
+				<div class="CodeRay">
+					<div class="code">
+						<pre>
+<span class="annotation">@Test</span>
+<span class="directive">public</span> <span class="type">void</span> ThreeWordsJustOverTheLimitShouldWrapAtSecondWord() <span class="directive">throws</span> <span class="exception">Exception</span> {
+  assertThat(wrap(<span class="string"><span class="delimiter">"</span><span class="content">word word word</span><span class="delimiter">"</span></span>, <span class="integer">9</span>), is(<span class="string"><span class="delimiter">"</span><span class="content">word word</span><span class="char">\n</span><span class="content">word</span><span class="delimiter">"</span></span>));
+}
+</pre>
+					</div>
+				</div>
+				<p>
+					But how do we make this pass? The current solution does not appear to be easily transformable into something that will pass the new test. If we had a function like <code>replaceLast(" ", "\n")</code> then perhaps it would be simple; but that wouldn’t help us for the next test case <code>"word word word word"</code>.
+				</p>
+				<p>
+					This is the impasse. Now this is a simple problem, and it’s not really that difficult to find a solution. But that’s not the point. The current situation forces us to take a step that’s larger than we like. We’ve put ourselves in the position where we must now solve a large part of the problem rather than a small incremental part of the problem. We have to take a step that’s uncomfortably large.
+				</p>
+				<h3>
+					Breaking the Impasse
+				</h3>
+				<p>
+					So not let’s go back to the point where we first ignored the priority premise. We had just posed the following test:
+				</p>
+				<div class="CodeRay">
+					<div class="code">
+						<pre>
+<span class="annotation">@Test</span>
+<span class="directive">public</span> <span class="type">void</span> OneShortWordDoesNotWrap() <span class="directive">throws</span> <span class="exception">Exception</span> {
+  assertThat(wrap(<span class="string"><span class="delimiter">"</span><span class="content">word</span><span class="delimiter">"</span></span>, <span class="integer">5</span>), is(<span class="string"><span class="delimiter">"</span><span class="content">word</span><span class="delimiter">"</span></span>));
+}
+</pre>
+					</div>
+				</div>
+				<p>
+					There is nothing unusual about this test that would make us think it’s out of order. There is no obviously better test to pose. However, the implementation forces us to use the <strong>(unconditional-&gt;if)</strong> transformation, which has a pretty low priority.
+				</p>
+				<div class="CodeRay">
+					<div class="code">
+						<pre>
+<span class="directive">public</span> <span class="directive">static</span> <span class="predefined-type">String</span> wrap(<span class="predefined-type">String</span> s, <span class="type">int</span> length) {
+  <span class="keyword">if</span> (s == <span class="predefined-constant">null</span>)
+    <span class="keyword">return</span> <span class="string"><span class="delimiter">"</span><span class="delimiter">"</span></span>;
+  <span class="keyword">return</span> s;
+}
+</pre>
+					</div>
+				</div>
+				<p>
+					So now we should ask ourselves whether there is another test we could pose that could be passed with a higher priority transformation. At the moment the implementation is simply <code>return "";</code> so are there any other inputs that should return an empty string?
+				</p>
+				<p>
+					A column length that’s less than one is kind of nonsensical. We could return an empty string for that, or we could throw an exception. I think the exception is probably more appropriate; but the tests for that would also require the <strong>(unconditional-&gt;if)</strong> transformation. Still, it’s probably a good idea to to get all the invalid input cases done first.
+				</p>
+				<div class="CodeRay">
+					<div class="code">
+						<pre>
+<span class="annotation">@Test</span>(expected = WordWrapper.InvalidArgument.class)
+<span class="directive">public</span> <span class="type">void</span> LengthLessThanOneShouldThrowInvalidArgument() <span class="directive">throws</span> <span class="exception">Exception</span> {
+  wrap(<span class="string"><span class="delimiter">"</span><span class="content">xxx</span><span class="delimiter">"</span></span>, <span class="integer">0</span>);
+}
+</pre>
+					</div>
+				</div>
+				<p>
+					Which is passed with:
+				</p>
+				<div class="CodeRay">
+					<div class="code">
+						<pre>
+<span class="directive">public</span> <span class="directive">static</span> <span class="predefined-type">String</span> wrap(<span class="predefined-type">String</span> s, <span class="type">int</span> length) {
+  <span class="keyword">if</span> (length &lt; <span class="integer">1</span>)
+    <span class="keyword">throw</span> <span class="keyword">new</span> InvalidArgument();
+  <span class="keyword">return</span> <span class="string"><span class="delimiter">"</span><span class="delimiter">"</span></span>;
+}
+</pre>
+					</div>
+				</div>
+				<p>
+					But that just leaves us where we were before. So I guess there’s no better test to write:
+				</p>
+				<div class="CodeRay">
+					<div class="code">
+						<pre>
+<span class="annotation">@Test</span>
+<span class="directive">public</span> <span class="type">void</span> OneShortWordDoesNotWrap() <span class="directive">throws</span> <span class="exception">Exception</span> {
+  assertThat(wrap(<span class="string"><span class="delimiter">"</span><span class="content">word</span><span class="delimiter">"</span></span>, <span class="integer">5</span>), is(<span class="string"><span class="delimiter">"</span><span class="content">word</span><span class="delimiter">"</span></span>));
+}
+</pre>
+					</div>
+				</div>
+				<p>
+					And after a <strong>(unconditionsl-&gt;if)</strong> and a <strong>(constant-&gt;scalar)</strong> the implementation is:
+				</p>
+				<div class="CodeRay">
+					<div class="code">
+						<pre>
+<span class="directive">public</span> <span class="directive">static</span> <span class="predefined-type">String</span> wrap(<span class="predefined-type">String</span> s, <span class="type">int</span> length) {
+  <span class="keyword">if</span> (length &lt; <span class="integer">1</span>)
+    <span class="keyword">throw</span> <span class="keyword">new</span> InvalidArgument();
+  <span class="keyword">if</span> (s == <span class="predefined-constant">null</span>)
+    <span class="keyword">return</span> <span class="string"><span class="delimiter">"</span><span class="delimiter">"</span></span>;
+
+  <span class="keyword">return</span> s;
+}
+</pre>
+					</div>
+				</div>
+				<p>
+					So now we pose the <code>word word</code> test again. As before this is just a <strong>(constant-&gt;constant+)</strong> transformation.
+				</p>
+				<div class="CodeRay">
+					<div class="code">
+						<pre>
+<span class="annotation">@Test</span>
+<span class="directive">public</span> <span class="type">void</span> TwoWordsLongerThanLimitShouldWrap() <span class="directive">throws</span> <span class="exception">Exception</span> {
+  assertThat(wrap(<span class="string"><span class="delimiter">"</span><span class="content">word word</span><span class="delimiter">"</span></span>, <span class="integer">6</span>), is(<span class="string"><span class="delimiter">"</span><span class="content">word</span><span class="char">\n</span><span class="content">word</span><span class="delimiter">"</span></span>));
+}
+</pre>
+					</div>
+				</div>
+				<p>
+					The last time we saw this test we passed it with a <strong>(expression-&gt;function)</strong>. Can it be solved with a higher priority transformation? I don’t think so. Every solution I can think of involves some kind of algorithm.
+				</p>
+				<p>
+					Is there a different test we could pose that could be solved with a higher priority transformation? Yes, there is! So let’s <code>@Ignore</code> the current test and write one that uses a simpler transformation.
+				</p>
+				<div class="CodeRay">
+					<div class="code">
+						<pre>
+<span class="annotation">@Test</span>
+<span class="directive">public</span> <span class="type">void</span> WordLongerThanLengthBreaksAtLength() <span class="directive">throws</span> <span class="exception">Exception</span> {
+  assertThat(wrap(<span class="string"><span class="delimiter">"</span><span class="content">longword</span><span class="delimiter">"</span></span>, <span class="integer">4</span>), is(<span class="string"><span class="delimiter">"</span><span class="content">long</span><span class="char">\n</span><span class="content">word</span><span class="delimiter">"</span></span>));
+}
+</pre>
+					</div>
+				</div>
+				<p>
+					This test can be passed with a <strong>(unconditional-&gt;if)</strong>.
+				</p>
+				<div class="CodeRay">
+					<div class="code">
+						<pre>
+<span class="directive">public</span> <span class="directive">static</span> <span class="predefined-type">String</span> wrap(<span class="predefined-type">String</span> s, <span class="type">int</span> length) {
+  <span class="keyword">if</span> (length &lt; <span class="integer">1</span>)
+    <span class="keyword">throw</span> <span class="keyword">new</span> InvalidArgument();
+  <span class="keyword">if</span> (s == <span class="predefined-constant">null</span>)
+    <span class="keyword">return</span> <span class="string"><span class="delimiter">"</span><span class="delimiter">"</span></span>;
+
+  <span class="keyword">if</span> (s.length() &lt;= length)
+    <span class="keyword">return</span> s;
+  <span class="keyword">else</span> {
+    <span class="keyword">return</span> <span class="string"><span class="delimiter">"</span><span class="content">long</span><span class="char">\n</span><span class="content">word</span><span class="delimiter">"</span></span>;
+  }
+}
+</pre>
+					</div>
+				</div>
+				<p>
+					This might look like a cheat; but it’s not. We have split the execution pathways, and the new pathway can be viewed as starting completely empty, and then transformed by <strong>({}–&gt;null)</strong> and <strong>(null-&gt;constant)</strong>. We could have written those transformations and seen them fail; but why bother?
+				</p>
+				<p>
+					The next test is completely obvious. We’ve got to get rid of that constant. We can do that by adding a new statement to the existing test with the <strong>(statement-&gt;statements)</strong> transformation.
+				</p>
+				<div class="CodeRay">
+					<div class="code">
+						<pre>
+<span class="annotation">@Test</span>
+<span class="directive">public</span> <span class="type">void</span> WordLongerThanLengthBreaksAtLength() <span class="directive">throws</span> <span class="exception">Exception</span> {
+  assertThat(wrap(<span class="string"><span class="delimiter">"</span><span class="content">longword</span><span class="delimiter">"</span></span>, <span class="integer">4</span>), is(<span class="string"><span class="delimiter">"</span><span class="content">long</span><span class="char">\n</span><span class="content">word</span><span class="delimiter">"</span></span>));
+  assertThat(wrap(<span class="string"><span class="delimiter">"</span><span class="content">longerword</span><span class="delimiter">"</span></span>, <span class="integer">6</span>), is(<span class="string"><span class="delimiter">"</span><span class="content">longer</span><span class="char">\n</span><span class="content">word</span><span class="delimiter">"</span></span>));
+}
+</pre>
+					</div>
+				</div>
+				<p>
+					That’s going to require a <strong>(expression-&gt;function)</strong> to pass. There’s no simpler transformation, and no simpler test.
+				</p>
+				<div class="CodeRay">
+					<div class="code">
+						<pre>
+<span class="keyword">else</span> {
+    <span class="keyword">return</span> s.substring(<span class="integer">0</span>, length) + <span class="string"><span class="delimiter">"</span><span class="char">\n</span><span class="delimiter">"</span></span> + s.substring(length);
+  }
+</pre>
+					</div>
+				</div>
+				<p>
+					The next test is the plural of the last:
+				</p>
+				<div class="CodeRay">
+					<div class="code">
+						<pre>
+<span class="annotation">@Test</span>
+<span class="directive">public</span> <span class="type">void</span> WordLongerThanTwiceLengthShouldBreakTwice() <span class="directive">throws</span> <span class="exception">Exception</span> {
+  assertThat(wrap(<span class="string"><span class="delimiter">"</span><span class="content">verylongword</span><span class="delimiter">"</span></span>, <span class="integer">4</span>), is(<span class="string"><span class="delimiter">"</span><span class="content">very</span><span class="char">\n</span><span class="content">long</span><span class="char">\n</span><span class="content">word</span><span class="delimiter">"</span></span>));
+}
+</pre>
+					</div>
+				</div>
+				<p>
+					We can pass that with <strong>(statement-&gt;recursion)</strong>
+				</p>
+				<div class="CodeRay">
+					<div class="code">
+						<pre>
+<span class="keyword">return</span> s.substring(<span class="integer">0</span>, length) + <span class="string"><span class="delimiter">"</span><span class="char">\n</span><span class="delimiter">"</span></span> + wrap (s.substring(length), length);
+</pre>
+					</div>
+				</div>
+				<p>
+					It is also possible to pass this test with <strong>(if-&gt;while)</strong>. Indeed, you might question why I put <strong>(statement-&gt;recursion)</strong> above <strong>(if-&gt;while)</strong>. So a bit later in this paper we’ll explore the iterative solution. Comparing the two may convince you that recursion is, in fact, simpler than iteration.
+				</p>
+				<p>
+					So now let’s go back to that <code>@Ignored</code> test and turn it back on. How would we pass it now?
+				</p>
+				<div class="CodeRay">
+					<div class="code">
+						<pre>
+<span class="keyword">if</span> (s.length() &lt;= length)
+    <span class="keyword">return</span> s;
+  <span class="keyword">else</span> {
+    <span class="type">int</span> space = s.indexOf(<span class="string"><span class="delimiter">"</span><span class="content"> </span><span class="delimiter">"</span></span>);
+    <span class="keyword">if</span> (space &gt;= <span class="integer">0</span>)
+      <span class="keyword">return</span> <span class="string"><span class="delimiter">"</span><span class="content">word</span><span class="char">\n</span><span class="content">word</span><span class="delimiter">"</span></span>;
+    <span class="keyword">else</span>
+      <span class="keyword">return</span> s.substring(<span class="integer">0</span>, length) + <span class="string"><span class="delimiter">"</span><span class="char">\n</span><span class="delimiter">"</span></span> + wrap(s.substring(length), length);
+  }
+</pre>
+					</div>
+				</div>
+				<p>
+					<strong>(unconditional-&gt;if)</strong> followed by a <strong>(nil-&gt;constant)</strong> does the trick. What’s more there is no simpler test to pass, nor a simpler transformation to use.
+				</p>
+				<p>
+					Getting rid of the constant requires an additional test:
+				</p>
+				<div class="CodeRay">
+					<div class="code">
+						<pre>
+<span class="annotation">@Test</span>
+<span class="directive">public</span> <span class="type">void</span> TwoWordsLongerThanLimitShouldWrap() <span class="directive">throws</span> <span class="exception">Exception</span> {
+  assertThat(wrap(<span class="string"><span class="delimiter">"</span><span class="content">word word</span><span class="delimiter">"</span></span>, <span class="integer">6</span>), is(<span class="string"><span class="delimiter">"</span><span class="content">word</span><span class="char">\n</span><span class="content">word</span><span class="delimiter">"</span></span>));
+  assertThat(wrap(<span class="string"><span class="delimiter">"</span><span class="content">wrap here</span><span class="delimiter">"</span></span>, <span class="integer">6</span>), is(<span class="string"><span class="delimiter">"</span><span class="content">wrap</span><span class="char">\n</span><span class="content">here</span><span class="delimiter">"</span></span>));
+}
+</pre>
+					</div>
+				</div>
+				<p>
+					Which is passed with <strong>(expression-&gt;function)</strong>. Again, there is no simpler test or transformation. (For the sake of brevity, and to keep this paper from sounding like a broken record, I’m going to stop making that statement. You should assume it.)
+				</p>
+				<div class="CodeRay">
+					<div class="code">
+						<pre>
+<span class="type">int</span> space = s.indexOf(<span class="string"><span class="delimiter">"</span><span class="content"> </span><span class="delimiter">"</span></span>);
+    <span class="keyword">if</span> (space &gt;= <span class="integer">0</span>)
+      <span class="keyword">return</span> s.substring(<span class="integer">0</span>, space) + <span class="string"><span class="delimiter">"</span><span class="char">\n</span><span class="delimiter">"</span></span> + s.substring(space+<span class="integer">1</span>);
+    <span class="keyword">else</span>
+      <span class="keyword">return</span> s.substring(<span class="integer">0</span>, length) + <span class="string"><span class="delimiter">"</span><span class="char">\n</span><span class="delimiter">"</span></span> + wrap(s.substring(length), length);
+</pre>
+					</div>
+				</div>
+				<p>
+					We can see that the new clause needs <strong>(statement-&gt;recursion)</strong>. So we write a test that forces the issue:
+				</p>
+				<div class="CodeRay">
+					<div class="code">
+						<pre>
+<span class="annotation">@Test</span>
+<span class="directive">public</span> <span class="type">void</span> ThreeWordsEachLongerThanLimitShouldWrap() <span class="directive">throws</span> <span class="exception">Exception</span> {
+  assertThat(wrap(<span class="string"><span class="delimiter">"</span><span class="content">word word word</span><span class="delimiter">"</span></span>, <span class="integer">6</span>), is(<span class="string"><span class="delimiter">"</span><span class="content">word</span><span class="char">\n</span><span class="content">word</span><span class="char">\n</span><span class="content">word</span><span class="delimiter">"</span></span>));
+}
+</pre>
+					</div>
+				</div>
+				<p>
+					Making it pass is simple.
+				</p>
+				<div class="CodeRay">
+					<div class="code">
+						<pre>
+<span class="keyword">if</span> (space &gt;= <span class="integer">0</span>)
+      <span class="keyword">return</span> s.substring(<span class="integer">0</span>, space) + <span class="string"><span class="delimiter">"</span><span class="char">\n</span><span class="delimiter">"</span></span> + wrap(s.substring(space+<span class="integer">1</span>), length);
+    <span class="keyword">else</span>
+      <span class="keyword">return</span> s.substring(<span class="integer">0</span>, length) + <span class="string"><span class="delimiter">"</span><span class="char">\n</span><span class="delimiter">"</span></span> + wrap(s.substring(length), length);
+</pre>
+					</div>
+				</div>
+				<p>
+					Now we can refactor to eliminate the duplication.
+				</p>
+				<div class="CodeRay">
+					<div class="code">
+						<pre>
+<span class="directive">public</span> <span class="type">class</span> <span class="class">WordWrapper</span> {
+  <span class="directive">private</span> <span class="type">int</span> length;
+
+  <span class="directive">public</span> WordWrapper(<span class="type">int</span> length) {
+    <span class="local-variable">this</span>.length = length;
+  }
+
+  <span class="directive">public</span> <span class="directive">static</span> <span class="predefined-type">String</span> wrap(<span class="predefined-type">String</span> s, <span class="type">int</span> length) {
+    <span class="keyword">return</span> <span class="keyword">new</span> WordWrapper(length).wrap(s);
+  }
+
+  <span class="directive">public</span> <span class="predefined-type">String</span> wrap(<span class="predefined-type">String</span> s) {
+    <span class="keyword">if</span> (length &lt; <span class="integer">1</span>)
+      <span class="keyword">throw</span> <span class="keyword">new</span> InvalidArgument();
+    <span class="keyword">if</span> (s == <span class="predefined-constant">null</span>)
+      <span class="keyword">return</span> <span class="string"><span class="delimiter">"</span><span class="delimiter">"</span></span>;
+
+    <span class="keyword">if</span> (s.length() &lt;= length)
+      <span class="keyword">return</span> s;
+    <span class="keyword">else</span> {
+      <span class="type">int</span> space = s.indexOf(<span class="string"><span class="delimiter">"</span><span class="content"> </span><span class="delimiter">"</span></span>);
+      <span class="keyword">if</span> (space &gt;= <span class="integer">0</span>) 
+        <span class="keyword">return</span> breakBetween(s, space, space + <span class="integer">1</span>);
+      <span class="keyword">else</span>
+        <span class="keyword">return</span> breakBetween(s, length, length);
+    }
+  }
+
+  <span class="directive">private</span> <span class="predefined-type">String</span> breakBetween(<span class="predefined-type">String</span> s, <span class="type">int</span> start, <span class="type">int</span> end) {
+    <span class="keyword">return</span> s.substring(<span class="integer">0</span>, start) + 
+      <span class="string"><span class="delimiter">"</span><span class="char">\n</span><span class="delimiter">"</span></span> + 
+      wrap(s.substring(end), length);
+  }
+
+  <span class="directive">public</span> <span class="directive">static</span> <span class="type">class</span> <span class="class">InvalidArgument</span> <span class="directive">extends</span> <span class="exception">RuntimeException</span> {
+  }
+}
+</pre>
+					</div>
+				</div>
+				<p>
+					The next test makes sure we break on the <em>last</em> space before the limit.
+				</p>
+				<div class="CodeRay">
+					<div class="code">
+						<pre>
+<span class="annotation">@Test</span>
+<span class="directive">public</span> <span class="type">void</span> ThreeWordsJustOverTheLimitShouldBreakAtSecond() <span class="directive">throws</span> <span class="exception">Exception</span> {
+  assertThat(wrap(<span class="string"><span class="delimiter">"</span><span class="content">word word word</span><span class="delimiter">"</span></span>, <span class="integer">11</span>), is(<span class="string"><span class="delimiter">"</span><span class="content">word word</span><span class="char">\n</span><span class="content">word</span><span class="delimiter">"</span></span>));
+}
+</pre>
+					</div>
+				</div>
+				<p>
+					This requires a <strong>(expression-&gt;function)</strong>, but it’s so simple it seems obvious.
+				</p>
+				<div class="CodeRay">
+					<div class="code">
+						<pre>
+<span class="type">int</span> space = s.lastIndexOf(<span class="string"><span class="delimiter">"</span><span class="content"> </span><span class="delimiter">"</span></span>);
+</pre>
+					</div>
+				</div>
+				<p>
+					Though this passes the new test, it breaks the previous test; but we can do one more <strong>(expression-&gt;function)</strong> transformation to fix it.
+				</p>
+				<div class="CodeRay">
+					<div class="code">
+						<pre>
+<span class="type">int</span> space = s.substring(<span class="integer">0</span>, length).lastIndexOf(<span class="string"><span class="delimiter">"</span><span class="content"> </span><span class="delimiter">"</span></span>);
+</pre>
+					</div>
+				</div>
+				<p>
+					Wherever limits are used, the law of trichotomy must be considered. All the lengths used in the tests have been unambiguously beyond the position of the breaking space. But what happens if we break right on the space.
+				</p>
+				<div class="CodeRay">
+					<div class="code">
+						<pre>
+<span class="annotation">@Test</span>
+<span class="directive">public</span> <span class="type">void</span> TwoWordsTheFirstEndingAtTheLimit() <span class="directive">throws</span> <span class="exception">Exception</span> {
+  assertThat(wrap(<span class="string"><span class="delimiter">"</span><span class="content">word word</span><span class="delimiter">"</span></span>, <span class="integer">4</span>), is(<span class="string"><span class="delimiter">"</span><span class="content">word</span><span class="char">\n</span><span class="content">word</span><span class="delimiter">"</span></span>));
+}
+</pre>
+					</div>
+				</div>
+				<p>
+					This fails, but can be made to pass with a <strong>(statement-&gt;function)</strong> transformation.
+				</p>
+				<div class="CodeRay">
+					<div class="code">
+						<pre>
+<span class="type">int</span> space = s.substring(<span class="integer">0</span>, length+<span class="integer">1</span>).lastIndexOf(<span class="string"><span class="delimiter">"</span><span class="content"> </span><span class="delimiter">"</span></span>);
+</pre>
+					</div>
+				</div>
+				<p>
+					This may not look like a <strong>(statement-&gt;function)</strong>, but it is. Adding is a function. We might as well have said <code>add(length, 1)</code>.
+				</p>
+				<h3>
+					Iteration instead of Recursion
+				</h3>
+				<p>
+					Now let’s wind back the clock and see how an iterative, rather than a recursive, solution might evolve. Remember that we introduced <strong>(statement-&gt;recursion)</strong> while trying to pass the following test:
+				</p>
+				<div class="CodeRay">
+					<div class="code">
+						<pre>
+<span class="annotation">@Test</span>
+<span class="directive">public</span> <span class="type">void</span> WordLongerThanTwiceLengthShouldBreakTwice() <span class="directive">throws</span> <span class="exception">Exception</span> {
+  assertThat(wrap(<span class="string"><span class="delimiter">"</span><span class="content">verylongword</span><span class="delimiter">"</span></span>, <span class="integer">4</span>), is(<span class="string"><span class="delimiter">"</span><span class="content">very</span><span class="char">\n</span><span class="content">long</span><span class="char">\n</span><span class="content">word</span><span class="delimiter">"</span></span>));
+}
+</pre>
+					</div>
+				</div>
+				<p>
+					The failing code looks like this:
+				</p>
+				<div class="CodeRay">
+					<div class="code">
+						<pre>
+<span class="keyword">if</span> (s.length() &lt;= length)
+    <span class="keyword">return</span> s;
+  <span class="keyword">else</span> {
+    <span class="keyword">return</span> s.substring(<span class="integer">0</span>, length) + <span class="string"><span class="delimiter">"</span><span class="char">\n</span><span class="delimiter">"</span></span> + s.substring(length);
+  }
+</pre>
+					</div>
+				</div>
+				<p>
+					We can make this pass by using the <strong>(if-&gt;while)</strong> transformation. If we are going to use a <code>while</code> then we need to invert the condition of the <code>if</code>. This is a simple refactoring, <em>not a transformation</em>.
+				</p>
+				<div class="CodeRay">
+					<div class="code">
+						<pre>
+<span class="keyword">if</span> (s.length() &gt; length) {
+    <span class="keyword">return</span> s.substring(<span class="integer">0</span>, length) + <span class="string"><span class="delimiter">"</span><span class="char">\n</span><span class="delimiter">"</span></span> + s.substring(length);
+  } <span class="keyword">else</span> {
+    <span class="keyword">return</span> s;
+  }
+</pre>
+					</div>
+				</div>
+				<p>
+					Next we need to create a variable to hold the state of the iteration. Once again, this is a refactoring, not a transformation.
+				</p>
+				<div class="CodeRay">
+					<div class="code">
+						<pre>
+<span class="predefined-type">String</span> result = <span class="string"><span class="delimiter">"</span><span class="delimiter">"</span></span>;
+  <span class="keyword">if</span> (s.length() &gt; length) {
+    result = s.substring(<span class="integer">0</span>, length) + <span class="string"><span class="delimiter">"</span><span class="char">\n</span><span class="delimiter">"</span></span> + s.substring(length);
+  } <span class="keyword">else</span> {
+    result = s;
+  }
+  <span class="keyword">return</span> result;
+}
+</pre>
+					</div>
+				</div>
+				<p>
+					<code>While</code> loops can’t have <code>else</code> clauses, so we need to eliminate the <code>else</code> path by doing less in the <code>if</code> path. Again, this is a refactoring.
+				</p>
+				<div class="CodeRay">
+					<div class="code">
+						<pre>
+<span class="predefined-type">String</span> result = <span class="string"><span class="delimiter">"</span><span class="delimiter">"</span></span>;
+  <span class="keyword">if</span> (s.length() &gt; length) {
+    result = s.substring(<span class="integer">0</span>, length) + <span class="string"><span class="delimiter">"</span><span class="char">\n</span><span class="delimiter">"</span></span>;
+    s = s.substring(length);
+  }
+  result += s;
+</pre>
+					</div>
+				</div>
+				<p>
+					And now we can employ <strong>(if-&gt;while)</strong> to make the test pass.
+				</p>
+				<div class="CodeRay">
+					<div class="code">
+						<pre>
+<span class="predefined-type">String</span> result = <span class="string"><span class="delimiter">"</span><span class="delimiter">"</span></span>;
+  <span class="keyword">while</span> (s.length() &gt; length) {
+    result += s.substring(<span class="integer">0</span>, length) + <span class="string"><span class="delimiter">"</span><span class="char">\n</span><span class="delimiter">"</span></span>;
+    s = s.substring(length);
+  }
+  result += s;
+</pre>
+					</div>
+				</div>
+				<h2>
+					The Process
+				</h2>
+				<p>
+					If we accept the Priority Premise, then we should amend the typical red-green-refactor process of TDD with the following provision:
+				</p>
+				<blockquote>
+					<ul>
+						<li>When passing a test, prefer higher priority transformations.
+						</li>
+						<li>When posing a test choose one that can be passed with higher priority transformations.
+						</li>
+						<li>When an implementation seems to require a low priority transformation, backtrack to see if there is a simpler test to pass.
+						</li>
+					</ul>
+				</blockquote>
+				<h2>
+					Issues
+				</h2>
+				<p>
+					There are a number of problems with this.
+				</p>
+				<ul>
+					<li>Are there other transformations? (almost certainly)
+					</li>
+					<li>Are these the right transformations? (probably not)
+					</li>
+					<li>Are there better names for the transformations? (almost certainly)
+					</li>
+					<li>Is there really a priority? (I think so, but it might be more complicated than a simple ordinal sequence)
+					</li>
+					<li>If so, what is the principle behind that priority? (some notion of “complexity”)
+					</li>
+					<li>Can it be quantified? (I have no idea)
+					</li>
+					<li>Is the priority order presented in this blog correct? (not likely)
+					</li>
+					<li>The transformations as described are informal at best. Can they be formalized? (That’s the holy grail!)
+					</li>
+				</ul>
+				<p>
+					As you can see from my parenthetic remarks, I have quibbles with nearly all these questions. What I am certain of is that there is a fundamental principle lurking somewhere in here. I think that there <em>are</em> a fixed and simple set of transformations, even if I have not enumerated them well. I <em>hope</em> they can be formalized. I also think that there is some criteria for selecting which transformations to employ, even if it is not quite as simple as a priority list.
+				</p>
+				<h2>
+					Implications
+				</h2>
+				<p>
+					If my suspicions turn out correct, then a number of things become possible.
+				</p>
+				<ul>
+					<li>Tool support for transformations similar to the current tool support for refactorings.
+					</li>
+					<li>Tool support for <em>suggesting</em> transformations that follow priority order.
+					</li>
+					<li>The sequence of tests, transformations, and refactorings may just be a formal proof of correctness.
+					</li>
+				</ul>
+				<h3>
+					Formal Proof of Correctness
+				</h3>
+				<p>
+					That last point requires a bit more amplification. If you can describe the desired behavior of a program with a suite of tests, and if you can show step by step how each test is passed by using formal transformations and refactorings, then you have created a proof.
+				</p>
+				<p>
+					Oddly, the proof is attained by <em>constructing</em> the algorithm in a stepwise fashion. It is interesting to compare this to Dijkstra’s approach of proving correctness by taking the algorithm apart.
+				</p>
+				<h2>
+					Conclusion
+				</h2>
+				<p>
+					Given the typical TDD <code>red/green/refactor</code> process, it appears that the <code>green</code> phase can be achieved by employing a fixed set of behavior changing transformations to the code. These changes move the code from a <em>specific</em> form to a more <em>generic</em> form. It also appears that these transformations have a preferred order based on complexity. This ordering can be used in both the <code>red</code> and <code>green</code> phases of TDD. During the <code>green</code> we prefer simpler transformations. During the <code>red</code> phase we prefer tests that can be passed with simpler transformations. It is the premise of this blog that if tests are chosen and implemented in this preferred order of transformations, then TDD impasses will be reduced or eliminated.
+				</p>
+			</div>
+		</div>
+
+
+
+

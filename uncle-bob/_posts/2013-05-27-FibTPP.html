@@ -1,0 +1,263 @@
+---
+layout: post
+title: Fib. The T-P Premise.
+tags: ["Coding"]
+---
+
+<div id='wrap'>
+	<div class='post'>
+		<div class='post_header'>
+			<div class='post_info'>
+				<span class='post_time'>February 2 2011</span>
+			</div>
+		</div>
+		<div class='post_body'>
+			<p>
+				Guilherme Silveira wrote a lovely <a href="http://blog.caelumobjects.com/2011/01/13/evolving-software-and-improving-algorithms/">blog</a> exploring the <a href="http://blog.8thlight.com/uncle-bob/2013/05/27/TheTransformationPriorityPremise.html">Transformation Priority Premise</a> using the Fibonacci sequence. He posed a suite of tests similar to these:
+			</p>
+			<div class="CodeRay">
+				<div class="code">
+					<pre>
+<span class="annotation">@Test</span>
+<span class="directive">public</span> <span class="type">void</span> fibTest() <span class="directive">throws</span> <span class="exception">Exception</span> {
+    assertEquals(<span class="integer">0</span>, of(<span class="integer">0</span>));
+    assertEquals(<span class="integer">1</span>, of(<span class="integer">1</span>));
+    assertEquals(<span class="integer">1</span>, of(<span class="integer">2</span>));
+    assertEquals(<span class="integer">2</span>, of(<span class="integer">3</span>));
+    assertEquals(<span class="integer">3</span>, of(<span class="integer">4</span>));
+    assertEquals(<span class="integer">5</span>, of(<span class="integer">5</span>));
+    assertEquals(<span class="integer">8</span>, of(<span class="integer">6</span>));
+}
+</pre>
+				</div>
+			</div>
+			<p>
+				He found that the proposed list of transformations did not lead him to a good solution. At first he found that the transformations led him to a solution like this:
+			</p>
+			<div class="CodeRay">
+				<div class="code">
+					<pre>
+<span class="keyword">switch</span>(n) {
+    <span class="keyword">case</span> <span class="integer">0</span>: <span class="keyword">return</span> <span class="integer">0</span>;
+    <span class="keyword">case</span> <span class="integer">1</span>: <span class="keyword">return</span> <span class="integer">1</span>;
+    <span class="keyword">case</span> <span class="integer">2</span>: <span class="keyword">return</span> <span class="integer">1</span>;
+    <span class="keyword">case</span> <span class="integer">3</span>: <span class="keyword">return</span> <span class="integer">2</span>;
+    ...
+}
+</pre>
+				</div>
+			</div>
+			<p>
+				Obviously this is the wrong approach, but the priority list presented in my original article did not prevent it. So I’ve added the <strong>(case)</strong> transformation to the very bottom of the list. <em>This means that using a switch/case or an ‘else if’ is always the last option to choose.</em>
+			</p>
+			<p>
+				Guilherme went on to rightly ignore the switch/case solution to see if he could get a good solution for fib by following the other priorities. I suggest you read his blog to see how that turned out. Meanwhile, let’s try it here.
+			</p>
+			<p>
+				The first test leads us to use the <strong>({}–&gt;nil)</strong> and then the <strong>(nil-&gt;constant)</strong> transformations:
+			</p>
+			<div class="CodeRay">
+				<div class="code">
+					<pre>
+<span class="directive">public</span> <span class="type">class</span> <span class="class">Fibonacci</span> {
+  <span class="directive">public</span> <span class="directive">static</span> <span class="type">int</span> of(<span class="type">int</span> n) {
+    <span class="keyword">return</span> <span class="integer">0</span>;
+  }
+}
+</pre>
+				</div>
+			</div>
+			<p>
+				The second test forces an <strong>(unconditional-&gt;if)</strong> transformation that we can refactor with a <strong>(constant-&gt;scalar)</strong>. This coincidentally makes the third test pass which is always nice.
+			</p>
+			<div class="CodeRay">
+				<div class="code">
+					<pre>
+<span class="directive">public</span> <span class="directive">static</span> <span class="type">int</span> of(<span class="type">int</span> n) {
+  <span class="keyword">if</span> (n &lt;=<span class="integer">1</span>)
+    <span class="keyword">return</span> n;
+  <span class="keyword">return</span> <span class="integer">1</span>;
+}
+</pre>
+				</div>
+			</div>
+			<p>
+				The fourth tests is tricky. How can we transform that ‘1’ into something that maps 1-&gt;1, 2-&gt;1, and 3-&gt;2. We know that fib(n) = fib(n-1)+fib(n-2) so we could use recursion to solve the problem. That’s the <strong>(statement-&gt;recursion)</strong> transformation.
+			</p>
+			<div class="CodeRay">
+				<div class="code">
+					<pre>
+<span class="directive">public</span> <span class="directive">static</span> <span class="type">int</span> of(<span class="type">int</span> n) {
+  <span class="keyword">if</span> (n &lt;=<span class="integer">1</span>)
+    <span class="keyword">return</span> n;
+  <span class="keyword">return</span> of(n-<span class="integer">1</span>) + of(n-<span class="integer">2</span>);
+}
+</pre>
+				</div>
+			</div>
+			<p>
+				This makes all the tests pass. Hallelujah! And look how simple that was! What a pretty sight.
+			</p>
+			<p>
+				Unfortunately there are three things wrong with this pretty solution. First, that algorithm has a horrific runtime complexity of something like O(n<sup>2)</sup> or worse. Secondly, the algorithm does not use tail-recursion, and so uses a lot of stack space. Thirdly, Java is not a great language for recursion anyway since the JVM simply <em>can’t</em> optimize tail recursion (yet).
+			</p>
+			<p>
+				It’s a great shame that such a simple expression has so many problems! There are <em>ways</em> to address that, but they are beyond the scope of this article. For now we’ll focus on the three problems mentioned above.
+			</p>
+			<p>
+				Let’s tackle them one at a time. Is there a transformation that will at least get us to tail recursion? Of course there is, but it was missing from my original list. So I’ve modified that list as follows:
+			</p>
+			<ul>
+				<li>
+					<strong>({}–&gt;nil)</strong> no code at all-&gt;code that employs nil
+				</li>
+				<li>
+					<strong>(nil-&gt;constant)</strong>
+				</li>
+				<li>
+					<strong>(constant-&gt;constant+)</strong> a simple constant to a more complex constant
+				</li>
+				<li>
+					<strong>(constant-&gt;scalar)</strong> replacing a constant with a variable or an argument
+				</li>
+				<li>
+					<strong>(statement-&gt;statements)</strong> adding more unconditional statements.
+				</li>
+				<li>
+					<strong>(unconditional-&gt;if)</strong> splitting the execution path
+				</li>
+				<li>
+					<strong>(scalar-&gt;array)</strong>
+				</li>
+				<li>
+					<strong>(array-&gt;container)</strong>
+				</li>
+				<li>
+					<strong>(statement-&gt;tail-recursion)</strong>
+				</li>
+				<li>
+					<strong>(if-&gt;while)</strong>
+				</li>
+				<li>
+					<strong>(statement-&gt;recursion)</strong>
+				</li>
+				<li>
+					<strong>(expression-&gt;function)</strong> replacing an expression with a function or algorithm
+				</li>
+				<li>
+					<strong>(variable-&gt;assignment)</strong> replacing the value of a variable.
+				</li>
+				<li>
+					<strong>(case)</strong> adding a case (or else) to an existing switch or if
+				</li>
+			</ul>
+			<p>
+				So tail recursion is preferred over arbitrary recursion.
+			</p>
+			<p>
+				Now, can we use tail recursion to tranform this?
+			</p>
+			<div class="CodeRay">
+				<div class="code">
+					<pre>
+<span class="directive">public</span> <span class="directive">static</span> <span class="type">int</span> of(<span class="type">int</span> n) {
+  <span class="keyword">if</span> (n &lt;=<span class="integer">1</span>)
+    <span class="keyword">return</span> n;
+  <span class="keyword">return</span> <span class="integer">1</span>;
+}
+</pre>
+				</div>
+			</div>
+			<p>
+				Of course we can. It’s not as pretty as the previous solution, but it captures the same semantics. And it’s not ugly by any means.
+			</p>
+			<div class="CodeRay">
+				<div class="code">
+					<pre>
+<span class="directive">public</span> <span class="type">class</span> <span class="class">Fibonacci</span> {
+  <span class="directive">public</span> <span class="directive">static</span> <span class="type">int</span> of(<span class="type">int</span> n) {
+    <span class="keyword">if</span> (n &lt;=<span class="integer">1</span>)
+      <span class="keyword">return</span> n;
+    <span class="keyword">return</span> of(<span class="integer">0</span>,<span class="integer">1</span>,n);
+  }
+
+  <span class="directive">private</span> <span class="directive">static</span> <span class="type">int</span> of(<span class="type">int</span> a, <span class="type">int</span> b, <span class="type">int</span> n) {
+    <span class="keyword">if</span> (n == <span class="integer">0</span>)
+      <span class="keyword">return</span> a;
+    <span class="keyword">return</span> of(b, a+b, n-<span class="integer">1</span>);
+  }
+}
+</pre>
+				</div>
+			</div>
+			<p>
+				Of course we can clean this up by removing the redundant ‘if’.
+			</p>
+			<div class="CodeRay">
+				<div class="code">
+					<pre>
+<span class="directive">public</span> <span class="type">class</span> <span class="class">Fibonacci</span> {
+  <span class="directive">public</span> <span class="directive">static</span> <span class="type">int</span> of(<span class="type">int</span> n) {
+    <span class="keyword">return</span> of(<span class="integer">0</span>,<span class="integer">1</span>,n);
+  }
+
+  <span class="directive">private</span> <span class="directive">static</span> <span class="type">int</span> of(<span class="type">int</span> a, <span class="type">int</span> b, <span class="type">int</span> n) {
+    <span class="keyword">if</span> (n == <span class="integer">0</span>)
+      <span class="keyword">return</span> a;
+    <span class="keyword">return</span> of(b, a+b, n-<span class="integer">1</span>);
+  }
+}
+</pre>
+				</div>
+			</div>
+			<p>
+				But now, how do we deal with the fact that Java doesn’t do well with recursion? If we thought that n would always stay relatively small, we could just ignore it. But let’s assume that ‘n’ will be large; forcing us to unwind the recursion and replace it with iteration. This requires a <strong>(if-&gt;while)</strong> and a few <strong>(variable-&gt;assignment)</strong> transformations.
+			</p>
+			<div class="CodeRay">
+				<div class="code">
+					<pre>
+<span class="directive">public</span> <span class="type">class</span> <span class="class">Fibonacci</span> {
+  <span class="directive">public</span> <span class="directive">static</span> <span class="type">int</span> of(<span class="type">int</span> n) {
+    <span class="keyword">return</span> of(<span class="integer">0</span>,<span class="integer">1</span>,n);
+  }
+
+  <span class="directive">private</span> <span class="directive">static</span> <span class="type">int</span> of(<span class="type">int</span> a, <span class="type">int</span> b, <span class="type">int</span> n) {
+    <span class="keyword">while</span> (n != <span class="integer">0</span>) {
+      <span class="type">int</span> s = a+b;
+      a = b;
+      b = s;
+      n--;
+    }
+    <span class="keyword">return</span> a;
+  }
+}
+</pre>
+				</div>
+			</div>
+			<p>
+				The list of priorities prevents this from being the direct outcome of TDD because it prefers the recursive solution. So my list of proposed priorities will necessarily create Java programs that are recursive, and therefore less than optimal for the language.
+			</p>
+			<p>
+				That makes me think that the priority list is language specific. In Java, for example, we might move <strong>(if-&gt;while)</strong> and <strong>(variable-&gt;assignment)</strong> <em>above</em> <strong>(statement-&gt;tail-recursion)</strong> so that iteration is always preferred above recursion, and assignment is preferred above parameter passing.
+			</p>
+			<p>
+				This makes sense because Java is not a functional language, and strongly resists a functional style. So any bias towards functional style will lead to suboptimal implementations.
+			</p>
+			<p>
+				If the priority list is language specific, is it also application specific? Do different problem domains require different priority lists? I strongly doubt this. We are working at a level of detail so far below the problem domain that it is hard for me to see how different problems would require different solution styles.
+			</p>
+			<p>
+				What about teams? Will teams tweak the priority list to match their styles? I hope not; but I have to say that I think this is not improbable.
+			</p>
+			<p>
+				I think what this shows us is that the transformations and their priorities are a way to encode a particular programming style. So long as we have different languages and styles, we’ll likely need different transformations and priorities.
+			</p>
+			<p>
+				On the other hand, if we compare the Java list with the Clojure list (say), the difference is subtle. The recursive transformations would move <em>slightly</em> lower in the list relative to the iterative and assignment transformations. The effect is, of course, profound, but the difference in the lists is actually relatively small. All the other transformations seem to hold their positions.
+			</p>
+			<p>
+				So the good news is that, although there may be different styles based on language type, the vast majority of the low level coding decisions remain similar irrespective of those styles.
+			</p>
+		</div>
+	</div>
+</div>

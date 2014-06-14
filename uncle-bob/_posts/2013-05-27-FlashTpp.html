@@ -1,0 +1,433 @@
+---
+layout: post
+title: Flash - TPP
+tags: ["Coding"]
+---
+
+
+		
+		<div class='post'>
+			<div class='post_header'>
+				<div class='post_info'>
+					<span class='post_time'>February 3 2011</span>
+				</div>
+			</div>
+			<div class='post_body'>
+				<p>
+					I read a nice <a href="http://madcoderspeak.blogspot.com/2011/02/flash-cards-kata-and-transformation.html">blog</a> today exploring the <a href="http://blog.8thlight.com/uncle-bob/2013/05/27/TheTransformationPriorityPremise.html">Transformation Priority Premise</a> using the flash card kata. The author did it in both lisp and C#. Let’s try it in Java.
+				</p>
+				<p>
+					The flash card kata is pretty straightforward. Given a set of questions and answers, ask the user each question and solicit an answer. If the answer is correct, say so and count it. If the answer is wrong show the correct answer and count the error. At the end, print the number of right and wrong answers.
+				</p>
+				<p>
+					The first test is wonderfully simple. Given an empty list of questions and answers, end the game immediately with a summary showing nothing right and nothing wrong.
+				</p>
+				<p>
+					We begin with an empty test which passes:
+				</p>
+				<div class="CodeRay">
+					<div class="code">
+						<pre>
+<span class="directive">public</span> <span class="type">class</span> <span class="class">flashCardTest</span> {
+  <span class="annotation">@Test</span>
+  <span class="directive">public</span> <span class="type">void</span> degenerateGame() <span class="directive">throws</span> <span class="exception">Exception</span> {
+  }
+}
+</pre>
+					</div>
+				</div>
+				<p>
+					We get the test to fail by asserting the answer we want and by doing a couple of <strong>({}–&gt;nil)</strong> transforms. (In this case -1 is the integer equivalent of nil, e.g. a degenerate value)
+				</p>
+				<div class="CodeRay">
+					<div class="code">
+						<pre>
+<span class="directive">public</span> <span class="type">class</span> <span class="class">FlashCardTest</span> {
+  <span class="annotation">@Test</span>
+  <span class="directive">public</span> <span class="type">void</span> rightAndWrongShouldBeZeroIfGamePlayedWithNoCards() {
+    <span class="predefined-type">List</span> emptyList = <span class="keyword">new</span> <span class="predefined-type">ArrayList</span>();
+    playGame(emptyList);
+    assertEquals(<span class="integer">0</span>, rightAnswers());
+    assertEquals(<span class="integer">0</span>, wrongAnswers());
+  }
+
+  <span class="directive">private</span> <span class="type">int</span> wrongAnswers() {
+    <span class="keyword">return</span> -<span class="integer">1</span>;
+  }
+
+  <span class="directive">private</span> <span class="type">int</span> rightAnswers() {
+    <span class="keyword">return</span> -<span class="integer">1</span>;
+  }
+
+  <span class="directive">private</span> <span class="type">void</span> playGame(<span class="predefined-type">List</span> flashCards) {
+  }
+}
+</pre>
+					</div>
+				</div>
+				<p>
+					To get this to pass just need to do some <strong>(nil-&gt;constant)</strong> transforms.
+				</p>
+				<div class="CodeRay">
+					<div class="code">
+						<pre>
+<span class="directive">private</span> <span class="type">int</span> wrongAnswers() {
+    <span class="keyword">return</span> <span class="integer">0</span>;
+  }
+
+  <span class="directive">private</span> <span class="type">int</span> rightAnswers() {
+    <span class="keyword">return</span> <span class="integer">0</span>;
+  }
+</pre>
+					</div>
+				</div>
+				<p>
+					This solution is a bit ugly since it couples the test and the solution. So let’s refactor to create a class.
+				</p>
+				<div class="CodeRay">
+					<div class="code">
+						<pre>
+<span class="directive">public</span> <span class="type">class</span> <span class="class">FlashCardTest</span> {
+  <span class="annotation">@Test</span>
+  <span class="directive">public</span> <span class="type">void</span> rightAndWrongShouldBeZeroIfGamePlayedWithNoCards() {
+    FlashCardGame flashCardGame = <span class="keyword">new</span> FlashCardGame();
+    <span class="predefined-type">List</span> emptyList = <span class="keyword">new</span> <span class="predefined-type">ArrayList</span>();
+
+    flashCardGame.playGame(emptyList);
+
+    assertEquals(<span class="integer">0</span>, flashCardGame.rightAnswers());
+    assertEquals(<span class="integer">0</span>, flashCardGame.wrongAnswers());
+  }
+}
+</pre>
+					</div>
+				</div>
+				<hr>
+				<div class="CodeRay">
+					<div class="code">
+						<pre>
+<span class="directive">public</span> <span class="type">class</span> <span class="class">FlashCardGame</span> {
+  <span class="directive">public</span> FlashCardGame() {
+  }
+
+  <span class="type">int</span> wrongAnswers() {
+    <span class="keyword">return</span> <span class="integer">0</span>;
+  }
+
+  <span class="type">int</span> rightAnswers() {
+    <span class="keyword">return</span> <span class="integer">0</span>;
+  }
+
+  <span class="type">void</span> playGame(<span class="predefined-type">List</span> flashCards) {
+  }
+}
+</pre>
+					</div>
+				</div>
+				<p>
+					For the next test, lets try a game with a single flash card, that the user gets right.
+				</p>
+				<div class="CodeRay">
+					<div class="code">
+						<pre>
+<span class="annotation">@Test</span>
+  <span class="directive">public</span> <span class="type">void</span> rightShouldBeOneIfOneRightAnswer() {
+    FlashCard card = <span class="keyword">new</span> FlashCard(<span class="string"><span class="delimiter">"</span><span class="content">Q</span><span class="delimiter">"</span></span>, <span class="string"><span class="delimiter">"</span><span class="content">A</span><span class="delimiter">"</span></span>);
+    <span class="predefined-type">List</span> cards = <span class="keyword">new</span> <span class="predefined-type">ArrayList</span>();
+    cards.add(card);
+
+    flashCardGame.playGame(cards);
+    assertEquals(<span class="integer">1</span>, flashCardGame.rightAnswers());
+    assertEquals(<span class="integer">0</span>, flashCardGame.wrongAnswers());
+  }
+</pre>
+					</div>
+				</div>
+				<p>
+					This fails of course. We can make it pass by simply incrementing the right count in <code>playGame</code> if the list of cards is not zero. This is a <strong>(unconditional-&gt;if)</strong> transform. That, plus a little refactoring gives us:
+				</p>
+				<div class="CodeRay">
+					<div class="code">
+						<pre>
+<span class="directive">public</span> <span class="type">class</span> <span class="class">FlashCardGame</span> {
+  <span class="directive">private</span> <span class="type">int</span> rightAnswers;
+
+  <span class="directive">public</span> FlashCardGame() {
+  }
+
+  <span class="type">int</span> getWrongAnswers() {
+    <span class="keyword">return</span> <span class="integer">0</span>;
+  }
+
+  <span class="type">int</span> getRightAnswers() {
+    <span class="keyword">return</span> rightAnswers;
+  }
+
+  <span class="type">void</span> playGame(<span class="predefined-type">List</span> flashCards, FlashCardTest answerer) {
+    <span class="keyword">if</span> (flashCards.size() != <span class="integer">0</span>)
+      rightAnswers++;
+  }
+}
+</pre>
+					</div>
+				</div>
+				<p>
+					OK, so let’s try a wrong answer.
+				</p>
+				<div class="CodeRay">
+					<div class="code">
+						<pre>
+<span class="annotation">@Test</span>
+  <span class="directive">public</span> <span class="type">void</span> wrongShouldBeOneIfOneWrongAnswer() {
+    FlashCard card = <span class="keyword">new</span> FlashCard(<span class="string"><span class="delimiter">"</span><span class="content">QW</span><span class="delimiter">"</span></span>, <span class="string"><span class="delimiter">"</span><span class="content">A</span><span class="delimiter">"</span></span>);
+    <span class="predefined-type">List</span> cards = <span class="keyword">new</span> <span class="predefined-type">ArrayList</span>();
+    cards.add(card);
+
+    flashCardGame.playGame(cards);
+    assertEquals(<span class="integer">0</span>, flashCardGame.getRightAnswers());
+    assertEquals(<span class="integer">1</span>, flashCardGame.getWrongAnswers());
+  }
+
+  <span class="directive">public</span> <span class="predefined-type">String</span> answerQuestion(<span class="predefined-type">String</span> question) {
+    <span class="keyword">if</span> (question.equals(<span class="string"><span class="delimiter">"</span><span class="content">QR</span><span class="delimiter">"</span></span>)) <span class="keyword">return</span> <span class="string"><span class="delimiter">"</span><span class="content">A</span><span class="delimiter">"</span></span>;
+    <span class="keyword">else</span> <span class="keyword">return</span> <span class="string"><span class="delimiter">"</span><span class="content">W</span><span class="delimiter">"</span></span>;
+  }
+</pre>
+					</div>
+				</div>
+				<p>
+					This forced us to create the <code>answerQuestion</code> function that pretends to be a user answering questions. If you pass in “QR” you get the right answer “A”. If you pass in “QW” you get the wrong answer “W”. To get this test to pass we’re going to have to get this function called by <code>playGame</code>. We can do this by passing the test along in an argument using the Change Signature refactoring. Then we can use a <strong>(unconditional-&gt;if)</strong> transform to check the value of our new function.
+				</p>
+				<div class="CodeRay">
+					<div class="code">
+						<pre>
+<span class="directive">public</span> <span class="type">class</span> <span class="class">FlashCardGame</span> {
+  <span class="directive">private</span> <span class="type">int</span> rightAnswers;
+  <span class="directive">private</span> <span class="type">int</span> wrongAnswers;
+
+  <span class="directive">public</span> FlashCardGame() {
+  }
+
+  <span class="type">int</span> getWrongAnswers() {
+    <span class="keyword">return</span> wrongAnswers;
+  }
+
+  <span class="type">int</span> getRightAnswers() {
+    <span class="keyword">return</span> rightAnswers;
+  }
+
+  <span class="type">void</span> playGame(<span class="predefined-type">List</span> flashCards, FlashCardTest answerer) {
+    <span class="keyword">if</span> (flashCards.size() != <span class="integer">0</span>) {
+      <span class="predefined-type">String</span> question = flashCards.get(<span class="integer">0</span>).getQuestion();
+      <span class="keyword">if</span> (answerer.answerQuestion(question).equals(<span class="string"><span class="delimiter">"</span><span class="content">A</span><span class="delimiter">"</span></span>))
+        rightAnswers++;
+      <span class="keyword">else</span>
+        wrongAnswers++;
+    }
+  }
+}
+</pre>
+					</div>
+				</div>
+				<p>
+					Of course this is hideous, so we need to refactor alot.
+				</p>
+				<div class="CodeRay">
+					<div class="code">
+						<pre>
+<span class="directive">public</span> <span class="type">interface</span> <span class="class">User</span> {
+  <span class="predefined-type">String</span> answerQuestion(<span class="predefined-type">String</span> question);
+}
+
+----
+
+<span class="directive">public</span> <span class="type">class</span> <span class="class">MockUser</span> <span class="directive">implements</span> User {
+  <span class="directive">public</span> MockUser() {
+  }
+
+  <span class="directive">public</span> <span class="predefined-type">String</span> answerQuestion(<span class="predefined-type">String</span> question) {
+    <span class="keyword">if</span> (question.equals(<span class="string"><span class="delimiter">"</span><span class="content">QR</span><span class="delimiter">"</span></span>)) <span class="keyword">return</span> <span class="string"><span class="delimiter">"</span><span class="content">A</span><span class="delimiter">"</span></span>;
+    <span class="keyword">else</span> <span class="keyword">return</span> <span class="string"><span class="delimiter">"</span><span class="content">W</span><span class="delimiter">"</span></span>;
+  }
+}
+
+----
+
+<span class="directive">public</span> <span class="type">class</span> <span class="class">FlashCardGame</span> {
+  <span class="directive">private</span> <span class="type">int</span> rightAnswers;
+  <span class="directive">private</span> <span class="type">int</span> wrongAnswers;
+
+  <span class="directive">public</span> FlashCardGame() {
+  }
+
+  <span class="type">int</span> getWrongAnswers() {
+    <span class="keyword">return</span> wrongAnswers;
+  }
+
+  <span class="type">int</span> getRightAnswers() {
+    <span class="keyword">return</span> rightAnswers;
+  }
+
+  <span class="type">void</span> playGame(<span class="predefined-type">List</span> flashCards, User user) {
+    <span class="keyword">if</span> (flashCards.size() != <span class="integer">0</span>) {
+      <span class="predefined-type">String</span> question = flashCards.get(<span class="integer">0</span>).getQuestion();
+      <span class="predefined-type">String</span> answer = user.answerQuestion(question);
+      <span class="keyword">if</span> (answer.equals(<span class="string"><span class="delimiter">"</span><span class="content">A</span><span class="delimiter">"</span></span>))
+        rightAnswers++;
+      <span class="keyword">else</span>
+        wrongAnswers++;
+    }
+  }
+}
+
+----
+
+<span class="directive">public</span> <span class="type">class</span> <span class="class">FlashCardTest</span> {
+  <span class="directive">private</span> FlashCardGame flashCardGame;
+  <span class="directive">private</span> MockUser user = <span class="keyword">new</span> MockUser();
+
+  <span class="annotation">@Before</span>
+  <span class="directive">public</span> <span class="type">void</span> setUp() <span class="directive">throws</span> <span class="exception">Exception</span> {
+    flashCardGame = <span class="keyword">new</span> FlashCardGame();
+    user = <span class="keyword">new</span> MockUser();
+  }
+
+  <span class="annotation">@Test</span>
+  <span class="directive">public</span> <span class="type">void</span> rightAndWrongShouldBeZeroIfGamePlayedWithNoCards() {
+    <span class="predefined-type">List</span> emptyList = <span class="keyword">new</span> <span class="predefined-type">ArrayList</span>();
+
+    flashCardGame.playGame(emptyList, user);
+
+    assertEquals(<span class="integer">0</span>, flashCardGame.getRightAnswers());
+    assertEquals(<span class="integer">0</span>, flashCardGame.getWrongAnswers());
+  }
+
+  <span class="annotation">@Test</span>
+  <span class="directive">public</span> <span class="type">void</span> rightShouldBeOneIfOneRightAnswer() {
+    FlashCard card = <span class="keyword">new</span> FlashCard(<span class="string"><span class="delimiter">"</span><span class="content">QR</span><span class="delimiter">"</span></span>, <span class="string"><span class="delimiter">"</span><span class="content">A</span><span class="delimiter">"</span></span>);
+    <span class="predefined-type">List</span> cards = <span class="keyword">new</span> <span class="predefined-type">ArrayList</span>();
+    cards.add(card);
+
+    flashCardGame.playGame(cards, user);
+    assertEquals(<span class="integer">1</span>, flashCardGame.getRightAnswers());
+    assertEquals(<span class="integer">0</span>, flashCardGame.getWrongAnswers());
+  }
+
+  <span class="annotation">@Test</span>
+  <span class="directive">public</span> <span class="type">void</span> wrongShouldBeOneIfOneWrongAnswer() {
+    FlashCard card = <span class="keyword">new</span> FlashCard(<span class="string"><span class="delimiter">"</span><span class="content">QW</span><span class="delimiter">"</span></span>, <span class="string"><span class="delimiter">"</span><span class="content">A</span><span class="delimiter">"</span></span>);
+    <span class="predefined-type">List</span> cards = <span class="keyword">new</span> <span class="predefined-type">ArrayList</span>();
+    cards.add(card);
+
+    flashCardGame.playGame(cards, user);
+    assertEquals(<span class="integer">0</span>, flashCardGame.getRightAnswers());
+    assertEquals(<span class="integer">1</span>, flashCardGame.getWrongAnswers());
+  }
+}
+</pre>
+					</div>
+				</div>
+				<p>
+					Now let’s do two questions, one right and one wrong.
+				</p>
+				<div class="CodeRay">
+					<div class="code">
+						<pre>
+<span class="annotation">@Test</span>
+  <span class="directive">public</span> <span class="type">void</span> countBothOneRightAndOneWrong() {
+    <span class="predefined-type">List</span> cards = <span class="keyword">new</span> <span class="predefined-type">ArrayList</span>();
+    cards.add(<span class="keyword">new</span> FlashCard(<span class="string"><span class="delimiter">"</span><span class="content">QW</span><span class="delimiter">"</span></span>, <span class="string"><span class="delimiter">"</span><span class="content">A</span><span class="delimiter">"</span></span>));
+    cards.add(<span class="keyword">new</span> FlashCard(<span class="string"><span class="delimiter">"</span><span class="content">QR</span><span class="delimiter">"</span></span>, <span class="string"><span class="delimiter">"</span><span class="content">A</span><span class="delimiter">"</span></span>));
+
+    flashCardGame.playGame(cards, user);
+    assertEquals(<span class="integer">1</span>, flashCardGame.getRightAnswers());
+    assertEquals(<span class="integer">1</span>, flashCardGame.getWrongAnswers());
+  }
+</pre>
+					</div>
+				</div>
+				<p>
+					This fails, but we can make it pass with a <strong>(if-&gt;while)</strong> transform.
+				</p>
+				<div class="CodeRay">
+					<div class="code">
+						<pre>
+<span class="type">void</span> playGame(<span class="predefined-type">List</span> flashCards, User user) {
+    <span class="keyword">for</span> (FlashCard card : flashCards) {
+      <span class="predefined-type">String</span> question = card.getQuestion();
+      <span class="predefined-type">String</span> answer = user.answerQuestion(question);
+      <span class="keyword">if</span> (answer.equals(<span class="string"><span class="delimiter">"</span><span class="content">A</span><span class="delimiter">"</span></span>))
+        rightAnswers++;
+      <span class="keyword">else</span>
+        wrongAnswers++;
+    }
+  }
+</pre>
+					</div>
+				</div>
+				<p>
+					One thing left. We need to actually compare the answer in the flashcard to the response from the user.
+				</p>
+				<div class="CodeRay">
+					<div class="code">
+						<pre>
+<span class="annotation">@Test</span>
+  <span class="directive">public</span> <span class="type">void</span> countThreeNewQuestionsTwoRightOneWrong() {
+    <span class="predefined-type">List</span> cards = <span class="keyword">new</span> <span class="predefined-type">ArrayList</span>();
+    cards.add(<span class="keyword">new</span> FlashCard(<span class="string"><span class="delimiter">"</span><span class="content">Q1</span><span class="delimiter">"</span></span>, <span class="string"><span class="delimiter">"</span><span class="content">1</span><span class="delimiter">"</span></span>));
+    cards.add(<span class="keyword">new</span> FlashCard(<span class="string"><span class="delimiter">"</span><span class="content">Q2</span><span class="delimiter">"</span></span>, <span class="string"><span class="delimiter">"</span><span class="content">2</span><span class="delimiter">"</span></span>));
+    cards.add(<span class="keyword">new</span> FlashCard(<span class="string"><span class="delimiter">"</span><span class="content">Q3</span><span class="delimiter">"</span></span>, <span class="string"><span class="delimiter">"</span><span class="content">wrong</span><span class="delimiter">"</span></span>));
+
+    flashCardGame.playGame(cards, user);
+    assertEquals(<span class="integer">2</span>, flashCardGame.getRightAnswers());
+    assertEquals(<span class="integer">1</span>, flashCardGame.getWrongAnswers());
+  }
+</pre>
+					</div>
+				</div>
+				<p>
+					We need to make a small change to the Mock.
+				</p>
+				<div class="CodeRay">
+					<div class="code">
+						<pre>
+<span class="directive">public</span> <span class="type">class</span> <span class="class">MockUser</span> <span class="directive">implements</span> User {
+  <span class="directive">public</span> <span class="predefined-type">String</span> answerQuestion(<span class="predefined-type">String</span> question) {
+    <span class="keyword">if</span> (question.equals(<span class="string"><span class="delimiter">"</span><span class="content">QR</span><span class="delimiter">"</span></span>)) <span class="keyword">return</span> <span class="string"><span class="delimiter">"</span><span class="content">A</span><span class="delimiter">"</span></span>;
+    <span class="keyword">else</span> {
+      <span class="keyword">return</span> question.substring(<span class="integer">1</span>);
+    }
+  }
+}
+</pre>
+					</div>
+				</div>
+				<p>
+					And now we can make this pass with a simple <strong>(expression-&gt;function)</strong> transform.
+				</p>
+				<div class="CodeRay">
+					<div class="code">
+						<pre>
+<span class="type">void</span> playGame(<span class="predefined-type">List</span> flashCards, User user) {
+    <span class="keyword">for</span> (FlashCard card : flashCards) {
+      <span class="predefined-type">String</span> question = card.getQuestion();
+      <span class="predefined-type">String</span> answer = user.answerQuestion(question);
+      <span class="keyword">if</span> (answer.equals(card.getAnswer()))
+        rightAnswers++;
+      <span class="keyword">else</span>
+        wrongAnswers++;
+    }
+  }
+</pre>
+					</div>
+				</div>
+				<p>
+					There’s more to do, of course, but the plumbing is all set up, and the algorithm looks right. There were several cases where we <em>could</em> have used a lower transform such as <strong>(variable-&gt;assignment)</strong> but there was no need, and the algorithm came out nicely.
+				</p>
+				<p>
+					There is just the slightest chance that the one use of <strong>(if-&gt;while)</strong> could have been done with <strong>(statement-&gt;tail-recursion)</strong>, but since this is Java, that’s probably not the best choice.
+				</p>
+			</div>
+		</div>
+
+

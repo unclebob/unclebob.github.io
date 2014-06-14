@@ -1,0 +1,42 @@
+---
+layout: post
+title: "First"
+tags: ["Testing"]
+---
+In the first [_Is TDD Dead?_ hangout](https://www.youtube.com/watch?v=z9quxZsLcfo), at time 30:25 `@dhh` makes a remarkable statement:
+>"...you're not done until you also have tests for a piece of functionality -- I'm completely on board with that."
+
+I think we can extrapolate from `@dhh`'s statement that he believes that having tests for a piece of functionality is a matter of professionalism. 
+
+It's not hard to understand why.  The benefits provided by a good test suite are enormous.  Let's just consider a few.
+
+* Well designed tests are small isolated snippets of code that call into the system being tested, expecting certain results. A programmer can read the tests to understand what the tested code is supposed to do.  So the tests are _documents_.  They are written in a language you understand. They are utterly unambiguous.  They are so formal that they _execute_.  And they cannot get out of sync with the application.  
+
+That's pretty close to documentation nirvana.  I've certainly seen my share of documents that were hard to read, ambiguous, informal, and out of sync with the application.  That fact that a good suite of tests cures those ills makes the tests pretty important.
+
+Another benefit is design:
+
+* Well designed tests force a certain degree of decoupling.  Often that decoupling is beneficial to the design of the system.  
+
+`@dhh` has rightly suggested that too much indiscriminate and gratuitous decoupling is deleterious the the design of the code.  On the other hand, no one can doubt that well-considered decoupling is beneficial.  Tests provide an opportunity for that consideration; and that adds to the importance of the tests.
+
+But without a doubt the most important benefit of a good test suite is:
+
+* Confidence.  A well designed test suite with a high degree of coverage eliminates, or at least strongly mitigates the fear of change.  And when you aren't afraid to change your code, you will _clean_ it.  And if you clean it, it won't rot.  And if it doesn't rot, then the software team can go _fast_.
+
+Whenever I teach a class, no matter the topic, I always ask my students this question: 
+>"Have you ever been significantly slowed down by bad code?"
+
+The vast majority of programmers say that they _have indeed_ been significantly slowed down by bad code.  I mean, honestly, _who hasn't_?  
+
+So it stands to reason that if we keep the code clean, we won't be slowed down by bad code.  And that means a suite of tests is a key to going fast.
+
+Let me state that more strongly.  If you have a suite of tests that you can execute _quickly_, and if you trust that suite of tests enough, then you will not be afraid to change the code.  That makes the code _flexible_.
+
+For years we've thought that flexibility of code was a function of it's design.  We thought that poorly designed code was rigid and hard to change; and that well designed code was flexible and easy to change.  And, for what it's worth, this is true.  But _nothing_ makes code easier to change than a quickly executing suite of tests that you trust -- _nothing_.
+
+How important is that?  How important is it that, at all times, you have the confidence that changes to your code haven't broken anything?  How important is it that you keep enough control over your code so that you aren't afraid to _clean_ it?  And how _irresponsible_ is it to have lost that control and to be _afraid_ to make changes -- afraid to _clean_?
+
+It seems to me; and apparently it seems to `@dhh`, that this is pretty important.  Indeed, I think it's _critically_ important.  So linking professionalism to a quickly executing suite of trustworthy tests is probably not out of line.
+
+But that brings us to an issue:  _Order_.  When something is critically important, when do you do it?  The answer to that is simple and obvious.  When something is critically important, you do it _first_.
