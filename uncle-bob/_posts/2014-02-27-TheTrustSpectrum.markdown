@@ -3,7 +3,7 @@ layout: post
 title: "A Spectrum of Trust"
 tags: ["Craftsmanship"]
 ---
-The response to my two previous blogs: [Where's the Foreman](http://blog.8thlight.com/uncle-bob/2014/02/21/WhereIsTheForeman.html) and [Oh Foreman Where Art Thou](http://blog.8thlight.com/uncle-bob/2014/02/23/OhForemanWhereArtThou.html) continues to be mixed; and has gotten quite loud.  That's a good thing; because we need to have this discussion.
+The response to my two previous blogs: [Where's the Foreman]({% post_url 2014-02-21-WhereIsTheForeman %}) and [Oh Foreman Where Art Thou]({% post_url 2014-02-23-OhForemanWhereArtThou %}) continues to be mixed; and has gotten quite loud.  That's a good thing; because we need to have this discussion.
 
 ###The Perfect Agile Team
 
