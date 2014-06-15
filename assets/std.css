@@ -221,7 +221,8 @@ body {
     font-family: "FrescoSansPlusPro-Normal", Helvetica, Arial, sans-serif;
     font-size: 112%;
     font-weight: normal;
-    line-height: 1.5em
+    line-height: 1.5em;
+    background-color: #f8fff8;
 }
 
 img {
@@ -350,7 +351,7 @@ a:hover {
     max-width: 1200px;
     width: 90%;
     padding: 1.5em 0;
-    position: relative
+    position: relative;
 }
 
 .container .narrow {
