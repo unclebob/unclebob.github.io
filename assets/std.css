@@ -279,7 +279,8 @@ p {
 
 em {
     font-family: 'FrescoSansPlusPro-Normal-Italic';
-    font-style: italic
+    font-style: italic;
+    font-size: 1.1em
 }
 
 b {
