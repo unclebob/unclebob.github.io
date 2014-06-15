@@ -19,7 +19,7 @@ So how can I believe that TDD is associated with professionalism when there are 
 
 First of all, if you read that article from 2007, you'll see that I don't believe that TDD is a _prerequisite_ to professionalism.  What I believe is that it currently plays a significant role in professional behavior.  I also believe it will play a much greater role as we look into the future.  
 
-In that article I briefly referred to the story of Ignaz Semmelweis who in 1847 achieved a six-fold drop in his maternity ward’s mortality rate by simply having doctors wash their hands before examining pregnant women.  Semmelwies tried to convince his peers to adopt hand-washing as a discipline.  They resisted -- for over 60 years.  The reasons for their resistance sound much like the articles we've seen of late claiming that TDD is dead.  
+In that article I briefly referred to the story of Ignaz Semmelweis who in 1847 achieved a six-fold drop in his maternity ward's mortality rate by simply having doctors wash their hands before examining pregnant women.  Semmelwies tried to convince his peers to adopt hand-washing as a discipline.  They resisted -- for over 60 years.  The reasons for their resistance sound much like the articles we've seen of late claiming that TDD is dead.  
 
 Doctors at that time did not wash their hands.  They saw no reason to wash their hands.  To them, cleanliness and disease were utterly unrelated.  To us, in the 21st century, that's difficult to believe; but just 167 years ago it was just as hard to believe that washing hands was anything but a fools errand.
 
