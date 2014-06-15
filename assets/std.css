@@ -164,48 +164,36 @@ table {
 
 @font-face {
     font-family: 'FrescoSansPlusPro-Normal';
-    src: url("/assets/frescosanspluspro-normal-webfont-6e45a93baabb6fb93bdb116af609f838.eot");
-    src: url("/assets/frescosanspluspro-normal-webfont-6e45a93baabb6fb93bdb116af609f838.eot?#iefix") format("embedded-opentype"), url("/assets/frescosanspluspro-normal-webfont-dafe8f1b435f73559e1e3e608be3c383.woff") format("woff"), url("/assets/frescosanspluspro-normal-webfont-5ee08a730c1ade647beb22a9c1e176f5.ttf") format("truetype"), url("/assets/frescosanspluspro-normal-webfont-568b6beaa29fd2de8e2c3e94ee92c3b1.svg?#FrescoSansPlusPro-Normal") format("svg");
     font-weight: normal;
     font-style: normal
 }
 
 @font-face {
     font-family: 'FrescoSansPlusPro-Normal-Italic';
-    src: url("/assets/frescosanspluspro-normalitalic-webfont-7fa6aa0e22b48fe83385871b0a1fce89.eot");
-    src: url("/assets/frescosanspluspro-normalitalic-webfont-7fa6aa0e22b48fe83385871b0a1fce89.eot?#iefix") format("embedded-opentype"), url("/assets/frescosanspluspro-normalitalic-webfont-43fbcc70bf304ff6979182b5611544ef.woff") format("woff"), url("/assets/frescosanspluspro-normalitalic-webfont-c67e433dd9f9dea36eac4ca4414d2632.ttf") format("truetype"), url("/assets/frescosanspluspro-normalitalic-webfont-b7e5e0e3aa177d9d91c26a5c9a0b1e0d.svg?#FrescoSansPlusPro-Normal-Italic") format("svg");
     font-weight: normal;
     font-style: normal
 }
 
 @font-face {
     font-family: 'FrescoSansPlusBold';
-    src: url("/assets/frescosansplus-bold-webfont-85fb4152101478e94e7af4ad82b07104.eot");
-    src: url("/assets/frescosansplus-bold-webfont-85fb4152101478e94e7af4ad82b07104.eot?#iefix") format("embedded-opentype"), url("/assets/frescosansplus-bold-webfont-c3e9a795838aac1e0fe207c78503e62d.woff") format("woff"), url("/assets/frescosansplus-bold-webfont-62a7238299e27d1dff6ab5439ca19a18.ttf") format("truetype"), url("/assets/frescosansplus-bold-webfont-b56a26216b1978fe23f9046f4fc3be37.svg?#FrescoSansPlusBold") format("svg");
     font-weight: normal;
     font-style: normal
 }
 
 @font-face {
     font-family: 'FrescoSansPlusSCNormalRegular';
-    src: url("/assets/frescosansplussc-normal-webfont-839236a971a1e731f78559b0937b8155.eot");
-    src: url("/assets/frescosansplussc-normal-webfont-839236a971a1e731f78559b0937b8155.eot?#iefix") format("embedded-opentype"), url("/assets/frescosansplussc-normal-webfont-4595d8ea25f547339770b8a47e294e2c.woff") format("woff"), url("/assets/frescosansplussc-normal-webfont-84ecdf1c5e7815fec7ffd8ab350f1ecf.ttf") format("truetype"), url("/assets/frescosansplussc-normal-webfont-4d26b80ea92134f67faaa791d1bb5fe2.svg?#FrescoSansPlusSCNormalRegular") format("svg");
     font-weight: normal;
     font-style: normal
 }
 
 @font-face {
     font-family: 'FrescoPlusNormal';
-    src: url("/assets/frescoplus-normal-webfont-a2708e8047f4a663253b8cdb2d652484.eot");
-    src: url("/assets/frescoplus-normal-webfont-a2708e8047f4a663253b8cdb2d652484.eot?#iefix") format("embedded-opentype"), url("/assets/frescoplus-normal-webfont-201dbe9b262cee4dbd777726760252ce.woff") format("woff"), url("/assets/frescoplus-normal-webfont-7658b1f0155bc9fa86f3370bc90c59ba.ttf") format("truetype"), url("/assets/frescoplus-normal-webfont-66a64c03796334fcaed926c03dc57d83.svg?#FrescoPlusNormal") format("svg");
     font-weight: normal;
     font-style: normal
 }
 
 @font-face {
     font-family: 'FrescoPlusNormalItalic';
-    src: url("/assets/frescoplus-normalitalic-webfont-03040e46cbf33c53ba52668e43c0918f.eot");
-    src: url("/assets/frescoplus-normalitalic-webfont-03040e46cbf33c53ba52668e43c0918f.eot?#iefix") format("embedded-opentype"), url("/assets/frescoplus-normalitalic-webfont-1e9c6761da64dcdf1e45a200691bb0bd.woff") format("woff"), url("/assets/frescoplus-normalitalic-webfont-b51909a56cb53691af41a54669157f4f.ttf") format("truetype"), url("/assets/frescoplus-normalitalic-webfont-c102da964f4c6233f2d33707cba89791.svg?#FrescoPlusNormalItalic") format("svg");
     font-weight: normal;
     font-style: normal
 }
@@ -431,7 +419,6 @@ section.gray {
 
 section.quotes {
     background: #eef2f5;
-    background-image: url("/assets/pattern/pattern-c573a06c5c9d6fd230ae87b4c3cd0dd3.png");
     background-repeat: repeat;
     background-size: cover;
     background-position: center
@@ -640,7 +627,6 @@ header ul li.top-level-nav .sub-nav {
 header ul li.top-level-nav .sub-nav:after {
     width: 14px;
     height: 14px;
-    background: url("/assets/icons/nav-arrow-a526cd719b79d006f9c059d626581478.png");
     content: ' ';
     position: absolute;
     top: -14px;
@@ -682,9 +668,6 @@ header ul li.top-level-nav .sub-nav a:hover, header ul li.top-level-nav .sub-nav
     background: #f5f8fa
 }
 
-header.light .logo {
-    background-image: url("/assets/logos/logo-white-1672fb294741f785de8b82164513ebf1.png")
-}
 
 header.light li.top-level-nav a {
     color: #f5f8fa;
@@ -698,10 +681,6 @@ header.light li.top-level-nav a:hover {
 header.light .sub-nav-arrow {
     border-top: 5px solid #eef2f5;
     border-top: 5px solid rgba(238, 242, 245, 0.8)
-}
-
-header.dark .logo {
-    background-image: url("/assets/logos/logo-light-5c2f6a2e9ce5bf561f14e3ecace26b4c.png")
 }
 
 header.dark li.top-level-nav a {
@@ -726,157 +705,10 @@ header.dark li.top-level-nav a:hover {
 }
 
 .toggle {
-    background-image: url("/assets/icons/toggle-f99c15201ddf0321ad2fd5c9e400380e.png");
     display: none;
     width: 44px;
     height: 44px;
     float: right
-}
-
-.hero {
-    background: #eef2f5;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    min-height: 600px;
-    overflow: hidden;
-    position: relative;
-    text-align: center;
-    width: 100%;
-    z-index: 0
-}
-
-.hero.dark-gray {
-    background: #333
-}
-
-.hero .light-tint {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background-color: rgba(150, 163, 177, 0.3);
-    z-index: 1
-}
-
-.hero .dark-tint {
-    background: rgba(150, 163, 177, 0.5);
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 1
-}
-
-.hero .haze {
-    background: rgba(98, 110, 122, 0.8);
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 1
-}
-
-.hero.pull-top {
-    margin-top: -6em;
-    min-height: 681px
-}
-
-.hero.portfolio {
-    min-height: 800px
-}
-
-.hero.apprenticeship {
-    background-image: url("/assets/hero-images/apprenticeship-a66305108d3acf1cb136ba14cd078829.jpg")
-}
-
-.hero.pairing {
-    background-image: url("/assets/hero-images/pairing-b6419842f4b65637f6511709e5a21693.jpg")
-}
-
-.hero.chicago {
-    background-image: url("/assets/hero-images/chicago-5a71faf662e76aa540e39d8132b5e306.jpg")
-}
-
-.hero.craft {
-    background-image: url("/assets/hero-images/craft-5e9221fe9b49ca94ac54299171f53067.jpg")
-}
-
-.hero.consulting {
-    background-image: url("/assets/hero-images/consulting-29f41d62e8ac92e2a3a5fd12b4bbac20.jpg")
-}
-
-.hero.mountain {
-    background-image: url("/assets/hero-images/mountain-ffa8ad4b7342eb4107f0f6bfdc3f3e39.png");
-    background-position: top
-}
-
-.hero.home {
-    background-image: url("/assets/hero-images/home-2cbeebd076c73af8abf1b176d106fb02.jpg")
-}
-
-.hero.community {
-    background-image: url("/assets/hero-images/community-4fc666e5f27dbdcb91c213f2bb5afe39.jpg")
-}
-
-.hero.studio {
-    background-image: url("/assets/hero-images/studio-f5d8eda70e2064d39014c38ae1f8c977.jpg")
-}
-
-.hero.styleguide {
-    background-image: url("/assets/hero-images/styleguide-bfa5c802255571fba3524fc32b7b8b1d.jpg")
-}
-
-.hero.whiteboard {
-    background-image: url("/assets/hero-images/whiteboard-de368ae8e030f375a6d93a3f06666d44.jpg")
-}
-
-.hero.books {
-    background-image: url("/assets/hero-images/books-d478b6454964043e6daa4253965108dc.jpg")
-}
-
-.hero.training {
-    background-image: url("/assets/hero-images/training-c22dabe6188803e3efc10fb25e2ef1ab.jpg");
-    background-position: 50% 100%
-}
-
-.hero.training-2 {
-    background-image: url("/assets/hero-images/training-2-7a3ed9956e7df0ea934c4960fd671992.jpg")
-}
-
-.hero.go-big {
-    background-image: url("/assets/portfolio/main/go-big-hero-d380f03a2febc65abbc76274988d3ce1.jpg")
-}
-
-.hero.pattern {
-    background-image: url("/assets/pattern/pattern-c573a06c5c9d6fd230ae87b4c3cd0dd3.png");
-    background-repeat: repeat
-}
-
-.hero .container {
-    padding: 4em 0
-}
-
-.hero-logo {
-    width: 500px;
-    margin: auto;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    top: 0;
-    z-index: 2
-}
-
-.hero-logo.small {
-    width: 350px
-}
-
-.hero-logo.large {
-    width: 1200px
 }
 
 .button, a.button, input[type=submit] {
@@ -1397,10 +1229,6 @@ select {
     font-style: normal
 }
 
-.portfolio-quote.go-big {
-    background-image: url("/assets/portfolio/main/go-big-hero-d380f03a2febc65abbc76274988d3ce1.jpg")
-}
-
 .portfolio-quote.law-vault {
     background: #d74b30
 }
@@ -1839,17 +1667,14 @@ select {
 
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
     header.light .logo {
-        background-image: url("/assets/logos/logo-white@2x-0e1f0981bb8911fe5fc9f605e7785530.png");
         background-size: 44px 44px
     }
 
     header.dark .logo {
-        background-image: url("/assets/logos/logo-light@2x-b56da0a46698f7f27e418736fd04b599.png");
         background-size: 44px 44px
     }
 
     .toggle {
-        background-image: url("/assets/icons/toggle@2x-9d2d95bb2d11a5ebb8300c3f7e1aeb93.png");
         background-size: 44px 44px
     }
 }
@@ -1899,7 +1724,6 @@ select {
     }
 
     header.light .logo {
-        background-image: url("/assets/logos/logo-light@2x-b56da0a46698f7f27e418736fd04b599.png");
         background-size: 44px 44px
     }
 
