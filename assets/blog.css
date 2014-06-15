@@ -307,7 +307,7 @@ article iframe {
 
 article blockquote {
     border-left: 5px solid #eef2f5;
-    margin: 1em 0 2em 0;
+    margin: 1em 0 1em 0;
     padding-left: 1em
 }
 
@@ -331,7 +331,8 @@ article figcaption {
 }
 
 article code {
-    font-size: 0.9em
+    font-size: 0.9em;
+    line-height: normal;
 }
 
 article pre {
