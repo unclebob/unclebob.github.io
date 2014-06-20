@@ -3,6 +3,8 @@ layout: post
 title: Clean Architecture
 tags: ["Architecture"]
 ---
+<meta http-equiv="refresh" content="0; url=http://blog.8thlight.com/uncle-bob/2011/11/22/Clean-Architecture.html" />
+
 In the weeks since I started talking about the need to clean up our architecture, I've noticed a surprising resistance to the idea.  Apparently the notion that it's a good idea to hide the framework, UI, or database from the application code is not universally accepted.
 
 I first blogged about this topic "here":{% post_url 2011-09-30-Screaming-Architecture %}, I did a whole cleancoders.com "episode":http://www.cleancoders.com/codecast/clean-code-episode-7/show on the topic. I've also done several keynotes on the topic, the slides for which are "here":http://dl.dropbox.com/u/4730299/Architecture%20the%20lost%20years.key, and a video recording of which is "here":http://mchenry.softwarecraftsmanship.org/the-a-word-a-discussion-about-architecture.

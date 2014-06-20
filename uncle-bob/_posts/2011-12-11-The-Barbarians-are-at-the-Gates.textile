@@ -3,6 +3,8 @@ layout: post
 title: The Barbarians are at the Gates
 tags: ["Coding"]
 ---
+<meta http-equiv="refresh" content="0; url=http://blog.8thlight.com/uncle-bob/2011/12/11/The-Barbarians-are-at-the-Gates.html" />
+
 There's a revolution coming.  I wonder if anyone has noticed.  It's not subtle.  It won't be sublime, or easy to integrate.  Indeed, it'll probably muck up everything for a long long time.  But it's coming nonetheless, and you'd better be strapped in and ready for the impact.
 
 The challenge for computing is _power_.  How much processing can you get done per unit of time.  Over the last fifty years we've seen this power increase by a scale that we usually reserve for thermonuclear weapons, supermassive black holes, or core-collapse supernovae.  We might characterize that power increase with the following formula:

@@ -3,6 +3,7 @@ layout: post
 title: The Laborer and the Craftsman
 tags: ["Craftsmanship"]
 ---
+<meta http-equiv="refresh" content="0; url=http://blog.8thlight.com/uncle-bob/2013/01/30/The-Craftsman-And-The-Laborer.html" />
 In a recent [blog](http://blogs.tedneward.com/2013/01/24/On+The+Dark+Side+Of+Craftsmanship.aspx) Ted Neward made this remarkable statement:
 
 >I'm criticizing because this is what "software craftsmanship" gets us: an imposed segregation of those who "get it" from those who "don't" based on somebody's arbitrary criteria of what we should or shouldn't be doing. And if somebody doesn't use the "right" tools or code it in the "right" way, then bam! You clearly aren't a "craftsman" (or "craftswoman"?) and you clearly don't care about your craft and you clearly aren't worth the time or energy necessary to support and nourish and grow and....

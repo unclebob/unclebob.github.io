@@ -3,6 +3,7 @@ layout: post
 title: The Careless Ones
 tags: ["Craftsmanship"]
 ---
+<meta http-equiv="refresh" content="0; url=http://blog.8thlight.com/uncle-bob/2013/10/24/The-Careless-Ones.html" />
 Two days ago my wife placed an on-line order at Walmart for a metal-frame bunk bed for our grandchildren to sleep on when they stay over at our house.  Yesterday it arrived.  Wow!  One day delivery to my front door.  Someone cared.  
 
 The metal-frame parts for the bunk bed came in a box that was, perhaps, 4ft X 18in X 6in, or 3 cu ft.  It weight about 100 lbs.  I looked at this carton with a growing sense of despair, knowing that the next several hours of my life would be in the hell of unpacking and assembly.  I've been in that hell before.  I had no desire to return to it.  But I love my grand children and I wanted them to have a nice place to sleep. So...

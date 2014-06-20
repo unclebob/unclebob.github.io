@@ -4,7 +4,7 @@ title: Service Oriented Agony
 tags: ["Architecture", "Craftsmanship"]
 old_tags: ["Architecture", "Craftsmanship",  "SOA"]
 ---
-
+<meta http-equiv="refresh" content="0; url=http://blog.8thlight.com/uncle-bob/2012/02/01/Service-Oriented-Agony.html" />
 I sat down with a group of developers today to do a retrospective on a project.  They told me that project management has been complaining about their velocity.  It wasn't serious, but the developers felt bad because things _do_ seem to take longer than they should.  When I asked them why, they said that the system was very complex, and making changes to it was time consuming. 
 
 I asked them to draw the system on the whiteboard.  Here's what they drew.

@@ -3,6 +3,7 @@ layout: post
 title: Extreme Programming, a Reflection
 tags: ["Craftsmanship"]
 ---
+<meta http-equiv="refresh" content="0; url=http://blog.8thlight.com/uncle-bob/2013/12/10/Thankyou-Kent.html" />
 In my hand I am holding a little white book that, fourteen years ago, changed the software world forever.   The title of that book is: _Extreme Programming Explained_; and the subtitle is: _Embrace Change_.   The author is Kent Beck, and the copyright date is 1999.  
 
 The book is small, less than 200 pages.  The print is large and widely spaced.  The writing style is casual and accessible.  The chapters are short.  The concepts are simple.  

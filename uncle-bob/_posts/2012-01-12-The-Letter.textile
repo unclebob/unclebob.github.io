@@ -4,6 +4,7 @@ title: The Letter
 tags: ["Testing", "Craftsmanship"]
 old_tags: ["TDD", "Professionalism", "Craftsmanship"]
 ---
+<meta http-equiv="refresh" content="0; url=http://blog.8thlight.com/uncle-bob/2012/01/12/The-Letter.html" />
 We need to become a self-regulating and self-policing profession.  The stakes are simply too high to allow software to remain in the current ad-hoc limbo of hackers, heroics, and hermits.  
 
 Consider how much software you interact with every day.  Your alarm clock, your cell phone, the television and cable box, the remote control, your toaster oven, your watch, your car, the train to work, the cash register at Starbucks, the coffee maker at Starbucks, the elevator you ride,  etc. etc.  The list is virtually endless.  Nearly every aspect of our daily lives, nearly ever corner of our civilization is somehow touched, controlled, managed, or influenced by software.  

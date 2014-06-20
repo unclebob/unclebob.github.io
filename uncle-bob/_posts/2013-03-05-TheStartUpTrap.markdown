@@ -3,6 +3,7 @@ layout: post
 title: The Start-Up Trap
 tags: ["Craftsmanship", "Testing"]
 ---
+<meta http-equiv="refresh" content="0; url=http://blog.8thlight.com/uncle-bob/2013/03/05/TheStartUpTrap.html" />
 * **You** have joined a new startup.
 * **You** are a multi-talented mega-being.
 * **You** can work 60, 70, 80 hours per week to get the job done.

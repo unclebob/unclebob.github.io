@@ -3,6 +3,7 @@ layout: post
 title: "The Single Responsibility Principle"
 tags: ["Architecture"]
 ---
+<meta http-equiv="refresh" content="0; url=http://blog.8thlight.com/uncle-bob/2014/05/08/SingleReponsibilityPrinciple.html" />
 In 1972 David L. Parnas published a classic paper entitled [On the Criteria To Be Used in Decomposing Systems into Modules](https://www.cs.umd.edu/class/spring2003/cmsc838p/Design/criteria.pdf).  It appeared in the December issue of the Communications of the ACM, Volume 15, Number 12. 
 
 In this paper, Parnas compared two different strategies for decomposing and separating the logic in a simple algorithm.  The paper is fascinating reading, and I strongly urge you to study it.  His conclusion, in part, is as follows:

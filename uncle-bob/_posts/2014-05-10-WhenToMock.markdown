@@ -3,6 +3,7 @@ layout: post
 title: "When to Mock"
 tags: ["Testing"]
 ---
+<meta http-equiv="refresh" content="0; url=http://blog.8thlight.com/uncle-bob/2014/05/10/WhenToMock.html" />
 A mock object is a very powerful tool, providing two major benefits: isolation and introspection.  But like all power tools, mocks come with a cost.  So where and when should you use them?  What is the cost/benefit trade off?  Let's look at the extremes.  
 
 ##No Mocks.

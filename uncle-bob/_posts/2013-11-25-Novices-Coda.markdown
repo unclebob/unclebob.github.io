@@ -3,6 +3,7 @@ layout: post
 title: Novices. A Coda
 tags: ["Craftsmanship"]
 ---
+<meta http-equiv="refresh" content="0; url=http://blog.8thlight.com/uncle-bob/2013/11/25/Novices-Coda.html" />
 There has been some confusion about my recent post: [Hordes of Novices]({% post_url 2013-11-19-HoardsOfNovices %}).  Many people who aspire to become craftsmen took the article to mean that I don't want new people to enter the craft.  Nothing could be farther from the truth.  We do, in fact, need a growing stream of newcomers entering our craft.  Some folks who run code academies or boot camps took the article to mean that I didn't think those schools were useful.  Again, nothing could be farther from the truth.  We need a growing and effective supply of accessible software education.
 
 What we _don't_ need is to throw masses of newly trained novices into mission critical projects without careful supervision, monitoring, and continuing education.  What we _don't_ need is to expect novices to behave like professionals.  What we _don't_ need is to continue in the absurd belief that a degree in computer science, or the completion of a boot camp, is sufficient to produce a professional software developer.

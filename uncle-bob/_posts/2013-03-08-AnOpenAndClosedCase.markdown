@@ -3,6 +3,7 @@ layout: post
 title: An Open and Closed Case
 tags: ["Craftsmanship", "Coding"]
 ---
+<meta http-equiv="refresh" content="0; url=http://blog.8thlight.com/uncle-bob/2013/03/08/AnOpenAndClosedCase.html" />
 I awoke this morning to see a twitter conversation about the Open-Closed Principle.  The tweeter was complaining that it didn't make a lot of sense.  He said things like: 
 
 >"Presumably true OCP fans barely use version control, btw. Only reason to change a source file is for bug fixes, right?"

@@ -4,6 +4,7 @@ title: Flipping the Bit
 tags: ["Testing", "Craftsmanship"]
 old_tags: ["TDD", "Professionalism", "Craftsmanship"]
 ---
+<meta http-equiv="refresh" content="0; url=http://blog.8thlight.com/uncle-bob/2012/01/11/Flipping-the-Bit.html" />
 
 There's a bit you need to flip in your head.  It's just one bit.  In this blog we'll call it "THE BIT".  Some of you have already flipped THE BIT.  The rest of you need to flip THE BIT as soon as possible.
 

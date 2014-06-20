@@ -3,6 +3,7 @@ layout: post
 title: "The Open Closed Principle"
 tags: ["Craftsmanship"]
 ---
+<meta http-equiv="refresh" content="0; url=http://blog.8thlight.com/uncle-bob/2014/05/12/TheOpenClosedPrinciple.html" />
 In 1988 Bertrand Meyer defined one of the most important principles of software engineering.  The Open Closed Principle (OCP).  In his book [Object Oriented Software Construction](http://www.amazon.com/Object-Oriented-Software-Construction-Prentice-Hall-International/dp/0136290493)[1] he said:
 
 >A satisfactory modular decomposition technique must satisfy one more requirement: It should yield modules that are _both_ open and closed.  

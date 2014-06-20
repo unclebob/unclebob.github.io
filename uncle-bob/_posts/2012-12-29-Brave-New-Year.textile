@@ -4,6 +4,7 @@ title: Brave New Year
 tags: ["Community"]
 old_tags: ["Prognostication"]
 ---
+<meta http-equiv="refresh" content="0; url=http://blog.8thlight.com/uncle-bob/2012/12/29/Brave-New-Year.html" />
 This is going to be one of those annoying, rambling, touchy-feely, new-years blogs.  You know the kind.  One that tries to make you think about what's passed, and what's coming.  One that tries to impress you with foresight and erudition.  One that claims profundity and depth.  You know the kind.
 
 Still, that's the mood I'm in.  So here goes.

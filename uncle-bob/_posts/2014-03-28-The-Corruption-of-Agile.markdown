@@ -3,6 +3,7 @@ layout: post
 title: "The <i>True</i> Corruption of Agile"
 tags: ["Craftsmanship"]
 ---
+<meta http-equiv="refresh" content="0; url=http://blog.8thlight.com/uncle-bob/2014/03/28/The-Corruption-of-Agile.html" />
 Andrew Binstock recently wrote a blog entitled [The Corruption of Agile](http://www.drdobbs.com/architecture-and-design/the-corruption-of-agile/240166698), which built upon another blog by Allen Holub entitled [The Agile Holocracy](http://www.drdobbs.com/architecture-and-design/the-agile-holocracy/240166629).  Allow me to summarize:
 
 Holub says: 

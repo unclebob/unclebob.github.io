@@ -3,6 +3,7 @@ layout: post
 title: "Framework Bound[2]"
 tags: ["Craftsmanship"]
 ---
+<meta http-equiv="refresh" content="0; url=http://blog.8thlight.com/uncle-bob/2014/05/11/FrameworkBound.html" />
 Frameworks are powerful tools.  We'd be lost without them.  But there's a cost to using them.
 
 Think of Rails, or Spring, or JSF, or Hibernate.  Think about what writing a web system would be like without these frameworks to help you.  The idea is disheartening.  There'd be so many little piddling details to deal with.  It'd be like endeavoring to construct a mnemonic memory circuit using stone knives and bearskins[1].
