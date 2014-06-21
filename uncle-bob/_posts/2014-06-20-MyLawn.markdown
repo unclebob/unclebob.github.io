@@ -1,0 +1,63 @@
+---
+layout: post
+title: "My Lawn"
+tags: ["Programming"]
+---
+Look at this graph, which I took from this [blog](http://coding-and-more.blogspot.ie/2011/06/its-official-developers-get-better-with.html) by Peter Knego.  
+
+<img src='/uncle-bob/images/ProgrammerAgeDistribution.png'>
+
+Peter was showing the relationship between age and reputation on stack overflow.  The correlation is unmistakable.  The older the programmer, the better the reputation, by far.  He also shows, in the following graph, that the reason for this correlation is that the older programmers answer far more questions than the younger ones.
+
+<img src='/uncle-bob/images/2014-06-20-questionsByAge.png'>  
+
+So it would appear that the older the programers are, the more knowledge they have.  Moreover, that knowledge does not seem to be out-of-date.  So these programmers were not getting the same year of experience over and over again.  
+
+This is interesting; but what caught my attention was the shape of the age distribution in the first graph.  If this graph is correct, then most programmers are under 28.  Most programmers have less than 6 years experience!  The implications of this are hair raising!  Who teaches the young programmers just entering the field?  Where are the seniors who can mentor the juniors?  Is the programming field the logical equivalent of _Lord of the Flies_?  All kids.  No adults?  
+
+Maybe this is a good thing.  After all, it is said that Mark Zuckerberg said[1]: "Young programmers are superior."   Perhaps he thought this because young programmers can work crazy hours.  Young programmers have oodles of high-intensity, frenzied, energy that causes high volumes of code to spew out of every orifice of their bodies.  So maybe there are more young programmers because young programmers are better, and old programmers' skills and energy fade away after age 30.  Maybe programming is a young person's game that older people just can't play all that well.
+
+Peter's graphs suggests otherwise.  The older the programmer, the more questions the programmer can answer -- _and can take the time to answer_.   The implication is that older programmers are less rushed because they have more knowledge and skill.  Code doesn't have to pour out of all their orifices because they can solve problems calmly, quickly, and easily with much less code.
+
+But if older programmers are so much better, where did they all go?  Why are half the programmers in the world under 30?  Do older programmers quit?  Do they move on to management?  Do they burn out and become chicken farmers?  Why does the age distribution fall off so rapidly after age 30?
+
+Actually, most of the old programmers are still here and are still coding.  The problem isn't that the old programmers are fading away.  The problem is that the number of programmers is growing by a huge factor every year.
+
+I'm 61 years old.  I still write code.  I love writing code. I'm very, very, good at it.  So why aren't there more 61 year old programmers?  Because, 40 years ago, in 1974, when I was 21, _there weren't very many programmers at all_.
+
+I estimate that the world, today, has twenty-two million programmers[2].  One of of every 300 people is a programmer.  In the US it's closer to 1%.  But in 1974 the number of programmers worldwide was vastly smaller, and probably numbered less than 100,000[3].  That implies that in 40 years our ranks have increased by a factor of 220.  That's a growth rate of 14.5% per year, or a doubling rate of five years.  
+
+If the ranks of programmers has doubled every five years, then it stands to reason that most programmers were hired within the last five years, and so about half the programmers would be under 28.  Half of those over 28 would be less than 33.  Half of those over 33 would be less than 38, and so on.  Less than 0.5% of programmers would be 60 or over.  So most of us old programmers are still around writing code.  It's just that there never were very many of us.
+
+What does this imply for our industry?
+
+Maybe it's not as bad as _Lord of the Flies_, but the fact that juniors exponentially outnumbers seniors is concerning.  As long as that growth curve continues[4] there will not be enough teachers, role models, and leaders.  It means that most software teams will remain relatively unguided, unsupervised, and inexperienced.  It means that most software organizations will have to endlessly relearn the lessons they learned the five years before.  It means that the industry as a whole will remain dominated by novices, and exist in a state of perpetual immaturity.
+
+And, again, _this will remain true as long as the exponential growth continues_.  Time can't heal this problem.
+
+### Come to My Lawn
+I know.  I know.  By now many of you are rolling your eyes and whispering to yourselves: "Hey, you kids, get off my lawn."  But, no.  I want the kids on my grass.  I want to teach as many young developers as I can.  I want to help them avoid the traps and pitfalls that I fell in to 35 years ago.  And I want all programmers in their 60s, 50s, and 40s to be teaching and mentoring as much as possible.  These older folks should be taking the newer programmers under their wings and teaching them how to really fly.
+
+If I'm right about the number of programmers doubling every five years, then one in sixteen developers are 40 or older.  That's a pretty high student to teacher ratio; but it's not unworkable.  That small older fraction should be _pairing_, not programming alone.  They should be taking fewer personal tasks, so that they can assist others with their tasks.  They should be acting as role models and as team leaders, but not as managers. Think of them as Sergeants not Lieutenants; squad leaders, not company commanders.  They should be leading teams in the trenches and on the front lines.
+
+And they should be paid very well because they have a huge leverage.  
+
+One seasoned programmer in their 40s can have a profound effect on a team of a dozen or so twenty-somethings.  As a leader, that programmer can teach the team about principles, patterns, practices, and _ethics_.  That leader can temper and curb the youthful enthusiasm that leads to premature decisions about frameworks and architectures.  That leader can help to instill the value of refactoring and clean code, as a counterweight to the youthful thrill of _gettingittowork_.  That leader can encourage the team to work hard for eight hours, and then to leave work so that they are fresh the next day. This would prevent burnout, resentment, the false sense that hours equals work, and the _insidious_ dependence upon, and value of, heroics.  That leader can look down the road a few months, see the dangers and traps that lie ahead, and correct the trajectory of the team to avoid those problems.  
+
+But most important of all, that leader will be creating more leaders; faster, and with less collateral damage, than the school of hard-knocks.
+
+So yes, those leaders should be very well paid.  They should be paid as much as a director, because that's how much value they can add. 
+
+### Ideal Staffing Strategy
+There is a meme in the software industry that says it is better to hire young programmers because they are cheap, energetic, and produce more code than older programmers.  But as the above analysis showed, that's a very foolish perspective.  I believe that meme is responsible for many software failures -- especially in the startup realm.  
+
+To my mind the ideal ratio of juniors to seniors is about five to one.  Given the demographics, that's very hard to achieve.  Most software companies and departments won't manage better than 16:1.  Still, software companies and departments, _especially startups_, should be striving to get that ratio as high as they possibly can.
+
+----
+[1] I was able to find several references to this quote, but no authoritative source; so this may be an Urban Legend.
+<br/>
+[2] Estimate based on [this study](http://www.infoq.com/news/2014/01/IDC-software-developers).
+<br/>
+[3] This is my guess.  I haven't been able to verify it.  I could be off by a factor of 10 in either direction.
+<br/>
+[4] It could be slowing.  Current projections for growth are [8% per year](http://www.myfuture.com/careers/growth/computer-programmers_15-1131.00).  But then the economy has been sluggish for the last five years.  A roaring economy could easily push that ratio a _lot_ higher.
