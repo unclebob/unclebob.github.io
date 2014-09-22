@@ -34,7 +34,7 @@ We had three telephone interface cards, allowing us to listen at three phone lin
 
 There were many different command line actions that the FSM could invoke.  One was login.  Another was to fetch a job and read it back.  Still another was to start a test, and another was to read test results back.  All in all there were over a dozen different command line actions that were driven by this finite state machine.
 
-The command line processes were invoked with a session ID on the command line itelf.  This allowed them to go to the 3DBB and pull the session FLD to discover what was going on.  Then it would do it's job and accept inputs from the user.  When it had completed it's job it would update the session in the 3DBB, would send the next event to it's FSM, and then terminate.  That next event would depend on the outcome of it's job, and the input received from the user.
+The command line processes were invoked with a session ID on the command line itself.  This allowed them to go to the 3DBB and pull the session FLD to discover what was going on.  Then it would do it's job and accept inputs from the user.  When it had completed it's job it would update the session in the 3DBB, would send the next event to it's FSM, and then terminate.  That next event would depend on the outcome of it's job, and the input received from the user.
 
 Nice huh?  Radical.  
 
