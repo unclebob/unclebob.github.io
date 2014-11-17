@@ -31,7 +31,7 @@ Perhaps you think I'm exaggerating?  Perhaps I am.  _Perhaps._
 
 But the fact remains that we programmers are in a position of tremendous power that the people whom we serve do not well understand; and that we hardly understand any better.  And so the time is certainly coming, if it has not already come, for us to make some decisions.  What kind of rulers do we want to be?
 
-Will we ignore the power in our hands and remain a disorganized band of rumpled hapless vagabonds?   Will we continue on our undisciplined course,  blown by the chaotic winds of business and government, until one of us finally blunders badly enough to wake the sleeping giant of government regulation?  Or will we recognize the power we have and decide to use it?  And if the latter, will we use that power for good, or for evil?  Or will we take responsibility for that power and promise only to wield it in service to our society.  
+Will we ignore the power in our hands and remain a disorganized band of rumpled hapless vagabonds?   Will we continue on our undisciplined course,  blown by the chaotic winds of business and government, until one of us finally blunders badly enough to wake the sleeping giant of government regulation?  Or will we recognize the power we have and decide to use it?  And if the latter, will we use that power for good, or for evil?  Or will we take responsibility for that power and promise only to wield it in service to our society?
 
 With great power comes great responsibility.  We, as programmers, should recognize that responsibility and determine to be conscientious servants of our society.  We should set the limits and standards of our behavior.  We programmers, not our employers, not our governments, should decide what it means to _accept_ the responsibility of the power that has been placed in our hands.
 
@@ -39,13 +39,13 @@ Think of the military.  We give weapons of tremendous power to the people in the
 
 So should it be with programmers.  To protect our society from the power they have unwittingly ceded to us, we should adopt a code of ethics that describes our sworn promise and duty to humbly use our power to serve.
 
-What would our code of ethics look like?  No one person is in a position so write such a code; but I think the rough outline would contain the following points:
+What would our code of ethics look like?  No one person is in a position to write such a code; but I think the rough outline would contain the following points:
 
 * `We will not purposely cause harm.`
 
 Of course this is nothing more, _and nothing less_, than a restatement of the first rule of the Hippocratic oath.  It's hard to improve upon something that's been around so long. Each programmer will have to interpret the definition of _harm_  according to their own moral code.  Some folks may believe that working on weapon systems is the best way to prevent or minimize harm.  So be it.   
 
-* `Our software will be well-written for it's purpose and lifetime.`
+* `Our software will be well-written for its purpose and lifetime.`
 
 Again, this could be interpreted many different ways.  We could add statements like: _We fully test our software._ or _We practice TDD._ or _We follow SOLID principles._ But the bottom line is simply that we go home every night, look in the mirror, and are proud of what we accomplished that day.  We never feel like we have to run home and take a shower.
 
