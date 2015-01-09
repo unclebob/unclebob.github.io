@@ -205,7 +205,7 @@ What?  And duplicate the delegation code in every one of my observers?  How cras
 
 I know.  And I hate it.  
 
->_Yeah, it seems that there's no escape.  Either you'll have to violate the separation of concerns, or you'll have to duplicate code.  
+>_Yeah, it seems that there's no escape.  Either you'll have to violate the separation of concerns, or you'll have to duplicate code._
 
 Yes.  And it's the language forcing me into that situation.  
 
