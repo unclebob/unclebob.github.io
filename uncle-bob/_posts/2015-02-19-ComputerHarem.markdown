@@ -32,7 +32,7 @@ A few months ago a man named Tom Polk wrote to me.  His letter said:
 
 >Hi, Bob, Tom Polk here.  I Googled ECP-18 and found you.  Below is a picture of a couple of my classmates in Big Spring, Texas around 1968 or so.  You can see our school's ECP-18 in it. I'm sorry I don't have a bigger picture, but you'll recognize this.    I learned to program on this machine and I really enjoyed your comments.   
 
-<img src=/assets/TomPolkEcp18.png/>
+<img src=/assets/TomPolkEcp18.jpg/>
 
 Tom and I struck up a conversation, and from him I learned much more about that machine, and the people behind it.  One thing he said struck a special chord in me:
 
