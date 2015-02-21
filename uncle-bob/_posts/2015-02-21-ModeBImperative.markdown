@@ -120,6 +120,10 @@ Do you want to know the secret for staying in `MODE-B`?  I know what it is.  I'l
 
 >The secret for staying in `MODE-B` is to use `MODE-A` behavior.  
 
+----
+##HOLY STRUCTURED METHODOLOGY BATMAN!
+
+I just discovered who wrote the PAL III assembler for the PDP-8.  Hold on to your hats.  It was [Ed Yourdon](http://en.wikipedia.org/wiki/Edward_Yourdon).  
 
 ----
 
