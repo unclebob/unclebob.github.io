@@ -5,11 +5,11 @@ tags: ["Craftsmanship"]
 ---
 I'm sitting here, passing time, by playing the old "Lunar Lander" game from 1969.  This game was written by Jim Storer, a high school student.  He wrote it on a PDP-8 in the FOCAL language.  Here's what a sample run looks like:
 
-<img src="assets/LunarLanderOutput.jpg"/>
+<img src="/assets/LunarLanderOutput.jpg"/>
 
 And here's the source code in FOCAL:
 
-<img src="assets/LunarLanderListing.jpg"/>
+<img src="/assets/LunarLanderListing.jpg"/>
 
 Jim Storer was a pretty talented High School student.  I mean, look at that code.  He's got some pretty interesting Taylor expressions in there.  
 
