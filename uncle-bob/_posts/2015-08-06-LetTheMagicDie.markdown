@@ -21,7 +21,7 @@ And so we write frameworks to compensate for the lack of features that we wish w
 A new language!  Golden!  Pure!  Perfect!  A new language to solve all ills.  A new language that supersedes all the others. A new language that answers all the complaints, addresses all the weaknesses, and settles all the disputes.  A new magical language that is expressive, safe, dense, flexible, disciplined, and, and, and, --- perfect! 
 
 ## Bzzzt!  Wrong answer!
-Of course there is no such beast.  There is no perfect langauge.  And, lately, all the "new" languages we have seen, are just rehashes of the same old ... same old ... _same old_ stuff.  I honestly don't think there has been a new idea in computer languages since the late '70s or early '80s.  
+Of course there is no such beast.  There is no perfect language.  And, lately, all the "new" languages we have seen, are just rehashes of the same old ... same old ... _same old_ stuff.  I honestly don't think there has been a new idea in computer languages since the late '70s or early '80s.  
 
 I mean, once you've programmed in Assembler, FORTRAN, C, Pascal, C++, Smalltalk, Lisp, Prolog, Erlang, and Forth, you've seen it all.  Oh, I suppose you could toss in languages like Snobol, ML, Cobol, and XSLT _(retch, puke)_.  But most of their ideas were really covered in the previous list.  
 
@@ -43,7 +43,7 @@ And some of those languages and frameworks will gain a certain notoriety and bec
 ## Magic!
 Why does this happen?  Why are people always hunting for the next new language and the next new framework?  Why do we go around and around on this merry-go-round of frameworks and languages in hopes that we'll see some different scenery on the next spin?  Why do we hope for the magic?
 
-We hope for the magic, because we believe in magic.  We've used languages whose behavior seems magical.  We've used frameworks that do magical things.  And, in our naivete, we trust that if we can just muster a little bit more of that magic, then the perfect language, or the perfect framework, will suddenly appear on the next turn of the merry-go-round.  
+We hope for the magic, because we believe in magic.  We've used languages whose behavior seems magical.  We've used frameworks that do magical things.  And, in our naivety, we trust that if we can just muster a little bit more of that magic, then the perfect language, or the perfect framework, will suddenly appear on the next turn of the merry-go-round.  
 
 ## No Magic
 
@@ -61,7 +61,7 @@ If you've ever written a simple dependency injector, or a simple XML parser, or 
 
 And that puts the framework in a whole new perspective.  You don't need it.  And if you don't need it, it can't have any power over you.  You can look at that framework for what it is: _just plain old code_ -- and probably a lot more code than you actually need.  
 
-Now you can judge whether the cost of all that code is worth the benefit.  Perhaps there's a simpler framework that will do just as well.  Perhaps you don't need any framework at all.  Perhaps -- _perhaps_ -- you should just write the little bit of code that you need, instead of importing thousands and thousands of lines into your project.  Lines that you didn't write.  Lines that you don't control.  Lines that you probably shouldn't be puting a whole lot of trust in.  
+Now you can judge whether the cost of all that code is worth the benefit.  Perhaps there's a simpler framework that will do just as well.  Perhaps you don't need any framework at all.  Perhaps -- _perhaps_ -- you should just write the little bit of code that you need, instead of importing thousands and thousands of lines into your project.  Lines that you didn't write.  Lines that you don't control.  Lines that you probably shouldn't be putting a whole lot of trust in.  
 
 ## My Advice.
 Never buy magic!  Before you commit to a framework, make sure you could write it.  Do this by actually writing something simple that does the basics that you need.  Make sure the magic all goes away.  And _then_ look at the framework again.  Is it worth it?  Can you live without it?  
