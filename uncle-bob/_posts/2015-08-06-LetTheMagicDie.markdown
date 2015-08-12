@@ -3,6 +3,8 @@ layout: post
 title: "Make the Magic go away."
 tags: ["Craftsmanship"]
 ---
+<meta http-equiv="refresh" content="0; url=http://blog.8thlight.com/uncle-bob/2015/08/06/let-the-magic-die.html" />
+
 I've been looking at [rxJava](https://github.com/ReactiveX/RxJava/wiki/How-To-Use-RxJava).  It's a nice little framework that helps you to create and manage observers.  The design philosophy seems to be that everything can be observed and therefore everything ought to be managed by callback. 
 
 Of course this is an old idea that dates back to data flow languages, functional languages, and other declarative languages.  The idea even had echoes in the late '90s when the GOF book was first published.  Those of you who were programming back then may remember that, for a few months, everybody thought that the Observer pattern was _so cool_.  We saw lots of observer based designs.  Then that stopped because those designs were too indirect; making them too hard to trace and debug.   (Tests anyone?)
