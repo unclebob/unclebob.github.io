@@ -78,7 +78,7 @@ That's what we were used to.  We'd never even thought it could be different.
 
 >_And so then those two guys, Bohm and Jacowhatsit..._
 
-Bohm and Jocobini.
+Bohm and Jocopini.
 
 >_Yeah, they wrote their paper and everybody stopped using `GOTO`._
 
