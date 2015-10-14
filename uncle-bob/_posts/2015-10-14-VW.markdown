@@ -1,0 +1,39 @@
+---
+layout: post
+title: "VW"
+tags: ["Craftsmanship"]
+---
+Do you know the name _Michael Horn_?  He's the CEO of _Volkswagen of America_.  You know what's going on with Volkswagen, right?  Dieselgate?  The fact that the software that controls the Diesel engine in some of their cars was specifically written to defeat emissions tests?  Yeah, apparently that software could detect when an emission test was being run, and could put the engine into a mode where it emitted one fortieth of the noxious nitrogen oxides of it's normal operation.
+
+So a few days ago Michael Horn is testifying before congress about this issue.  Do you know what he said?  He told the lawmakers the following:
+
+> _"This was a couple of software engineers who put this in for whatever reason," 
+
+You can hear him say this at 1:11:40 into [this](https://www.youtube.com/watch?v=Sr9GknJ1kGk) recording.
+
+Now, never mind that nobody in their right mind believes this asinine statement.  The effects may be profound.  
+
+1. It is now a matter of congressional record that software developers can be used as scapegoats.  This particular accusation may not be believable; but the next one might be.  Indeed; once executives improve their game a bit; they may be able to set up far more convincing evidence of programmer malfeasance.  
+
+2. The public has been made aware that programmers can be culprits.  This will make it more likely that the next time something goes wrong -- a plane crash, a fire, a flood -- that the public will jump to the conclusion that some programmer caused it.  Yes, this is a stretch; but it wasn't so long ago that the concept of programmer implication in disasters was non-existent.
+
+But that's just my paranoia talking.  Yeah, I worry that the public, and the politicians, are one day going to realize that they depend upon programmers far too much, and regulate them far too little.  You've heard me preach about this before.
+
+# The Real Issue.
+
+Never mind all of the above.  There is a much deeper problem here.  
+
+Some programmers _did, in fact, do this_.  
+
+That they did it without authorization is neither likely, nor relevant.  _They did it_.  
+
+It doesn't matter that their bosses told them to do it.  _They did it._
+
+It doesn't matter that they were paid to do it.  _They did it._
+
+I suppose you could make the argument that these programmers did not know what they were doing.  That they were simply given some specs, and they implemented those specs, and didn't know that they were accomplices in a case of massive fraud.
+
+I think that argument is even more asinine than Michael Horn's.  _They knew_.  And if they didn't know, they _should_ have known.  They had a responsibility to know.  
+
+If we had a real profession, those programmers would be brought before that profession, investigated, and if found guilty, drummed out of the profession in disgrace.
+
