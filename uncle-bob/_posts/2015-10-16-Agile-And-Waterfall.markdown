@@ -7,7 +7,7 @@ I read [Agile is the new Waterfall](https://medium.com/swlh/agile-is-the-new-wat
 
 The author makes a reasonable point towards the end; but in getting to that point he states a number of falsehoods and eventually discredits a philosophy and discipline that does not deserve it.  He is close to throwing _everything_ out with the bathwater.
 
-Be begins by claiming that no sane person advocates waterfall.  I don't know what universe the author lives in; but in this universe there are quite a few people who advocate waterfall.  Are they sane?  By any legal standard they are.  Anyone who thinks that the battle against waterfall is over simply hasn't been fighting in the right trenches.  
+He begins by claiming that no sane person advocates waterfall.  I don't know what universe the author lives in; but in this universe there are quite a few people who advocate waterfall.  Are they sane?  By any legal standard they are.  Anyone who thinks that the battle against waterfall is over simply hasn't been fighting in the right trenches.  
 
 If you want to get a feel for just how wrong the author is about this, just google ["Waterfall Software Teams"](http://bfy.tw/2KPj) and count the number of articles that talk about striking a balance, or mixing the two processes, etc.   People are not anxious to give up on the past. 
 
