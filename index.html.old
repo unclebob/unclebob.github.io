@@ -6,10 +6,11 @@ title: Latest
 {% assign page = site.posts[0] %}
 <div class="column three-fourths" id="blog">
   <div class="blog-post">
+    <h1>{{ page.title }}</h1>
+
+    <div class="date">{{ page.date | date_to_long_string }}</div>
     <article>
-			<h2><center>
-				Welcome!
-			</center></h2>
+      {{ page.content }}
     </article>
   </div>
 </div>

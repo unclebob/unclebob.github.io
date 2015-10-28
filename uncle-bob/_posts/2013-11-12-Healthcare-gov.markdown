@@ -3,7 +3,7 @@ layout: post
 title: Healthcare.gov
 tags: ["Craftsmanship"]
 ---
-<meta http-equiv="refresh" content="0; url=http://blog.8thlight.com/uncle-bob/2013/11/12/Healthcare-gov.html" />
+<meta http-equiv="refresh" content="3; url=http://blog.8thlight.com/uncle-bob/2013/11/12/Healthcare-gov.html" />
 This is not a political blog.  This is a blog about the Software Industry; and the profound effect that its failure is having upon our society.
 
 The Software Industry failed to deliver `healthcare.gov`.  As a result, millions of people are being hurt.  _We_ did that, folks.  It was _our_ industry, _our_ failure.

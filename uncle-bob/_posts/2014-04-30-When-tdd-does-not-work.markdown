@@ -3,7 +3,7 @@ layout: post
 title: "When TDD doesn't work."
 tags: ["Craftsmanship"]
 ---
-<meta http-equiv="refresh" content="0; url=http://blog.8thlight.com/uncle-bob/2014/04/30/When-tdd-does-not-work.html" />
+<meta http-equiv="refresh" content="3; url=http://blog.8thlight.com/uncle-bob/2014/04/30/When-tdd-does-not-work.html" />
 Over the years many people have complained about the so-called "religiosity" of some of the proponents of Test Driven Development.  The [recent brouhaha]({% post_url 2014-04-25-MonogamousTDD %}) over TDD has, once again, brought these complaints to the fore.  So I thought it would be a good idea to talk about when TDD does not work.
 
 I have often compared TDD to double-entry bookkeeping.  The act of stating every bit of logic twice, once in a test, and once in the production code, is very similar to the accounting practice of entering every transaction twice, once on the asset side, and once on the liability side.  The running of the tests is very similar to the creation of the balance sheet.  If the balance of assets and liabilities isn't zero, somebody made a mistake somewhere.

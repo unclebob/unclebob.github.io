@@ -3,7 +3,7 @@ layout: post
 title: "Language Layers"
 tags: ["Craftsmanship"]
 ---
-<meta http-equiv="refresh" content="0; url=http://blog.8thlight.com/uncle-bob/2015/04/27/language-layers.html" />
+<meta http-equiv="refresh" content="3; url=http://blog.8thlight.com/uncle-bob/2015/04/27/language-layers.html" />
 I'm sitting here, passing time, by playing the old "Lunar Lander" game from 1969.  This game was written by Jim Storer, a high school student.  He wrote it on a PDP-8 in the FOCAL language.  Here's what a sample run looks like:
 
 <img src="/assets/LunarLanderOutput.jpg"/>

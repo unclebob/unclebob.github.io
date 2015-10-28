@@ -3,7 +3,7 @@ layout: post
 title: The Pragmatics of TDD
 tags: ["Craftsmanship", "Testing"]
 ---
-<meta http-equiv="refresh" content="0; url=http://blog.8thlight.com/uncle-bob/2013/03/06/ThePragmaticsOfTDD.html" />
+<meta http-equiv="refresh" content="3; url=http://blog.8thlight.com/uncle-bob/2013/03/06/ThePragmaticsOfTDD.html" />
 So my last blog: [The Startup Trap]({% post_url 2013-03-05-TheStartUpTrap %}) raised quite a ruckus.  Amidst the various shouts of agreement and support, there was also a group who vehemently disagreed.  I'm not going to summarize all their disagreements here, since I've already used up my quota of curse words for the month.  But one of those disagreements struck me as something I should address.  
 
 It's the old argument of pragmatism vs. dogmatism.  In essence, the complaint was that I was being too dogmatic.  That TDD might be great in some cases, but in others it might have too high a cost.  So you have to be pragmatic and choose wisely.

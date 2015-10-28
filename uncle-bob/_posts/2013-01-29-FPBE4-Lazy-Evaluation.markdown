@@ -4,7 +4,7 @@ title: FP Basics E4
 tags: ["Tools"]
 old_tags: ["Functional Programming"]
 ---
-<meta http-equiv="refresh" content="0; url=http://blog.8thlight.com/uncle-bob/2013/01/29/FPBE4-Lazy-Evaluation.html" />
+<meta http-equiv="refresh" content="3; url=http://blog.8thlight.com/uncle-bob/2013/01/29/FPBE4-Lazy-Evaluation.html" />
 #### Lazy Evaluation
 
 Remember my squares of integers program in clojure?

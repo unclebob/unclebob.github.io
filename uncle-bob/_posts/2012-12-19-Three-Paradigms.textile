@@ -4,7 +4,7 @@ title: Three Paradigms
 tags: ["Tools"]
 old_tags: ["Functional Programming"]
 ---
-<meta http-equiv="refresh" content="0; url=http://blog.8thlight.com/uncle-bob/2012/12/19/Three-Paradigms.html" />
+<meta http-equiv="refresh" content="3; url=http://blog.8thlight.com/uncle-bob/2012/12/19/Three-Paradigms.html" />
 In the last 40 years computer hardware technology has increased the computing power of our machines by well over twenty orders of magnitude.  We now play Angry Birds on our phones, which have the computing power of the freon cooled supercomputer monsters of the 70s.  
 
 But in that same 40 years software technology has barely changed at all.  After all, we still write the same if statements, while loops, and assignment statements we did back in the '60s.  If I took a programmer from 1960 and brought him forward through time to sit at my laptop and write code; he'd need 24 hours to recover from the shock; but then he'll be able to write the code.  The concepts haven't changed that much.  

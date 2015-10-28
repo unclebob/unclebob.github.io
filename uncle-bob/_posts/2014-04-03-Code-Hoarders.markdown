@@ -3,7 +3,7 @@ layout: post
 title: "Code Hoarders"
 tags: ["Craftsmanship"]
 ---
-<meta http-equiv="refresh" content="0; url=http://blog.8thlight.com/uncle-bob/2014/04/03/Code-Hoarders.html" />
+<meta http-equiv="refresh" content="3; url=http://blog.8thlight.com/uncle-bob/2014/04/03/Code-Hoarders.html" />
 Have you ever watched an episode of _Hoarders_, or a documentary about a hoarder?  Shows like this were popular a few years back.  They showcased the tragic, and all-too-common, phenomenon of people who have lost control over their living space by filling it with so much junk that there's no place for them to live.
 
 These people fill their homes so full of stuff that all they have left are dark and narrow passageways winding through floor to ceiling towers of junk, trash, old food, pet droppings, dirty laundry, and other less mentionable things.  The volume of each room is taken up by junk.  The counters, the tables, and the furniture are invisible, buried, beneath junk.  The bedrooms and bathrooms are piled high.  There is no room to move.  No room to eat.  No room to sleep.  No room to live. There have been cases in which dead bodies have been found beneath the piles of rubbish and detritus.

@@ -4,7 +4,7 @@ title: FP Basics E3
 tags: ["Tools"]
 old_tags: ["Functional Programming"]
 ---
-<meta http-equiv="refresh" content="0; url=http://blog.8thlight.com/uncle-bob/2013/01/07/FPBE3-Do-the-rules-change.html" />
+<meta http-equiv="refresh" content="3; url=http://blog.8thlight.com/uncle-bob/2013/01/07/FPBE3-Do-the-rules-change.html" />
 h4. Do all the Rules Change?
 
 Whenever we start to use a new paradigm, we confront the problem of our old rules and our old habits.  We ask ourselves whether all those rules and habits are valid in the new paradigm.  Consider, for example Test Driven Development.  Is it valid in Functional Programming?  If so, how do you do it?

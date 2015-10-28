@@ -4,7 +4,7 @@ title: FP Basics E2
 tags: ["Tools"]
 old_tags: ["Functional Programming"]
 ---
-<meta http-equiv="refresh" content="0; url=http://blog.8thlight.com/uncle-bob/2013/01/02/FPBE2-Whys-it-called-functional.html" />
+<meta http-equiv="refresh" content="3; url=http://blog.8thlight.com/uncle-bob/2013/01/02/FPBE2-Whys-it-called-functional.html" />
 h4. Why's it called Functional?
 
 In the previous episode I told you what all the functional programming hubbub is all about.  Remember: Referential Transparency and the multi-core freight train?   Since you are here, reading episode 2, I presume you were convinced by my arguments and want to know more.

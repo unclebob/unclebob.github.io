@@ -3,7 +3,7 @@ layout: post
 title: Hordes Of Novices
 tags: ["Craftsmanship"]
 ---
-<meta http-equiv="refresh" content="0; url=http://blog.8thlight.com/uncle-bob/2013/11/19/HoardsOfNovices.html" />
+<meta http-equiv="refresh" content="3; url=http://blog.8thlight.com/uncle-bob/2013/11/19/HoardsOfNovices.html" />
 Is the software industry trying to write the script for Hamlet by hiring a million monkeys to bang on keyboards?  Perhaps we should rethink that strategy and hire one bard instead.  Perhaps, instead of hordes of novices, we need a small team of professionals.  
 
 ## Demand.

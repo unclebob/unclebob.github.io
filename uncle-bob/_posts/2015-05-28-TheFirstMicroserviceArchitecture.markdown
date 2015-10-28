@@ -3,7 +3,7 @@ layout: post
 title: "The First Micro-service Architecture"
 tags: ["Craftsmanship"]
 ---
-<meta http-equiv="refresh" content="0; url=http://blog.8thlight.com/uncle-bob/2015/05/28/TheFirstMicroserviceArchitecture.html" />
+<meta http-equiv="refresh" content="3; url=http://blog.8thlight.com/uncle-bob/2015/05/28/TheFirstMicroserviceArchitecture.html" />
 In the early 1960s IBM created the [1401 computer](http://ibm-1401.info/1401GuidePosterV9.html).  It was wildly popular and exceeded all revenue projections.  IBM built 2,800 of them in the first year (1960), and built over 15,000 of them overall.  They typically rented for $7,000 per month (~$42,000 in todays dollars) and would have sold (if selling had been an option) for several million dollars.  
 
 The 1401 had a clock rate of around 88khz, and as much as 16,000 bytes of core memory.  Not 16,384, mind you, _16,000_.  The machine addressed it's memory in _decimal_.  Some installations had magnetic tape drives; but many had nothing more than a card reader, card punch, and a line printer.   The card reader could read 800 cards per minute.  The punch could punch 250 cards per minute.  The line printer could print 600 lines per minute.

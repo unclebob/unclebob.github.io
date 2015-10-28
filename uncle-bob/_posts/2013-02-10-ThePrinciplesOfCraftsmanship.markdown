@@ -3,7 +3,7 @@ layout: post
 title: The Principles of Craftsmanship
 tags: ["Craftsmanship"]
 ---
-<meta http-equiv="refresh" content="0; url=http://blog.8thlight.com/uncle-bob/2013/02/10/ThePrinciplesOfCraftsmanship.html" />
+<meta http-equiv="refresh" content="3; url=http://blog.8thlight.com/uncle-bob/2013/02/10/ThePrinciplesOfCraftsmanship.html" />
 It should come as no surprise to anyone that I think 8th Light Inc. is a remarkable company.   The company was founded, and is run, by two of my previous apprentices; one of whom is my son Micah, and the other is Paul Pagel.   From the start they based their ideals on those of software craftsmanship.  They wanted to build a community of professionals who _believed in their core_ that the best way to build software was to build it well.  Now, with the better part of a decade behind them, they are one of the most successful software consulting businesses in Chicago; and will soon be able to make that claim about Tampa, Florida.
 
 The company is unique in many ways.  For example: Their employees are called craftsmen, and the recruiting model is based upon apprenticeship.  Craftsmen are not hired in the usual sense that an employee is hired.  Rather, they are brought on as apprentices and gradually inducted into the company through a months long intricate ritual of training, mentoring, challenge, and accomplishment.  It's a tough gauntlet to walk; and those few who make it through know they have achieved something difficult and important.

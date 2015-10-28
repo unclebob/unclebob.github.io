@@ -3,7 +3,7 @@ layout: post
 title: Clean Architecture
 tags: ["Architecture"]
 ---
-<meta http-equiv="refresh" content="0; url=http://blog.8thlight.com/uncle-bob/2011/11/22/Clean-Architecture.html" />
+<meta http-equiv="refresh" content="3; url=http://blog.8thlight.com/uncle-bob/2011/11/22/Clean-Architecture.html" />
 
 In the weeks since I started talking about the need to clean up our architecture, I've noticed a surprising resistance to the idea.  Apparently the notion that it's a good idea to hide the framework, UI, or database from the application code is not universally accepted.
 

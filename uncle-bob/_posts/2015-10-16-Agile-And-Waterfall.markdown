@@ -3,7 +3,7 @@ layout: post
 title: "Agile is not now, nor was it ever, Waterfall."
 tags: ["Craftsmanship"]
 ---
-<meta http-equiv="refresh" content="0; url=http://blog.8thlight.com/uncle-bob/2015/10/16/agile-and-waterfall.html" />
+<meta http-equiv="refresh" content="3; url=http://blog.8thlight.com/uncle-bob/2015/10/16/agile-and-waterfall.html" />
 I read [Agile is the new Waterfall](https://medium.com/swlh/agile-is-the-new-waterfall-f7baef5d026d) at first with disgust, then with horror, and then finally with a meager amount of very qualified approval.  
 
 The author makes a reasonable point towards the end; but in getting to that point he states a number of falsehoods and eventually discredits a philosophy and discipline that does not deserve it.  He is close to throwing _everything_ out with the bathwater.

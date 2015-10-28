@@ -4,7 +4,7 @@ title: NO DB
 tags: ["Architecture", "Tools", "Craftsmanship"]
 old_tags: ["Professionalism", "Architecture", "Database", "Rant"]
 ---
-<meta http-equiv="refresh" content="0; url=http://blog.8thlight.com/uncle-bob/2012/05/15/NODB.html" />
+<meta http-equiv="refresh" content="3; url=http://blog.8thlight.com/uncle-bob/2012/05/15/NODB.html" />
 In the United States, in 1920, the manufacture, sale, and importation of alcoholic beverages was prohibited by a constitutional amendment.  That amendment was repealed thirteen years later.  During that period of prohibition, the beer industry died.  
 
 In 1933, when prohibition was lifted, a few giant grain companies started brewing beer.  They completely cornered the market.  And for nearly 50 years, we in the United State drank this fizzy bodily effluent and called it “beer”.  The only way to tolerate the flavor was to drink it very cold. 

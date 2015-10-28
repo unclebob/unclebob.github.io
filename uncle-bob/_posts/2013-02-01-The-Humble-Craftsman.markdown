@@ -3,7 +3,7 @@ layout: post
 title: The Humble Craftsman
 tags: ["Craftsmanship"]
 ---
-<meta http-equiv="refresh" content="0; url=http://blog.8thlight.com/uncle-bob/2013/02/01/The-Humble-Craftsman.html" />
+<meta http-equiv="refresh" content="3; url=http://blog.8thlight.com/uncle-bob/2013/02/01/The-Humble-Craftsman.html" />
 There is another side to Ted Neward's [blog](http://blogs.tedneward.com/2013/01/24/On+The+Dark+Side+Of+Craftsmanship.aspx); and it's a side that I agree with.  I believe Ted's overall thesis and analysis was wrong.  Software Craftsmanship does not automatically give us a blue-collar/white-collar dichotomy; it does not automatically separate those who "get it" from those who don't.  It does not automatically create a condescending elite who lord their self-perceived superiority over the unwashed masses.  And, in case you hadn't noticed, I _really_ disliked Ted's manipulative appeal to populism.
 
 However, Ted was not entirely wrong either.  Because there are folks (and, to my shame, I've sometimes numbered among them) who have behaved badly when pointing out problems or deficiencies in other peoples' code.  To those people (and to myself) I'd like to make the following points.

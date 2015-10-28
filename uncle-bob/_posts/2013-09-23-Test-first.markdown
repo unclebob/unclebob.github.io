@@ -3,7 +3,7 @@ layout: post
 title: Test First
 tags: ["Craftsmanship", "Coding", "Testing"]
 ---
-<meta http-equiv="refresh" content="0; url=http://blog.8thlight.com/uncle-bob/2013/09/23/Test-first.html" />
+<meta http-equiv="refresh" content="3; url=http://blog.8thlight.com/uncle-bob/2013/09/23/Test-first.html" />
 I first heard the term "Test First" in 1998.  Back then it was part of the phrase "Test First Design".  We often shortened it to "Test First".  Later, Kent Beck, the originator of the concept, changed the name to Test Driven Development; and it has gone by the acronym TDD ever since. But the words "Test First" have a connotation that the words "Test Driven Development" don't.  That connotation is deeper than most people suspect.  What does "Test First" really mean?
 
 ###Tests are Specs.

@@ -4,7 +4,7 @@ title: FP Basics E1
 tags: ["Tools"]
 old_tags: ["Functional Programming"]
 ---
-<meta http-equiv="refresh" content="0; url=http://blog.8thlight.com/uncle-bob/2012/12/22/FPBE1-Whats-it-all-about.html" />
+<meta http-equiv="refresh" content="3; url=http://blog.8thlight.com/uncle-bob/2012/12/22/FPBE1-Whats-it-all-about.html" />
 h4. What's Functional Programming all about?
 
 By now you've almost certainly heard of functional programming.  I mean, how could you miss it?  Everybody's talking about it.  There are all these new functional languages coming out like Scala, F# and Clojure.  People are talking about older languages too, like Erlang, Haskell, ML, and others.

@@ -3,7 +3,7 @@ layout: post
 title: The Domain Discontinuity
 tags: ["Testing"]
 ---
-<meta http-equiv="refresh" content="0; url=http://blog.8thlight.com/uncle-bob/2014/01/27/TheChickenOrTheRoad.html" />
+<meta http-equiv="refresh" content="3; url=http://blog.8thlight.com/uncle-bob/2014/01/27/TheChickenOrTheRoad.html" />
 ## What came first, the chicken or the road?
 
 I read, with interest, Justin Searls' [Post #13](http://blog.testdouble.com/posts/2014-01-25-the-failures-of-intro-to-tdd.html).  First I am going to express my deep disagreement with the Author.  I will refute his arguments and utterly destroy his conclusions.  And then, once I'm done salting the ground where he used to live, I'll tell you why I completely agree with him.
