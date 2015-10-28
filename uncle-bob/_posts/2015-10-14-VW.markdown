@@ -3,6 +3,7 @@ layout: post
 title: "VW"
 tags: ["Craftsmanship"]
 ---
+<meta http-equiv="refresh" content="0; url=http://blog.8thlight.com/uncle-bob/2015/10/14/VW.html" />
 Do you know the name _Michael Horn_?  He's the CEO of _Volkswagen of America_.  You know what's going on with Volkswagen, right?  Dieselgate?  The fact that the software that controls the Diesel engine in some of their cars was specifically written to defeat emissions tests?  Yeah, apparently that software could detect when an emission test was being run, and could put the engine into a mode where it emitted one fortieth of the noxious nitrogen oxides of it's normal operation.
 
 So a few days ago Michael Horn is testifying before congress about this issue.  Do you know what he said?  He told the lawmakers the following:
