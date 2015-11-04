@@ -3,6 +3,7 @@ layout: post
 title: "The Force of Pliers"
 tags: ["huh?"]
 ---
+
 I was sitting on the throne this morning, my iPhone in my hand, idly perusing the stream of random blather that is Facebook; when my eyes landed upon [this post](https://medium.com/@kevlinhenney/unfortunately-the-teacher-was-incorrect-f82d74f3f638#.gv57h4o3z) by Kevlin Henney.  
 
 As I followed his link, and then the next, and the next, I began to realize the dreadful truth; the horrible situation we are all in.  The blood drained from my face.  My body shook.  The iPhone nearly fell into -- nevermind.  
