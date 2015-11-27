@@ -6,7 +6,7 @@ tags: ["Craftsmanship"]
 
 ###**In order to defend and preserve the honor of the profession of computer programmers, **
 
-##**I Promise that**:
+##**I Promise that, to the best of my ability and judgement:**
 
 1. I will not produce harmful code.
 
