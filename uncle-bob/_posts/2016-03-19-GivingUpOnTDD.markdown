@@ -170,7 +170,7 @@ It's true that TDD is not going to help you defend against things you didn't ant
 
 >_I think you should stop ranting about this._
 
-Yeah, OK, I just find is frustrating that anyone would give up on TDD because it doesn't cure athlete's foot.
+Yeah, OK, I just find it frustrating that anyone would give up on TDD because it doesn't cure athlete's foot.
 
 >_I said stop ranting._
 
