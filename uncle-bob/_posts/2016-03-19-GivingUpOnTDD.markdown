@@ -13,7 +13,7 @@ I think he gave up too quickly and too easily.
 
 >_Well, he said he tried it for a few months.  Isn't that long enough?_
 
-Normally, it should be; but he said he was just using it for some home projects. I doubt he was using it 40 hours per day for a few months.  I suspect the actual number of hours he logged was relatively low; because I recognize the symptoms.
+Normally, it should be; but he said he was just using it for some home projects. I doubt he was using it 40 hours per week for a few months.  I suspect the actual number of hours he logged was relatively low; because I recognize the symptoms.
 
 >_The symptoms?  What do you mean?_
 
