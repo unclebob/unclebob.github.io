@@ -1,0 +1,92 @@
+---
+layout: post
+title: Type Wars
+tags: ["Software"]
+---
+My son, Justin, and I have begun a new video series on [cleancoders.com](http://cleancoders.com) investigating mobile apps using `swift`.  Learning `swift` has been an interesting experience.  The language is _very_ opinionated about type safety.  Indeed, I don't remember using a language that was quite so assiduous about types.  
+
+For example, the fact that a variable of type `X` might also be `nil` means you must declare that variable to hold an "optional" value by using a `?`.  [e.g. `myVariable: X?`] The language tightly constrains how that optional value is used. For instance, you cannot reference it without either checking for `nil` with an `if` or asserting with a `!` that it is not `nil`.  [e.g. `myVariable!.myFunc()`]
+
+The extreme nature of the type system in `swift` got me thinking about the "Type Wars" that our industry has been fighting for the last six decades.  And that got me to thinking that I should blog about the history of those wars, and then predict the future outcome.  So, here goes:  _Don't Panic_. 
+
+>_WARNING: This history has many omissions and contains much that is apocryphal, or at least wildly inaccurate._
+
+The issue of types actually predates computers.  In the last half of the nineteenth century, Gottlob Frege developed a logical system with which he hoped to derive all of mathematics from first principles.  His work was the progenitor of predicate calculus; but it was found to have a critical flaw.  On the eve of publication, Bertrand Russel wrote to Frege and pointed out that Frege's logical system allowed statements that were ambiguous -- neither false nor true.  Frege was devastated and included the following remark in an appendix to his work.
+
+>_"Hardly anything more unfortunate can befall a scientific writer than to have one of the foundations of his edifice shaken after the work is finished. This was the position I was placed in by a letter of Mr. Bertrand Russell, just when the printing of this volume was nearing its completion."_
+
+One of the solutions that was proposed to resolve the problem was the notion of _types_.  It was hoped that if the types of the parameters within Frege's logical statements could be constrained, then Russell's ambiguities could be eliminated.  But in 1931 these hopes were dashed by Kurt Godel's _incompleteness theorems_.  
+
+This was the mathematical world that Alan Turing was active in.  He, and other mathematicians like John Von Neumann, and John Backhus, who were steeped in these issues, were also responsible for many of the founding concepts of computer science, and our first languages -- like `Fortran`.
+
+I first ran into the concept of types in 1966 while learning `Fortran` as a teenager.  My father had managed to acquire some very early manuals on languages like `Fortran`, `Cobol`, and `PL/1`; and I was devouring them.  (Though I didn't have access to a computer!)
+
+In `Fortran` there were essentially two types.  Fixed Point (integer), and Floating point.  In the original language the type was denoted by the first letter of the variable.  Variables that began with the letters `I` through `N` (the first two letters in the word "integer") were fixed point. All other variables were floating point.  
+
+Expressions in `Fortran` could not "mix modes".  You could not have integers alongside floating point numbers.  Only certain library functions could translate between the modes.  
+
+As a young programmer, without access to a computer, I found this very confusing.  I wondered why such a distinction, with such horrific constraints, was so important. It wasn't until I learned assembly language that I began to understand.  
+
+During my first years as a programmer, I wrote a bit of `Fortran`, `Cobol`, and `PL/1`; but I was much more focussed on assembler.  I felt the "high-level" languages were bloated, slow, cop-outs.  _Real_ programmers wrote assembler -- or so I thought.  But then in 1977 I was introduced to `C`.
+
+It was an instant love-affair.  As I sat by the campfire in my back yard, reading a copy of _Kernighan and Ritchie_, I cheered this language that was _not_ a bloated, slow, cop-out; but was, instead, a simple translation of assembler.  
+
+`C`, of course, had types; but they were not enforced in any way.  You could declare a function to take an `int`, but then pass it a `float` or a `char` or a `double`.  The language didn't care.  It would happily push the passed argument on the stack, and then call the function.  The function would happily pop its arguments off the stack, under the assumption that they were the declared type.  If you got the types wrong, you got a crash.  Simple.  Any assembly language programmer would instantly understand and avoid this.  
+
+The late 70s was the first time I realized that there was a war going on.  A war about types.  Although I had been completely enthralled by `C` I was aware of another contender for my attention: `Pascal`.  `Pascal` was everything I hated about high level languages.  I considered it to be a bloated, slow, cop-out.  People who programmed this language were _not_ real programmers because they depended on the language to keep them safe.  `Pascal`, you see, was strongly typed.  
+
+In `Pascal` if you declared a function to take certain argument types, then you had to call that function with those types.  The language enforced type safety.  For an assembly language programmer like me, in my twenties, this was just too constraining.  `Pascal`, I felt, was a language for babies.
+
+Apparently many programmers agreed with me because `C` won that language war; and won it _decisively_.  The early '80s was the heyday of `C`.  As mini-computers proliferated, so did `C`.  `Pascal` survived, but only because Apple decided (wrongly) to use it as the language for the Macintosh -- a decision it would eventually reverse.
+
+There were other languages bubbling up from time to time; but they weren't taken too seriously.  We heard about Smalltalk, and the million dollar machines required to run it.  We knew of Logo, Lisp, and several other languages.  But in my part of the world, we were happy with `C` and couldn't imagine anything better.
+
+`Objective-C` popped up around 1986 or so.  I remember looking pretty seriously at Brad Cox's odd little hybrid between `C` and `Smalltalk`.  But it was `C++` that captured my attention.  It captured my attention because, after the better part of a decade of `C`'s ambivalence towards types, I was ready for a language to enforce strong typing.  
+
+You see, I had learned my lesson.  As programs grew ever more complicated in the late 70s and early 80s, the problem of keeping your types straight began to get out of hand.  There were too many times that I debugged problems in the field, only to find that someone had called a function with a `long` that was declared to take an `int`. 
+
+So when Stroustup published his book on `C++`, I was ready!  (I was also glad that this was a `C` derivative, so that I didn't have to admit to the `Pascal` weenies that they'd been right all along!)
+
+The pendulum had swung.  The industry adopted `C++` and the era of strong typing had begun.  We `C` programmers, combat hardened and war weary, swore we'd never go back to the careless days of unenforced types.
+
+Meanwhile the `Smalltalk` programmers were scratching their heads wondering what the big deal was.  You see, their language was also strongly typed; but their types were _undeclared_.  In `Smalltalk` types were enforced at _runtime_.  Type errors in `Smalltalk` did not lead to _undefined_ behavior, as they did in `C`.  The behavior in `Smalltalk` was _very well_ defined.  You got a type exception during execution.
+
+We in the `C++` community felt that was simply the same as dereferencing a `null` pointer.  After all, who cares if the software in the missile fails because of a type exception or a segmentation error?  Either way, the missile fails.
+
+The late '80s and early '90s were a kind of "cold-war" between the _static_ type-checking of `C++` and the _dynamic_ type checking of Smalltalk.  Other languages rose and fell during this time; but those two broad typing categories pretty well defined them.
+
+Then the war got hot again.  But this time it wasn't just programmers in the streets carrying `C` and `Pascal` signs.  This time it was a real war with heavyweight players.  It was a war between IBM and Sun.  
+
+But to set the stage I have to tell you about the research done by Capers-Jones regarding the productivity of programmers using different languages.  His study showed that `Smalltalk` programmers were much more productive than `C++` programmers.  Some people thought the difference was as much as 5X.  Others thought it was more like 2X-3X. But nobody thought `C++` programmers were more productive than Smalltalk programmers.
+
+In light of this, IBM chose `Smalltalk` as the development language for the internet.  They made a huge bet on this by developing IDEs, and frameworks, and all the necessary infra-structure.  Sun, on the other hand, put their weight behind `Java` (which was just `C++ Lite`.)
+
+The battle raged.  But the deciding factor was types.  Sun fielded rank upon rank of `Java` (nee `C++`) programmers and won that battle over IBM on the basis of type safety (the _missile_ argument). On that day `Smalltalk` died as a language.  (But don't worry, the `Smalltalk`ers got their revenge.)  
+
+And so, `Java`, and it's bastard cousin `C#` became the languages of the internet; and held sway for two decades.  But there was a lot going on behind the scenes.
+
+You see, the `Smalltalk` programmers had solved the missile problem in their own unique way.  They invented a discipline.  Today we call that discipline: _Test Driven Development_.  
+
+Using TDD, the `Smalltalk` programmers were assured that the missile would reach it's target.  In fact, they had much more assurance than the type-checking of the `C++` or `Java` compiler could provide.  So when `Smalltalk` died, a fifth column of `Smalltalk` programmers infiltrated the ranks of the `Java` programmers and began to teach TDD.  Their goal:  _subversion_.  
+
+You see, when a `Java` programmer gets used to TDD, they start asking themselves a very important question: "Why am I wasting time satisfying the type constraints of `Java` when my unit tests are already checking everything?"  Those programmers begin to realize that they could become _much_ more productive by switching to a dynamically typed language like `Ruby` or `Python`.  
+
+And that's exactly what happened in second half of the first decade of the current millennium.  Tons of `Java` programmers jumped ship and became dedicated dynamic typers, and TDDers.  That ship-jumping continues to this day, spurred on by the fact that salaries tend to be higher for programmers of the dynamic languages.
+
+Oh, and I should tell you about one special unit of `Smalltalk` programmers who stayed at IBM planned their revenge against Sun.  They executed that revenge by creating ... _Eclipse_.  
+
+And so here we are.  The pendulum is quickly swinging towards dynamic typing.  Programmers are leaving the statically typed languages like `C++`, `Java`, and `C#` in favor of the dynamically typed languages like `Ruby` and `Python`.  And yet, the new languages that are appearing, languages like `go` and `swift` appear to be reasserting static typing?  So is the stage for the next battle being set?
+
+How will this all end?  
+
+My own prediction is that TDD is the deciding factor.  You don't need static type checking if you have 100% unit test coverage.  And, as we have repeatedly seen, unit test coverage close to 100% can, and is, being achieved.  What's more, the benefits of that achievement are enormous. 
+
+Therefore, I predict, that as TDD becomes ever more accepted as a necessary professional discipline, dynamic languages will become the preferred languages.  The `Smalltalk`ers will, eventually, win.  
+
+So says this old `C++` programmer.
+
+----
+Early Fortran Spec: [https://www.fortran.com/FortranForTheIBM704.pdf](https://www.fortran.com/FortranForTheIBM704.pdf)
+
+Caper-Jones Study:[http://www.cs.bsu.edu/homepages/dmz/cs697/langtbl.htm](http://www.cs.bsu.edu/homepages/dmz/cs697/langtbl.htm)
+ 
