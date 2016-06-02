@@ -16,7 +16,7 @@ tags: ["Craftsmanship"]
 
 4. I will make frequent, small, releases so that I do not impede the progress of others.
 
-5. I will fearlessly and relentlessly improve the code at every opportunity.  I will never make the code worse.  
+5. I will fearlessly and relentlessly improve my creations at every opportunity.  I will never degrade them.  
 
 6. I will do all that I can to keep the productivity of myself, and others, as high as possible.  I will do nothing that decreases that productivity.
 
