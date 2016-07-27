@@ -1,0 +1,128 @@
+---
+layout: post
+title: The Churn
+tags: ["Software"]
+---
+Did you year about the guy who said goodbye to OO?
+
+>_Oh no.  Not another one.  What did he say?_
+
+He described all the promises of OO, and how none of them had really been delivered, and that all the features of OO cost more than they were worth, and that functional programming was better and...
+
+>_Sigh.  Yes, I've heard it all before._
+
+So, then, OO is finally dead, and we can move on.
+
+>_Move on to what?_
+
+Why, to **THE NEXT BIG THING** of course!
+
+>_Oh. -- That.  Do you know what it is yet?_
+
+I dunno, I'm pretty excited about _micro-services_; and I'm really keen on _Elixr_; and I hear _React_ is really cool; and ...
+
+>_Yes.  Yes.  The Churn.  You are caught up in The Churn._
+
+Huh?  What do you mean by that.  These are exciting times.
+
+>_Actually, I find them rather depressing._
+
+Why?  I mean, there are new technologies bubbling up every few days!  We are climbing to ever higher heights.
+
+>_Bah!  All we are really doing is reinventing the wheel, over, and over again.  And we're wasting massive amounts of time and effort doing it._
+
+Oh come on!  We're making **PROGRESS**.
+
+>_Progress.  Really?  That's not the way I see it._
+
+Well, just what is it that you see?
+
+>_I see waste.  Massive, incalculable, waste.  Waste, piled upon waste, piled upon even more waste._
+
+How can you say that?
+
+>_Well, consider this OO issue.  OO isn't dead.  OO was never alive.  OO is a technique; and a good one.  Claiming it's dead is like claiming that a perfectly good screwdriver is dead.    Saying goodbye to OO is like saying goodbye to a perfectly good screwdriver.  It's _waste!
+
+But Functional Programming is better!
+
+>_I'm sorry, but that's like saying that a hammer is better than a screwdriver.  Functional programming is not "better" than Object Oriented programming.  Functional Programming is a technique, and a good one, that can be used alongside Object Oriented programming._
+
+That's not what I heard.  I heard they were mutually exclusive.
+
+>_Of course they aren't.  They address orthogonal concerns.  Concerns that are present in all projects._
+
+<p/>
+
+>_Look there are people who think that software is a linear chain of progress.  That we are climbing a ladder one rung at a time; and that every "new" thing is better than the previous "older" thing.  That's not the way it works._
+
+So, how _does_ it work -- in your opinion?
+
+>_Progress in software has followed a [logarithmic growth](https://en.wikipedia.org/wiki/Logarithmic_growth) curve.  In the early years, progress was stark and dramatic.  In later years the progress became much more incremental.  Now, progress is virtually non-existent._
+
+<p/>
+
+>_Look: Assembler was massively better than Binary.  Fortran was much better than Assembler.  C was a lot better than Fortran.  C++ was probably better than C.  Java was an improvement over C++.  Ruby is probably a bit better than Java._
+
+<p/>
+
+>_Waterfall was a whole lot better than nothing.  Agile was better than waterfall.  Lean was a little better than Agile.  Kanban may have been something of an improvement._
+   
+<p/>
+
+>_Every year. though we apply massive effort, we make less progress than the year before; because every year we get closer and closer to the asymptote._
+
+Asymptote!  You think there's an upper limit to software technology and progress?
+
+>_I absolutely do.  What's more I think we are so close to that limit now, that any further striving is fruitless.  We are _well passed_ the point of diminishing returns._
+
+What?  That sounds ludicrous!  That sounds depressing!
+
+>_I understand.  But that's because we got used to all that early rapid growth.  Those were heady days; and we want them back again.  But they're gone; and we have to face the fact that we are wasting time and effort on a massive scale trying to recreate them._
+
+But if we don't push for the future; we'll never create it!
+
+>_Believe me, I definitely want us to push for the future.  That's not what we are doing.  What we are doing is pining for the past._
+
+So what future do you think we should be pushing towards?
+
+>_A productive one.  A future that is not dominated by all this wasteful churn._
+
+What's wasteful about it?
+
+>_Have you ever used _IntelliJ_ or _Eclipse_ to program Java?_
+
+Sure.
+
+>_Those are _incredibly_ powerful tools.  A skilled professional can be _wildly_ productive with those tools.  The refactorings! The representations! The facilities!  My God; those tools are spectacular!_
+
+<p/>
+
+>_Yet every time a new language comes along we dash away from those powerful tools to use the **NEXT NEW THING**.  And the tools for that new language are like programming in the third world.  God, you often don't even have a reasonable `rename` refactoring!_
+
+<p/>
+
+>_It takes _time_ to build up a reasonable toolset.  If we keep on switching languages, we'll never be able to tool those languages up._
+
+But the newer languages are better.
+
+>_Oh bull!  They're _different_; but they aren't better.  Or at least not better _enough_ to justify throwing our toolset back into the stone age._
+
+<p/>
+
+>_And think of the training costs for adopting a new language.  Think of the cost to the organization of having to use 84 different languages because the programmers get excited about shiny new things every two weeks._
+
+Shiny new things?  That's kind of insulting isn't it.
+
+>_I suppose so; but that's what it comes down to.  New languages aren't better; they are just shiny.  And the search for the golden fleece of a new language, or a new framework, or a new paradigm, or a new process has reached the point of being_ unprofessional.
+
+Unprofessional?
+
+>_Yes! Unprofessional.  We need to realize that we have hit the asymptote.  It's time to stop the wasteful churning over languages, and frameworks, and paradigms, and processes._ 
+
+<p/>
+
+>_It's time to simply get down to work._
+
+<p/>
+
+>_We need to choose a language, or two, or three.  A small set of simple frameworks.  Build up our tools.  Solidify our processes.  And become a goddam _profession.
