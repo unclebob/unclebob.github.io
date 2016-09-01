@@ -5,7 +5,7 @@ tags: ["Software"]
 ---
 It has often been said (by me) that a professional software developer never stops learning.
 
-The [Progmatic Programmer](https://www.amazon.com/Pragmatic-Programmer-Journeyman-Master/dp/020161622X/) book said it this way (p. 15):
+The [Pragmatic Programmer](https://www.amazon.com/Pragmatic-Programmer-Journeyman-Master/dp/020161622X/) book said it this way (p. 15):
 
  * Learn at least one new language every year.
  * Read a technical book each quarter.
