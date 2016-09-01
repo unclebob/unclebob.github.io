@@ -1,0 +1,100 @@
+---
+layout: post
+title: The Lurn
+tags: ["Software"]
+---
+It has often been said (by me) that a professional software developer never stops learning.
+
+The [Progmatic Programmer](https://www.amazon.com/Pragmatic-Programmer-Journeyman-Master/dp/020161622X/) book said it this way (p. 15):
+
+ * Learn at least one new language every year.
+ * Read a technical book each quarter.
+ * Read non-technical books too.
+ * Take classes.
+ * Participate in local user groups.
+ * Experiment with different environments.
+ * Stay current.
+ * Get Wired (blogs, redit, HN, YC, etc). 
+
+Good ideas all.  But how does this jibe with the blog I wrote last month: [The Churn](http://blog.cleancoder.com/uncle-bob/2016/07/27/TheChurn.html) which made the case that there is little to be gained by learning new languages and frameworks because our industry is approaching a kind of asymptote in language and framework technology.  I mean, should we really learn at least one new language every year, if there's nothing to be gained?
+
+Yes.  Of course.  You should learn at least one new language every year.  And if you do, you'll eventually come to realize that the languages start to become repetitive.  You'll learn Lua, and realize it's really just Javascript (or vice versa).  You'll learn Ruby and realize that it's really just Python in different clothes.  You'll learn Swift and realize it's just a rehash of Java with strong overtones of Pascal with some bangs (`!`) thrown in.  You'll learn GO and realize that it's an amalgam of C, Java, and Erlang.  
+
+You'll begin to see the patterns behind all these languages, and recognize that those patterns are relatively few in number.  It will eventually occur to you that the endless recombination of those patterns is rather like the search for the holy grail.
+
+So, yes.  Learn at least one new language every year so that you can come to the understanding that we've pretty well explored the language domain.  
+
+The same is true of frameworks.  Learn a new one every year or so.  And when you do you'll come to the realization that none of the new frameworks is actually "new" in any real sense.  You'll realize, as with languages, that the underlying patterns are relatively few in number; and that the endless recombination of those patterns approaches futility.
+
+Is this a depressing viewpoint?  _It shouldn't be._  The fact that we've explored one small aspect of our profession does not mean that there aren't other things to explore and learn.  Yikes!  The list of things to learn and improve upon is huge.  What's more, we've been neglecting those things in our endless churning search for new languages and frameworks.  
+
+So, for example, let's talk about _concurrency_.  This is something _we suck at_!  Don't you think it's time we got better at it?  Wouldn't it be a good idea for us to explore the realm of concurrency as deeply as we've explored languages?  Isn't this especially true now as our applications are growing ever more dependent on multi-processor platforms, configurations, and deployments?  Doesn't the exponential advance of cloud based applications demand that we develop a very good understanding of concurrency?
+
+Here, let me test your knowledge a bit:
+
+ * Do you know the Dining Philosopher's problem, and what it teaches?
+ * Can you define a deadly-embrace and describe how to avoid it?
+ * Do you know what the actor model is?
+ * Are you familiar with run-to-completion threads?
+ * Have you ever written a circular buffer to communicate between an interrupt head and a background application?
+ * Do you know what a semaphore is, who invented it, and why?
+ * Are you familiar with the rationale behind double-checked locking?
+ * What is priority inversion?
+
+If you can't answer a majority of those questions competently (after appropriate googling to disambiguate vocabulary differences) then I'd say you've got several glorious years of exploration ahead of you; and I advise you to take advantage of them.
+
+Or, how about communication protocols.  Have we explored this realm sufficiently?  Do you know the domain?
+
+ * Do you understand how unreliable connections are made to carry reliable communications?
+ * Do you know what a sliding window protocol is?
+ * How about a CRC?
+ * Why is collision detection important to Ethernet?
+ * What is exponential backoff?
+ * What are the seven layers in the OSI model; and why are they important?
+ * What is the difference between BPS and BAUD?
+
+How well versed are you in the classics of our industry.  Have you read _and understood_ (just to mention a few):
+
+ * _The Art of Computer Programming_: Knuth
+ * _Computer Networks_: Tanenbaum
+ * _The Structure and Interpretation of Computer Programs_: Abelson and Sussman
+ * _Structured Analysis and System Specification_: DeMarco
+ * _Design Patterns_: Gamma, Helm, Johnson, Vlissides
+ * _Analysis Patterns_: Fowler
+ * _Structured Programming_: Dijkstra, Dahl, Hoare
+ * _Object Oriented Software Construction_: Meyer
+
+Do you understand the difference between _discrete event simulation_ and _continuous simulation_?  When would you use them?
+
+How's your queueing theory?  Do you understand how to organize a series of gates and queues to maximize throughput in various environments?  
+
+Are you familiar with graph algorithms?  How would you find the shortest route between two towns?  The fastest?  
+
+Could you write a quicksort on demand, without looking it up?
+
+What is DeMorgan's theorem, and why is it useful to you?
+
+What is the difference between a Mealy and a Moore machine?
+
+How's your computational geometry?  How would you calculate the area of an arbitrary polygon?
+
+Have you written a genetic algorithm?
+Have you worked with a neural net?
+What do you know about Big Data.
+Have you written a floating point package?
+Have you written an IO driver?
+Have you written a file system?
+Have you written a multi-tasking nucleus
+Have you written a compiler?
+
+And then there are languages.  Have you learned the really important ones -- the ones that truly _were_ innovations -- the ones that were the stepping stones that we took to get where we are?  Have you learned Fortran?  Have you learned Cobol?  Have you learned Snobol, and Forth, and Lisp, and Prolog, and C? 
+
+Have you written in a machine language, hand assembling your code into binary?  Have you read Alan Turing's original paper: _On Computable Numbers..._?
+
+`*~~~*`
+
+So, yes.  Learn at least one new language every year.  And perhaps one of those new languages could be new -- to you; but old and significant to our profession.  And perhaps, while you are learning a new language, you could apply that learning to some of the other topics I mentioned here.  
+
+Our field is a rich one.  We've barely scratched the surface.  There are deep things to learn and understand about computing, and about software.  It would be a shame if we never truly explored those depths because we kept on being distracted by shiny objects. 
+
+
