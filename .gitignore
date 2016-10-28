@@ -7,3 +7,5 @@ _site
 /server
 .idea
 /.bundle
+Gemfile*
+
