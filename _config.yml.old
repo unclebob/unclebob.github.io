@@ -1,4 +1,4 @@
-markdown: kramdown
+markdown: rdiscount
 highlighter: rouge
 safe: false
 exclude: [README.md, Rakefile, Gemfile, Gemfile.lock]
