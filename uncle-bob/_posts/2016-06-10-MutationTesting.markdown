@@ -21,7 +21,7 @@ There are many answers to that, which I will phrase as questions[1]:
  2. Have you covered every line, every branch, every path?
  3. If a semantic change is made to the code, will some test fail?
 
-###Sufficiency.
+### Sufficiency.
 
 The first question is obvious.  If you missed a test, you may have a bug.  There are two kinds of missing tests.  The first is some statements in the code that are not tested by the tests.  The second is some requirements that the developers missed.  
 
@@ -29,7 +29,7 @@ There's not much we can do about that later case other than to carefully review 
 
 The former case is a symptom of test-after.  If you write the code first, and then write the tests for the code, you are very likely to miss some statements or branches.  This is one of the biggest arguments in favor of the test-first strategy of TDD.  If you write your tests first, and if you refuse to write a line of production code unless it is to get a failing test to pass, then you are not likely to leave any code uncovered by the tests.
 
-###Coverage.
+### Coverage.
 
 And that brings us to the second question.  Have you covered all the lines, branches, and paths?  Covering every path is impractical.  The simple explosion in the number of paths makes the testing burden enormous.  We may solve this problem one day; but today is not that day.  
 
@@ -39,7 +39,7 @@ So what should your goal be?  The question is absurd.  There is no justifiable g
 
 Of course the problem with coverage is that it doesn't prove what you might think it proves.  It does not prove that you have _tested_ every line and every branch.  All it proves is that you have _executed_ every line and every branch.  Pull out all the asserts from your tests, and your coverage remains unchanged!
 
-###Semantic Stability. 
+### Semantic Stability. 
 
 And that leads us to the third, and most important question.  If you make a semantic change to the code -- a change that alters the meaning of the code -- will one of your tests detect it?  That's a very high bar for a test suite.  But, again, it is the only justifiable bar to set.  _Of course_ your test suite should fail if you make a semantic change to your production code.  Does anybody realistically doubt that?
 
@@ -47,7 +47,7 @@ And think about what such semantic stability means.  It means that your test sui
 
 Well, perhaps not quite.  Remember we aren't ensuring that all pathways are covered.  Still, if we change the sense of an `if` statement, and some test doesn't fail, that's a problem.  If, on the other hand, we walk through the code and, one-by-one, change the sense of every `if` statement to see if a test fails, then we can be pretty sure that all our `if` statements are covered _and_ tested.  If we also change, one-by-one, the sense of every `while` statement; and if, one-by-one, we remove every function call; and we ensure that each of those changes causes our test-suite to fail, then we can be pretty sure that those `while` statements and function calls are covered and tested.
 
-###Mutation Testing
+### Mutation Testing
 This is what mutation testing does.  The `pitest` tool first runs a coverage analysis by executing your test suite and measuring which lines are covered by the tests.  Then, one-by-one, it makes semantic changes to the `Java` byte code, such as inverting the sense of `if` and `while` statements, and removing function calls.  Each one of those changes is called a _mutant_.  
 
 For each mutant the tool runs the unit test suite; and if that suite _fails_, the mutant is said to have been _killed_. That's a _good_ thing.
@@ -58,7 +58,7 @@ A surviving (green) mutant might be the result of tests that have been `@ignore`
 
 As a side note, I have found `pitest` to be pretty easy to operate, and relatively fast.  It apparently does some smart dependency detection to help it determine what tests need to be run for particular mutants.  Your mileage may vary; and I did have to break the mutation tests up into small parts for one larger project I am working on.  Still, I have found the tool to be quite useful at identifying semantic instabilities in my test suites.
 
-###Implications
+### Implications
 A fundamental goal of TDD is to create a test suite that you can trust, so that you can effectively refactor.  We need to be able to refactor in order to keep the code clean enough to modify and enhance without paying huge costs and taking huge risks.  The cleaner the code the longer it's useful lifetime.
 
 For years the argument has been that test-after simply cannot create such a high reliability test suite.  Only diligent application of the TDD discipline has a chance of creating a test suite that you implicitly trust.  
