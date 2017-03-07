@@ -3,7 +3,7 @@ layout: post
 title: Testing Like the TSA
 tags: ["Software"]
 ---
-I was very glad to read in DHH's [recent post](https://signalvnoise.com/posts/3159-testing-like-the-tsa) that he is actually still using TDD.  I'm glad he has realized that TDD is not, in fact, [dead](http://david.heinemeierhansson.com/2014/tdd-is-dead-long-live-testing.html).  
+I was very glad to read in DHH's [recent post](https://signalvnoise.com/posts/3159-testing-like-the-tsa) that he is actually still using TDD***.  I'm glad he has realized that TDD is not, in fact, [dead](http://david.heinemeierhansson.com/2014/tdd-is-dead-long-live-testing.html).  
 
 This blog is a simple response; just to state a couple of disagreements.  But I have to say, I agree more than I disagree.  
 
@@ -36,5 +36,9 @@ DHH presented seven points.  I have reproduced them below, along with my comment
  * (7. Don’t force yourself to test-first every controller, model, and view (my ratio is typically 20% test-first, 80% test-after).
 
 >_Agree...  Sort of.  Some controllers, models, and views are too stupid to bother to test.  If they are obviously correct, because they are one line of code, then testing them might be superfluous.  But be careful.  Sometimes one line of code has 20 lines of semantics._
+
+----
+*** It has been pointed out to me that the "TSA" post actually predates the "TDD is Dead" post by several years.  Somehow or another I got the two backwards.  (sigh).  
+
 
 
