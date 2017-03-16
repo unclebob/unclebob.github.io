@@ -3,7 +3,7 @@ layout: post
 title: Is Dr. Calvin in the Room?
 tags: ["Software"]
 ---
-<img src="/assets/drcalvin/boochtweet.jpg" width="500" align="middle">
+<img src="/assets/DrCalvin/boochtweet.jpg" width="500" align="middle">
 
 I saw Grady's tweet today, and I read the [article](https://theoutline.com/post/1228/when-machines-go-rogue) it referenced; and it got me to thinking.  Is the training of a neural net a kind of programming?  It is the kind of activity that an agile team could plan, estimate, and execute in iterations?  Or is it something entirely different?
 
