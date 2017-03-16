@@ -21,7 +21,7 @@ There are too many issues to simply disregard.  So what's going on here?
 
 Before I answer that, let's look at a simple diagram.  Which of these two designs is better?
 
-<img src="/assets/TDD_Harms_Architecture/user_service.JPG">
+<img src="/assets/TDD_Harms_Architecture/user_service.JPG" size="80%">
 
 Yes, it's true, I've given you a hint by coloring the left (sinister) side red, and the right (dexter) side green.  I hope it is clear that the right hand solution is generally better than the left.  
 
