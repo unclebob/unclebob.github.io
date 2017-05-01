@@ -1,0 +1,27 @@
+---
+layout: post
+title: Bringing Balance to the Force
+tags: ["Software"]
+---
+I read Martin Fowler's [contribution](https://martinfowler.com/bliki/CraftmanshipAndTheCrevasse.html) to the craftsmanship thread with interest.  He spoke of the so-called "crevasse" between developers and customers.  He reiterated Dan North's fear that the craftsmanship movement could widen this crevasse.
+
+We are programmers.  We need to talk about programming from time to time. We need time and space to focus on our primary discipline: programming.  That discussion, and that focus, is a very positive thing.  It means we care about what we do.  But have we gone too far?  Are we too technical?  Is the Software Craftsmanship movement a movement only about technical practice and details?  Have we forgotten the customer?
+
+[The Software Craftsmanship Manifesto's](http://manifesto.softwarecraftsmanship.org/) fourth statement: "We value not only customer collaboration but also productive partnerships" should be enough to quell those fears. Software Craftsmanship is a movement dedicated to partnering with customers.  That means taking on the customer's problems as our own.  That means putting ourselves in the position of our customers.  Their pain becomes our pain, their problems our problems, their victories, our victories.  That's craftsmanship!  That's what we want.  We want to be able to do our job with professionalism and skill, and to partner with our customers to achieve the best possible outcomes.
+
+Software Craftsmanship is not, as Martin said: "A place where programming can be front and central again."  It is not a movement that "underplays the vital role of customer communication".  After all, those of us in the Software Craftsmanship movement have not abandoned Agile.  We still read the Agile papers.  We still follow the Agile threads.  We still go to the Agile conferences.  We are still part of the Agile community.  So we are steeped in "the vital role of customer communication."  So much so that we amplified that role to one of partnership. 
+
+No, the Software Craftsmanship movement is not overplaying the technical role; rather it is trying to recapture the balance that the Agile movement has lost. 
+
+Martin made an amazing point about this in his article.  He said that the craftsmanship movement was spawned as a reaction to the rise of non-programming topics within agile.  I completely agree.  Indeed, I made exactly that point just a week ago while attending an Agile Coach Camp in Norway.  I, for one, consider the agile movement to have been inundated by a vocal and enthusiastic cohort of project managers, waving their scrum-master certificates, or their Lean and Kanban books.  They have overwhelmed the original movement and changed it into something new.   Agile is no longer about a balance between the technical and non-technical parts of development.  Rather it has become a discussion almost entirely dedicated to non-technical issues.  Agile is no longer about healing the divide, or closing the crevasse.  The agile movement now represents one side of the crevasse. 
+
+The argument has been made that the technical issues are the simple part.  That the real hard parts of software development are the people issues. So therefore we should focus on the people issues, on the customers and employers, and keep quiet about the technical stuff.  If we talk too loudly about the technical stuff, then the customers may feel that we're not paying due attention to them.
+
+Bollocks!  Bollocks I say!  Yes, the people part is hard.  The people part is complicated.  The people part needs lots of work.  We should be talking a lot about the people part.  But anybody who thinks the technical stuff isn't just as hard, and just as worthy of conversation, is misguided.  We need both.  And we need both sides to listen to each other and to trust each other.  We need balance! 
+
+The imbalance is the crevasse!  One side thinks their issues are more important that the other's.  One side thinks their issues should dominate.  And when the other side tries to talk about their issues, they are told to shush because they might alienate the other side and "widen the crevasse". 
+
+But neither side is more important than the other.  Neither side should dominate.  Neither side's issues should be toned down.  Neither side should be told to shush for fear of what the other side might say.  The only way to bring the crevasse together is to realize that both sides need each other, and need each other to be skilled and professional.  Each side should be glad that the other is talking about their own issues.  And each side should be willing to listen to the other side's issues. Each side must respect the other side's desire to increase their skill and professionalism.  If we do that enough, maybe we'll realize that there's actually only one side. 
+
+So the next time you see some programmers talking about code retreats or koans or katas or TDD or some other deeply technical topic, congratulate them for giving due diligence to their practice.  The next time you see an agile coach talking about Kanban, or Lean, or Iteration length, or story points, congratulate them for their dedication to their discipline.  Remember, these are your team-mates.  You want them to be able to play their positions with skill and professionalism.  You want them to be good at their jobs.  And, if you want them to respect your role,  you must first respect theirs.
+
