@@ -1,11 +1,11 @@
 ---
 layout: post
-title: What Software Craftsmanship is about.
+title: What Software Craftsmanship is about
 tags: ["Software"]
 ---
 
-TL;DR.<br/>
-<img src="/assets/TwinklesAndPetunia.JPG" width="500" align="middle"/>
+TL;DR.<br>
+<img src="/assets/TwinklesAndPetunia.JPG" width="500" align="middle">
 
 I've gone from [Dan North's post](https://dannorth.net/2011/01/11/programming-is-not-a-craft/), to [Gil Zilberfeld's](http://www.gilzilberfeld.com/2011/01/path-already-taken.html?utm_source=twitterfeed&utm_medium=twitter&utm_campaign=Feed%3A+gilzilberfeld+%28Geek+out+of+water%29) to [Michael Feather's](http://michaelfeathers.typepad.com/michael_feathers_blog/2011/01/the-thing-of-software-development.html) to [Jason Gorman's](http://www.codemanship.co.uk/parlezuml/blog/?postid=992).  It would appear that we, in the software craftsmanship movement have not been clear. I hope this blog clears a few things up.
 
