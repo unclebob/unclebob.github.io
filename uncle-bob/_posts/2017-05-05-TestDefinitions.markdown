@@ -1,6 +1,6 @@
 ---
 layout: post
-title: First class tests.
+title: First-Class Tests.
 tags: ["Software"]
 ---
 I believe it may be my fate to find blogs written by people who have fallen prey to unfortunate disciplines that have led them to give up on unit testing.  [This blog](https://techbeacon.com/1-unit-testing-best-practice-stop-doing-it) is just another one of those.
