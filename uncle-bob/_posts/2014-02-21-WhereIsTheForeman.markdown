@@ -3,7 +3,6 @@ layout: post
 title: Where is the Foreman?
 tags: ["Craftsmanship"]
 ---
-<meta http-equiv="refresh" content="3; url=http://blog.8thlight.com/uncle-bob/2014/02/21/WhereIsTheForeman.html" />
 The foreman on a construction site is the guy who is responsible for making sure all the workers do things right.  He's the guy with the tape-measure that goes around making sure all the walls are placed properly.  He's the guy who examines all the struts, joists, and beams to make sure they are installed correctly, and don't have any significant defects.  He's the guy who counts the screws in the flooring to make sure it won't squeak when you walk on it.  He's the guy -- the guy who takes responsibility -- the guy who makes sure everything is done _right_.
 
 Where is the foreman on our software projects?  Where's the guy who makes sure all the tests are written.  Where's the guy who makes sure that all the exceptions are caught.  Where's the guy who makes sure all the errors are checked, and that references can't be null, and that variables are thread-safe?  Where's the guy who makes sure that the programmers are pairing enough, talking enough, planning enough? Where's the guy who keeps the floors from squeaking?

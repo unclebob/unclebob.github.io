@@ -3,7 +3,6 @@ layout: post
 title: "Professionalism and TDD (Reprise)"
 tags: ["Craftsmanship"]
 ---
-<meta http-equiv="refresh" content="3; url=http://blog.8thlight.com/uncle-bob/2014/05/02/ProfessionalismAndTDD.html" />
 Lately I have been criticized, both directly and indirectly, for associating TDD with professionalism.  Indeed, I believe much of the recent "true believer" rhetoric we have been subjected to comes from that association.  
 
 I plead guilty to claiming that the association exists.  I wrote extensively about it in the article [Professionalism and Test-Driven-Development, IEEE Software, 06/2007](http://www.researchgate.net/publication/3248924_Professionalism_and_Test-Driven_Development)

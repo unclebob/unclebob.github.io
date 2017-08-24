@@ -3,7 +3,6 @@ layout: post
 title: "Does Organization Matter?"
 tags: ["Craftsmanship"]
 ---
-<meta http-equiv="refresh" content="3; url=http://blog.8thlight.com/uncle-bob/2015/04/15/does-organization-matter.html" />
 >  _I wonder if it's even possible to get all three of readability, hackability and abstraction._ 
 >   _--  Ben Kuhn. from [Readability, hackability, and abstraction](http://www.benkuhn.net/rha)_
 

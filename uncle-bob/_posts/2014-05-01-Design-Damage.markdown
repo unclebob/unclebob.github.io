@@ -3,7 +3,6 @@ layout: post
 title: "Test Induced Design Damage?"
 tags: ["Craftsmanship"]
 ---
-<meta http-equiv="refresh" content="3; url=http://blog.8thlight.com/uncle-bob/2014/05/01/Design-Damage.html" />
 I miss Jim Weirich.  I miss his laugh.  I miss his good nature.  Most of all, I miss what he would have taught me next year, and in the years to follow.  I _feel_ that loss.
 
 Last October Jim gave a talk named [Decoupling from Rails](https://www.youtube.com/watch?v=tg5RFeSfBM4) in which he showed how to refactor a rails app in order to decouple business logic from rails framework code.  The talk is _spectacular_.  The hour you spend watching it will pay you back many times over.  

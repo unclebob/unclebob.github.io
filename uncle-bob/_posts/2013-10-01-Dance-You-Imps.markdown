@@ -3,7 +3,6 @@ layout: post
 title: Dance you Imps!
 tags: ["Tools"]
 ---
-<meta http-equiv="refresh" content="3; url=http://blog.8thlight.com/uncle-bob/2013/10/01/Dance-You-Imps.html" />
 There are several tools out there that promise to bridge the divide between objects and relational tables.  Many of these tools are of high quality, and are very useful.  They are collectively known as ORMs, which stands for _Object Relational Mappers_.  There's just one problem.  There ain't no such beast!
 
 ### The Impedance Mismatch

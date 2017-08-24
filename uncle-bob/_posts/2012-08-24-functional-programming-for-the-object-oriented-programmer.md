@@ -5,7 +5,6 @@ tags: ["Tools"]
 old_tags: ["Clojure", "Functional Programming"]
 ---
 
-<meta http-equiv="refresh" content="3; url=http://blog.8thlight.com/uncle-bob/2012/08/24/functional-programming-for-the-object-oriented-programmer.html" />
 This book, written by Brian Marick, is important. Indeed, it may be *necessary*. We need something to bridge the gap between the huge population of OO programmers, and the growing need for functional programmers. I've seen nothing else that fills this need so well.
 
 I read a lot of books, but few are so competently written. I'm a hundred pages in and I'm loving it. If you are a Java, C\#, C++, Ruby, or Python programmer, and you are wondering what all this *functional programming* noise is about, this is the book for you.

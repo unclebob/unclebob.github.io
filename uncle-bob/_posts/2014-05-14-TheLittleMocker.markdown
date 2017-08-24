@@ -3,7 +3,6 @@ layout: post
 title: "The Little Mocker"
 tags: ["Testing"]
 ---
-<meta http-equiv="refresh" content="3; url=http://blog.8thlight.com/uncle-bob/2014/05/14/TheLittleMocker.html" />
 The following is a conversation around mocking:
 
 What is this?:

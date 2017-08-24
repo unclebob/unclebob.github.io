@@ -5,7 +5,6 @@ tags: ["Testing"]
 old_tags: ["TDD"]
 ---
 
-<meta http-equiv="refresh" content="3; url=http://blog.8thlight.com/uncle-bob/2011/11/06/Double-Entry-Bookkeeping-Dilemma-Should-I-Invest-or-Not.html" />
 
 A few days ago I found [this](http://blogs.agilefaqs.com/2011/11/01/unit-testing-dilemma-should-i-invest-or-not) blog, which makes the case that
 software developers who use TDD, should be pragmatic about the costs and benefits. You should read the blog now. Notice how reasonable and

@@ -3,7 +3,6 @@ layout: post
 title: A.T. FAIL!
 tags: ["Testing"]
 ---
-<meta http-equiv="refresh" content="3; url=http://blog.8thlight.com/uncle-bob/2013/09/26/AT-FAIL.html" />
 Recently Kevin Liddle, a colleague of of mine at [8th Light](http://8thlight.com), wrote a blog entitled: [The Case Against Cucumber](http://blog.8thlight.com/kevin-liddle/2013/09/18/a-case-against-cucumber.html).  This blog fits in with a trend started by Jim Shore in 2010 and before.  Jim's position is well expressed in his blog: [The Problems with Acceptance Testing](http://www.jamesshore.com/Blog/The-Problems-With-Acceptance-Testing.html).
 
 My response to this is: 

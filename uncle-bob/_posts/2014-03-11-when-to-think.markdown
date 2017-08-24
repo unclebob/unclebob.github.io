@@ -3,7 +3,6 @@ layout: post
 title: "When Should You Think?"
 tags: ["Craftsmanship"]
 ---
-<meta http-equiv="refresh" content="3; url=http://blog.8thlight.com/uncle-bob/2014/03/11/when-to-think.html" />
 In the last few weeks there have been a spate of blogs, from various sources, that have suggested that TDD could be done better if people would just think before they code.  These blogs have suggested that some people leap into code too quickly, and would be better served by thinking about the problem first.  
 
 In some ways these blogs remind me of Rich Hickey's now famous talk on [Hammock Driven Developmen](https://gibbon.co/wunki/clojures-best-presentations/hammock-driven-development-rich-hickey); which I enthusiastically support.  

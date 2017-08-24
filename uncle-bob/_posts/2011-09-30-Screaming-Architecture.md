@@ -4,7 +4,6 @@ title: Screaming Architecture
 tags: ["Architecture"]
 ---
 
-<meta http-equiv="refresh" content="3; url=http://blog.8thlight.com/uncle-bob/2011/09/30/Screaming-Architecture.html" />
 Imagine that you are looking at the blueprints of a building. This document, prepared by an architect, tells you the plans for the building. What do these plans tell you?
 
 If the plans you are looking at are for a single family residence, then you'll likely see a front entrance, a foyer leading to a living room and perhaps a dining room. There'll likely be a kitchen a short distance away, close to the dining room. Perhaps a dinette area next to the kitchen, and probably a family room close to that. As you looked at those plans, there'd be no question that you were looking at a *house*. The architecture would *scream*: **house**.

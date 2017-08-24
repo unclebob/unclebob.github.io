@@ -5,7 +5,6 @@ tags: ["Craftsmanship"]
 old_tags: ["Professionalism", "Craftsmanship"]
 ---
 
-<meta http-equiv="refresh" content="3; url=http://blog.8thlight.com/uncle-bob/2012/04/20/Why-Is-Estimating-So-Hard.html" />
 Consider the Gettysburg Address:
 
 "Four score and seven years ago our fathers brought forth upon this continent a new nation, conceived in liberty and dedicated to the proposition that all men are created equal..."

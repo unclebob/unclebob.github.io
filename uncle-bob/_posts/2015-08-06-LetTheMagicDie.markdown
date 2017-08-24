@@ -3,7 +3,6 @@ layout: post
 title: "Make the Magic go away."
 tags: ["Craftsmanship"]
 ---
-<meta http-equiv="refresh" content="3; url=http://blog.8thlight.com/uncle-bob/2015/08/06/let-the-magic-die.html" />
 
 I've been looking at [rxJava](https://github.com/ReactiveX/RxJava/wiki/How-To-Use-RxJava).  It's a nice little framework that helps you to create and manage observers.  The design philosophy seems to be that everything can be observed and therefore everything ought to be managed by callback. 
 

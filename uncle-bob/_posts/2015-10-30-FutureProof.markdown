@@ -3,7 +3,6 @@ layout: post
 title: "Future Proof"
 tags: ["Craftsmanship"]
 ---
-<meta http-equiv="refresh" content="3; url=http://blog.8thlight.com/uncle-bob/2015/10/30/futureproof.html" />
 I recently read Christin Gorman's blog [Future Proof](http://kranglefant.tumblr.com/post/131808192355/future-proof).  In it she lambastes the idea that you can create code that is protected from future change.  
 
 >_Awesome or not, some things are impossible.  Cordless garden hoses are impossible. So is software that changes without being changed. If you need it to adapt to future requirements, then guess what: that involves adaptation -- AKA change._

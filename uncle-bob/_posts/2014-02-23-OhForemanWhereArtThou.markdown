@@ -3,7 +3,6 @@ layout: post
 title: "Oh Foreman,  Where art Thou?"
 tags: ["Craftsmanship"]
 ---
-<meta http-equiv="refresh" content="3; url=http://blog.8thlight.com/uncle-bob/2014/02/23/OhForemanWhereArtThou.html" />
 The response to my previous blog: [Where's the Foreman]({% post_url 2014-02-21-WhereIsTheForeman %}) has been mixed.  While the vast majority of folks seemed to agree; there was a vocal minority of people, whom I respect, who were quite negative.  The thing that most of these people hated the most was my insistence that the foreman be the only person with commit rights.  
 
 The complaints were all based on the notion of _team_ vs. _foreman_.  Those who disagreed with my blog seem to feel that a software team is based on egalitarian rules, where all are peers, and none has authority over others.  Nearly all of these people call themselves _coaches_; which is odd because, of all the roles in a team, the role of _coach_ is the _least_ egalitarian.  The coach is _special_.

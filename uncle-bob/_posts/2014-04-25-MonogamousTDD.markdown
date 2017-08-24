@@ -3,7 +3,6 @@ layout: post
 title: "Monogamous TDD"
 tags: ["Craftsmanship"]
 ---
-<meta http-equiv="refresh" content="3; url=http://blog.8thlight.com/uncle-bob/2014/04/25/MonogamousTDD.html" />
 When a [blog](http://david.heinemeierhansson.com/2014/tdd-is-dead-long-live-testing.html) begins like this...
 
 >"Test-first fundamentalism is like abstinence-only sex ed: An unrealistic, ineffective morality campaign for self-loathing and shaming."

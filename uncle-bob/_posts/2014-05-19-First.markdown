@@ -3,7 +3,6 @@ layout: post
 title: "First"
 tags: ["Testing"]
 ---
-<meta http-equiv="refresh" content="3; url=http://blog.8thlight.com/uncle-bob/2014/05/19/First.html" />
 In the first [_Is TDD Dead?_ hangout](https://www.youtube.com/watch?v=z9quxZsLcfo), at time 30:25 `@dhh` makes a remarkable statement:
 >"...you're not done until you also have tests for a piece of functionality -- I'm completely on board with that."
 

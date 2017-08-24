@@ -5,7 +5,6 @@ tags: ["Craftsmanship", "Tools"]
 old_tags: ["Professionalism", "Craftsmanship",  "Ruby"]
 ---
 
-<meta http-equiv="refresh" content="3; url=http://blog.8thlight.com/uncle-bob/2012/01/31/The-Ruby-Colored-Box.html" />
 I recently read a [blog](http://www.unlimitednovelty.com/2011/12/can-you-solve-this-problem-for-me-on.html) about a guy who had a bad interview. The blog was well written and pretty funny. He metaphorically described the interview in terms of a mexican chef being grilled about how to make crème brûlée. He made a bunch of interesting points about how unfair the interview was, and how you shouldn't ask a mexican chef how to cook pastry.
 
 The blog was in two parts, the mexican chef metaphor, and then a rant. By the time I got to the end of the metaphor I was pretty much thinking that the author was a bit of a whiner. OK, so the interview was unfair. What interview isn't? Why would any employer want to conduct a "fair" interview. I'm certainly not fair when I interview people. I put them under all kinds of stresses, and throw lots of strange issues at them. I want to see how they behave when confronted with unfamiliar problems. I want to know if they can extrapolate their experience into a new domain.

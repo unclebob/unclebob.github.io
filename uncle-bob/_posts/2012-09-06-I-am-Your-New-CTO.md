@@ -5,7 +5,6 @@ tags: ["Craftsmanship"]
 old_tags: ["Craftsmanship", "Professionalism"]
 ---
 
-<meta http-equiv="refresh" content="3; url=http://blog.8thlight.com/uncle-bob/2012/09/06/I-am-Your-New-CTO.html" />
 "So, what did you think of *that*?" I asked as we sat down at our regular table in the cafeteria. As I scanned the other tables in the lunchroom I could see that many other teams were leaning in to their conversation and speaking in semi-hushed tones. The normally light-hearted lunchtime banter had been replaced with a new intensity.
 
 "It started pretty well." said Jasper. "I mean he was nice enough at first, introducing himself as the new CTO and all."

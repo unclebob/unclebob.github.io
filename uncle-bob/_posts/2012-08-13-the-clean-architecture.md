@@ -4,7 +4,6 @@ title: The Clean Architecture
 tags: ["Architecture", "Craftsmanship"]
 ---
 
-<meta http-equiv="refresh" content="3; url=http://blog.8thlight.com/uncle-bob/2012/08/13/the-clean-architecture.html" />
 <img width="100%" src="/uncle-bob/images/2012-08-13-the-clean-architecture/CleanArchitecture.jpg"/>
 
 Over the last several years we've seen a whole range of ideas regarding the architecture of systems. These include:

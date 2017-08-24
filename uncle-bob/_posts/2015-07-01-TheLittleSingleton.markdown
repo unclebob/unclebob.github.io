@@ -3,7 +3,6 @@ layout: post
 title: "The Little Singleton"
 tags: ["Craftsmanship"]
 ---
-<meta http-equiv="refresh" content="3; url=http://blog.8thlight.com/uncle-bob/2015/06/30/the-little-singleton.html" />
 Do you recognize this:
 
     public class X {

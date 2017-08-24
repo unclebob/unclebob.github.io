@@ -3,7 +3,6 @@ layout: post
 title: Coding in the Clink (9)
 tags: ["Community"]
 ---
-<meta http-equiv="refresh" content="3; url=http://blog.8thlight.com/uncle-bob/2014/01/20/Marion_Correctional.html" />
 My son, Micah `(@slagyr)`, and I had planned to fly his _Archer_ on Saturday morning; but the weather said "No.".  So, we fell into the far-too-familiar routine of leaving the night before,  airports, commercial flights, rental cars, and hotel beds.  Sigh.
 
 In the morning the two of us drive to Marion Correctional Institution; a medium security prison run by the State of Ohio.  We pull into the visitor's parking lot and call the organizer, Dan Wiebe `(@dnwiebe)`.  He says he's already there waiting inside with several others.  I ask whether I should leave my cell phone in the car.  He says to leave _everything_ in the car except our driver's licenses and the car keys. We comply.

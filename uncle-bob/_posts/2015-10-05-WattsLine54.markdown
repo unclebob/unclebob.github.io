@@ -3,7 +3,6 @@ layout: post
 title: "WATS Line 54"
 tags: ["Craftsmanship"]
 ---
-<meta http-equiv="refresh" content="3; url=http://blog.8thlight.com/uncle-bob/2015/10/05/WattsLine54.html" />
 I had an interesting conversation with [Doc Norton](http://www.docondev.com/) this morning.  And it got me to thinking...
 
 You know what an 800 number is.  Some people call them "toll free".  The Telephone company call them WATS lines.  Wide Area Telephone Service.

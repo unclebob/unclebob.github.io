@@ -3,7 +3,6 @@ layout: post
 title: "A Spectrum of Trust"
 tags: ["Craftsmanship"]
 ---
-<meta http-equiv="refresh" content="3; url=http://blog.8thlight.com/uncle-bob/2014/02/27/TheTrustSpectrum.html" />
 The response to my two previous blogs: [Where's the Foreman]({% post_url 2014-02-21-WhereIsTheForeman %}) and [Oh Foreman Where Art Thou]({% post_url 2014-02-23-OhForemanWhereArtThou %}) continues to be mixed; and has gotten quite loud.  That's a good thing; because we need to have this discussion.
 
 ###The Perfect Agile Team

@@ -3,7 +3,6 @@ layout: post
 title: "A Little Structure"
 tags: ["Craftsmanship"]
 ---
-<meta http-equiv="refresh" content="3; url=http://blog.8thlight.com/uncle-bob/2015/09/23/a-little-structure.html" />
 What is _Structured Programming_?
 
 >_Ummm?...  Wasn't it some ancient history having to do with `GOTO`?_ 

@@ -5,7 +5,6 @@ tags: ["Testing", "Tools"]
 old_tags: ["TDD", "Simplicity", "Agile"]
 ---
 
-<meta http-equiv="refresh" content="3; url=http://blog.8thlight.com/uncle-bob/2011/10/20/Simple-Hickey.html" />
 
 Rich Hickey gave a great [talk](http://www.infoq.com/presentations/Simple-Made-Easy) at [Strange Loop](https://thestrangeloop.com) entitled *Simple Made Easy*. I strongly recommend you spend an hour and listen to this talk. It's worth every second you give it. There will be some things in this talk that you will disagree with. When that happens, stop and think - think real hard - you probably don't actually disagree. And if you do, you probably shouldn't.
 

@@ -5,7 +5,6 @@ tags: ["Craftsmanship"]
 old_tags: ["Professionalism", "Craftsmanship", "Clean Code"]
 ---
 
-<meta http-equiv="refresh" content="3; url=http://blog.8thlight.com/uncle-bob/2012/01/20/Fecophiles.html" />
 I got an interesting email yesterday. It contained the following paragraph describing an email he had sent to his co-workers about a refactoring he had done:
 
 > When I originally sent this email to my co-workers, I got the following reaction; 1 team member thought it was better & 2 team members thought it was harder to understand. Of the 2 who thought it was worse; 1 thinks I should change it back, and the other is willing to put up with my change to shut me up :-)

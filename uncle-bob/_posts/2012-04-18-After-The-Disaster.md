@@ -5,7 +5,6 @@ tags: ["Craftsmanship"]
 old_tags: ["Professionalism", "Craftsmanship"]
 ---
 
-<meta http-equiv="refresh" content="3; url=http://blog.8thlight.com/uncle-bob/2012/04/18/After-The-Disaster.html" />
 There's a disaster coming. I don't know when. I don't know what. But it's coming, and there's nothing we can do to stop it; but there *is* something we can do to mitigate it.
 
 How much software is running near you at the moment? Of course you are reading this on a web browser, and that computer you are sitting next to has lots of software running in it. And there are probably many other computers near you with software running on them. Is there software in your cell phone? Of course. How about in your watch? Likely. In the light switch on the wall? How about in the light bulbs? The intercom? The doorbell? The thermostat? Your furnace? Your air conditioner? Your refrigerator, dishwasher, washing-machine, drier? How about your car; and all the other cars on the road? How about the traffic signals? Did you ride an elevator today? Get in a plane or a train? How about an escalator? Do you have a pacemaker? An insulin pump?
