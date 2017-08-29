@@ -3,9 +3,10 @@ layout: post
 title: "A Spectrum of Trust"
 tags: ["Craftsmanship"]
 ---
+
 The response to my two previous blogs: [Where's the Foreman]({% post_url 2014-02-21-WhereIsTheForeman %}) and [Oh Foreman Where Art Thou]({% post_url 2014-02-23-OhForemanWhereArtThou %}) continues to be mixed; and has gotten quite loud.  That's a good thing; because we need to have this discussion.
 
-###The Perfect Agile Team
+### The Perfect Agile Team
 
 At one end of the spectrum of trust within a team is the _perfect_ agile team. Such a team is composed of 6-12 experienced developers with good design sense and a deep commitment to craftsmanship. They all sit around a single table.  They all start and end work at the same time.  They all pair with each other 100% of the time; changing pair partners several times per day.  They have an on-site customer who perfectly balances the backlog.  Their velocity is consistent and flat from iteration to iteration.  They all practice TDD perfectly.  Their code coverage is 100%.  They all refactor mercilessly.  Their code is clean.  They are the _perfect_ agile team.
 
@@ -15,7 +16,7 @@ This team also does not need a coach or a scrum master (certified or otherwise).
 
 There are likely some teams out there that approach this ideal; but in my experience they are few and far between.
 
-###Open-Source Single-Committer
+### Open-Source Single-Committer
 
 At the other end of the trust spectrum is the lone programmer who creates an successful open source project.  Let's call her Rachel.  Rachel finds herself at the focal point of a community of willing and eager programmers, all grimly determined to be of service to her.  She is inundated by a steady stream of pull requests and patches.  Of course Rachel welcomes the help; but the contributions are all over the map as far as quality is concerned.  Some of the contributors share her values, and have done a nice job.  She has no problem committing their code.  Other contributors, however, have done all the wrong things, and have made a mess.  She can't have those contributions contaminating her code base.
 
@@ -33,7 +34,8 @@ We could view the combination of the core team and the community of contributors
 
 There are many projects that use a model like this.  Junit, FitNesse, NUnit, Linux, git, etc.  Some of the very best software out there uses this approach.  Indeed, much of the software revered within the Agile community, was produced, and is maintained, using a foreman model.
 
-###How do I convince the rest of my team?
+### How do I convince the rest of my team?
+
 In my travels I encounter many different software teams. Very few are high functioning Agile teams. Most fall pretty low on the trust scale.  To one extent or another, most of these teams pay lip-service to Agile principles; but do not pair, do not consistently write tests, do not refactor, do not have an on-site customer, etc..  They are, in fact, regular old dysfunctional software teams with all the problems you'd expect.
 
 In most cases I encounter these teams because a few members attend a course of mine; or convince their management to bring me in an teach some part of the team.   I teach them TDD.  I teach them Refactoring.  I teach them Craftsmanship.  I teach them design principles.  I teach them professionalism.  I teach them why it is important to care.  I teach them why it is important to never rush.  I teach them that the only way to go fast is to go well.  
@@ -44,7 +46,8 @@ And then, at the end; when I am done teaching and about to leave them, they ask 
 
 And there you go.  That's the same trust issue that Rachel and Betty had, isn't it?  The members of the team don't value the same things; and so they don't trust each other to write the tests, refactor the code, and keep things clean.  
 
-###Enter the Coach
+### Enter the Coach
+
 Lots of people try to solve this misalignment of values through coaching.  The team hires a coach, and the coach works with the team, addressing fears, allaying suspicions, guiding, teaching, cajoling, and gradually, softly, moving the team towards trust. 
 
 When this works it is a beautiful thing. 
@@ -55,7 +58,8 @@ This is not to say that coaching is a bad idea; it is not.  Coaching is a very g
 
 That's why the coaches of sports teams are also foremen.  Not only do such coaches teach, guide, advise, and cajole; they also have the power to say "no".  A coach, faced with a disagreement of values, must have the power to draw a line in the sand and say: "Only things on this side of the line may pass".
 
-###My Answer to That Question.
+### My Answer to That Question.
+
 So, at the end of my talks, or courses, when the team members ask me how to convince their other team mates; I tell them this:
 
 Most often you _can't_ convince people to change their behavior.  At least not by talking.  Telling people that they are doing things wrong, and that _you_ know how they should do them right, is not a good way to convince someone.  What you _can_ do, is be a role model.  You can stick to your disciplines and values, and show the others, by example, how to behave.  Perhaps one or two others will notice what you are doing, and decide to emulate you.  
@@ -64,17 +68,20 @@ And then you'll have a problem.  Because in a team where some follow TDD (for ex
 
 That period of conflict can be long and painful; and the quality of the software will suffer throughout that period leaving a legacy of troubles.
 
-###Foremen
+### Foremen
+
 If, however, the person asking me that question happens to be someone who has the appropriate responsibility and authority I tell them to look at the open-source model; because that model has proven effective in teams that have significant trust issues.  
 
 I tell them to form the people they trust into a core team; and give that core team the power to draw a line in the sand, the responsibility to declare standards of quality and behavior, and the authority to enforce those standards.  i.e. a team of foremen.
 
-###Precipitate the Crisis
+### Precipitate the Crisis
+
 Several people who read my previous articles have blogged that foremen will cause distrust and destroy the team.  However, the team I am referring to is already in a state of distrust, and is already on a slow and painful course to destruction.  The bloggers are right; the foremen will accelerate that.  They'll bring the issue to the fore and precipitate a crisis.
 
 And that's a good thing.  I want the crisis to come quickly.  I want the period of divisiveness to be short.  I want those who are going to change to change sooner rather than later.  I want those who are going to leave, to leave sooner rather than later.  I want to get a team with shared values and mutual trust in place as quickly as possible.  And while that process is going on, I want the code to be protected by the people I trust.
 
-###End Game
+### End Game
+
 The goal, of course, is to increase the ranks of the trusted team members and decrease the ranks of those that aren't trusted.  The goal is to create a high functioning agile team in which everyone shares the same values.  The goal is to obviate the foremen because _everyone_ has become a foreman.  
 
 But most teams aren't high functioning Agile teams. Most teams are caught in a divisive struggle over disciplines, quality, and professionalism. Most teams need to draw a line in the sand and decide what their values are, and what disciplines, behaviors, and standards they will use to support those values.  Most teams need to set, and then enforce, quality standards.  
