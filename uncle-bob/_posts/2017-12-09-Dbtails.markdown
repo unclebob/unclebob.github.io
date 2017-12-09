@@ -1,0 +1,86 @@
+---
+layout: post
+title: Dbtails
+tags: ["Software"]
+---
+## A Bit of History about Bits.
+
+Memory was always the problem.  Once we had established that we could _process_ information with relays, or vaccuum tubes, or transistors; the problem was where to keep the information we were processing.
+
+<img src="/assets/Dbtails/core.jpg" width="300" align="right">
+Random Access Memory (RAM) within the computer was tricky during those days.  By the time I became a programmer, in 1968, the move to _core_ memory was pretty well established.  But in the years just before that there were many different schemes, including accoustic waves through tubes of mercury, or magnetic drums, or even using electron beams to store charge on the surface of a Cathode Ray Tube.
+
+Indeed, one of the early programmable calculators that I used in High School, [the Olivetti-Underwood Programma 101](https://en.wikipedia.org/wiki/Programma_101), stored its information in accoustic waves travelling down steel wires.
+
+### Paper with Holes.
+<img src="/assets/Dbtails/punched_card_file.jpg" width="300" align="right">
+Early computers used paper tape and punched cards to store the information being processed.  In my earliest years as a programmer, back in 1968 when computers were frightfully expensive, I worked for a company that offered computing services to companies.  Those companies would ship us massive crates full of punched cards containing their business records.  We'd process that data and punch a new massive pile of punched cards that we'd crate up and ship back to them.  It was quite an operation.
+
+<img src="/assets/Dbtails/punch_card_sorter.jpg" width="300" align="right">
+What's more, we had a whole room full of equipment just for dealing with cards.  We had card sorters, and card duplicators all over the place.  We even had little patch panel machines that could read cards and make small modifications to the information on those cards -- like punching new sequence numbers.  Much of the preparation work for a big batch job was done on these machines because they were a lot cheaper than time on the big IBM 360.  
+
+### Magnetic Tape.
+<img src="/assets/Dbtails/magtape.jpg" width="300" align="right">
+I started working as a programmer just as magnetic tape was replacing punched cards.  As you can imagine, shipping reels of magnetic tape back and forth to the customer was a lot cheaper, and a lot more reliable, than shipping crates of cards.  What's more, the computer could read those tapes a lot faster than it could read cards, so time on the computer was reduced by a huge margin.
+
+At first, of course, the cards were simply copied to tape.  A card was 80 bytes of data, so the data on tape was simply a linear array of 80 byte records.  But as time went by we realized that there was no need to limit ourselves to 80 byte records on tape.  So tape record size became independent of cards.  
+
+<img src="/assets/Dbtails/tape_library.jpg" width="300" align="right">
+But as fast and convenient as tapes were, the information density was still pretty low.  You could store 800 bytes per inch on those tapes.  So a megabyte was a thousand inches.  A gigabyte would have required almost sixteen _miles_ of tape.  What's more, the data on tape was stored _serially_.  There was no way to get the data on the end of the tape other than to read the whole tape.  Random access was simply not an option.
+
+### Disks.
+<img src="/assets/Dbtails/disk_pack.jpg" width="300" align="right">
+Disks were invented to solve that problem.  Disks were thin platters of metal with a magnetic coating.  A dozen or so of these platters were stacked up on a spindle and then spun at high speed.  Typically 3600 RPM.  Magnetic read-write heads were mounted on servo motors so they could move radially across the platters.  
+
+The data on the disk were written onto circular tracks.  Each platter could have several hundred of these tracks.  The tracks were subdivided into records that could hold a fixed amount of data.  Since the platters were stacked up vertically, we called the vertical group of tracks _cylinders_.  In order to read a record from the disk, the programmer would seek the heads to the appropriate cylinder, select the appropriate head, and then wait for the desired record to travel around the spindle until it came under the head.  We called the address of a record a `CHR`, or Cylinder-Head-Record. 
+
+Programmers could format the disk any way they liked.  They could decide that the first 20 cylinders should hold Employee records that were 250 bytes long; and that the next 50 cylinders should hold item records that were 500 bytes long.  We could arrange the record size and the number of records per track, as part of the design of our application.  We could even split the disk vertically such that the top few platters held index information while the bottom platters held the data.  We could set that disk up any way we liked.  The data on the disk had a _fixed formal arrangement_.
+
+Of course that fixed formal arrangement meant that the disks were specific to a particular application.  When it was time to run the Bill of Materials application, the computer operators would load the Bill of Materials disks into the disk drives. Those disks were formatted just for that Bill of Materials application.
+
+### File Systems.
+As time went on we realized that we wanted to use the disks in a different way.  We wanted easy access to the capacity and random access that disks afforded without imposing a fixed formal arragnement to our data.  So we invented file systems.  In general, files systems required that we format the disks in a uniform way.  Every track was formatted to hold a relatively small number of records (called sectors).  All tracks were formatted identically.  We invented direcrories, and indexes, and files, and all of the trappings that we have become so used to in our daily work.
+
+File systems allowed us to view the memory on disk as named arrays of bytes.  They imposed no fixed formal arrangement of the data.  Rather, we could have any number of directories, containing any number of files, containing any number of bytes. The actual structure of the disk itself was invisible to this view.  It did not matter to us which cylinder, head, and record we were accessing.  We simply created, wrote, read, and deleted individual files.  The structure of the disk had been entirely abstracted away and decoupled from the structure of the data.
+
+### Relational Databases.
+As convenient as file systems were for storing documents and simple linear files, they weren't all that convenient at accessing vast arrays of fixed-sized, organized records.  Finding the `Employee` Record for _Bob_ in the `Employees.dat` file usually implied a linear search, or some kind of ad hoc, nightmarish indexing scheme.  And so other modes of access were invented.  One of those methods was the _Relational Database_.
+
+Relational databases abstract away the physical nature of the disk, just as file systems do; but instead of storing informal arrays of bytes, relational databases provide access to sets of fixed sized records.  Each record type is called a table, and each record within a table is called a row.  Each row has a unique identifier called a key.
+
+This is similar to the way we conceived of disks in the early days, except back then we specifically formatted the disk to hold the fixed sized records, and we used the `CHR` as the key.  
+
+### SSD.
+The disks are going away.  Your laptop or desktop computer almost certainly does not contain a piece of spinning metal.  (If it does, I'm sorry. ;-)  Within the next few years. _all_ the disks will go away.  They will have been replaced by solid state memory -- RAM.  (We call it SSD.  What could that "D" stand for?  Not "disk", certainly.  Not "drive".  What?) 
+
+Every time our technology has changed, from Cards, to Tape, to Disk, new access methods were invented.  The older technology fell away, and newer modes of access were adopted.
+
+Will this happen with SSD?  Will file systems and relational databases fall to the wayside?  If so, what will replace them?
+
+With each new technology a fact that we considered essential was abstracted away.  Cards were linear arrays of 80 byte records, period.  There wasn't any arguing about that.  It was a physical limitation of the medium.  
+
+Magnetic tape abstracted away the record size limit; but maintained the linear sequence.  
+
+Disk abstracted away the linear sequence, but replaced it with that strange physical `CHR` addressing scheme.
+
+File systems abstracted away the physical structure of the disk but provided no easy access to fixed sized records.
+
+Relational databases (which often ride on top of file systems nowadays) provided random access to fixed sized records.
+
+What does SSD change?  What physical limitation can be abstracted away because of this change?
+
+Well, the one big thing that has changed is _time_.  Accessing SSD is _fast_.  There is no rotaional latency.  There is no seek time.  The time to access a byte in SSD is the same regardless of where that byte is.  
+
+So what does this mean for us?  
+
+Tape made cards faster; but changed the way we viewed records.  Disks made tape faster but changed the way we viewed access.  SSD makes _everything_ faster but changed the way we viewed _____.  Fill in that blank.
+
+
+
+
+
+
+
+
+
+
