@@ -15,7 +15,7 @@ Thrust, of course, comes from the engine.  Lift comes from the air flowing aroun
 
 Parasitic drag is simply the cost of plowing through the air.  It is the air resisting the movement of the plane.  But there's another kind of drag called _induced drag_.
 
-Induced drag is caused by the pilot.  It happens when the pilot raises the nose of the aircraft.  Raising the nose, changes the angle of the wings causing the lift vector, which is always pependicular to the wings, to point a bit _backwards_, thereby _opposing_ the forward motion of the aircraft.
+Induced drag is caused by the pilot.  It happens when the pilot raises the nose of the aircraft.  Raising the nose, changes the angle of the wings causing the lift vector, which is always perpendicular to the wings, to point a bit _backwards_, thereby _opposing_ the forward motion of the aircraft.
 
 If you raise the nose just a little, the induced drag is small, and so increased thrust still causes increased speed.  But if you raise the nose a lot, then the induced drag can cancel out the thrust.  This is called getting _behind the power curve_.
 
@@ -23,7 +23,7 @@ If you raise the nose just a little, the induced drag is small, and so increased
 
 The graph[1] shows an airplane in straight and level flight.  To the right, you can see that the speed and power have a positive relationship.  The more power, the more speed.  But to the left, in the region of reversed command, _it takes more and more power to go slower and slower_.  
 
-In other words, the pilot has the nose so high that the thust vector is being defeated by the backwards pointing lift vector; and the plane is kind of _mushing_ through the air on raw power, barely making any headway.
+In other words, the pilot has the nose so high that the thrust vector is being defeated by the backwards pointing lift vector; and the plane is kind of _mushing_ through the air on raw power, barely making any headway.
 
 >_Can you see where I'm going with this?_
 
@@ -33,13 +33,13 @@ So what does this have to do with software?  (As if you haven't already guessed.
 
 Too many software teams operate behind the power curve _all the time_.  Rotten code is _induced drag_.  These teams have created so much induced drag that it takes a huge effort to make any forward progress.  The team mushes forward at full power, barely making any headway.   Indeed, many teams have maxed out their power and are in a slow uncontrollable descent.
 
-How does a pilot get out from behind the power curve?  By lowering the nose.  This brings the lift vector to vertical allowing the thust vector to dominate, and the plane screams off into the wild blue yonder.
+How does a pilot get out from behind the power curve?  By lowering the nose.  This brings the lift vector to vertical allowing the thrust vector to dominate, and the plane screams off into the wild blue yonder.
 
 How does a software team get out from behind the power curve?  By lowering their noses, cleaning up the messes, and reducing the induced drag.  With that drag gone, and all the power they have, the wild blue yonder is theirs to explore.
 
 Wouldn't it be great if we could invent an airspeed indicator and a stall warning horn for software teams?  Oh, yeah, we did!  It's called the velocity chart.  Good Agile teams operate in front of the power curve, because the velocity chart allows them to see their speed, and keep it in front of the inflection point.  When the velocity starts going down, good agile teams increase their refactoring to eliminate the induced drag. 
 
-Startup culture in the U.S. _believes_ in operating behind the power curve.  That's where they think they _want_ to be.  They are so focussed on fast progress, and so convinced that high quality means low speed, that they abandon discipline and principles for the sake of the goal. This is a tradgedy.  
+Startup culture in the U.S. _believes_ in operating behind the power curve.  That's where they think they _want_ to be.  They are so focussed on fast progress, and so convinced that high quality means low speed, that they abandon discipline and principles for the sake of the goal. This is a tragedy.  
 
 They start out believing that power and speed are related without paying any attention to drag.  So they haul back on the yoke, put their noses into the sky, ram the throttle forward, and then burn fuel madly while going nowhere in a hurry.  They don't understand that when you make a mess, you induce drag, and you cancel out your power.
 
