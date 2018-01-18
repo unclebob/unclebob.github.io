@@ -13,7 +13,7 @@ The parallels between double entry bookkeeping and Test Driven Development are d
  
 To put this in more concrete terms:
 
-* Accoutants enter each transaction into two different accounts.  One is a Liability account.  The other is an Asset or Equity account.  These accounts are summed on the balance sheet, and the following relationship must hold:  Assets + Equties = Liabilities. 
+* Accountants enter each transaction into two different accounts.  One is a Liability account.  The other is an Asset or Equity account.  These accounts are summed on the balance sheet, and the following relationship must hold:  Assets + Equities = Liabilities. 
 * Accountants are trained to enter transaction one at a time, checking the balance sheet after each such entry.
 * Programmers who practice TDD enter each new granule of behavior in two different programs.  One is a test program.  The other is the desired production program.  The two must execute in a complimentary fashion demonstrating that the production code works as the tests describe.
 * Programmers are trained to add one granule at a time to each program, and then to execute the tests after each such addition.
@@ -36,13 +36,13 @@ Can you imagine an accountant making excuses like these: (All taken from article
 
 * I never do double entry bookkeeping because keeping track of all those accounts takes too much time.
 * Accounts don't need to be prefect, they only need to be good enough.  Double entry bookkeeping is overkill.  
-* All these accountants who practice double entry bookkeeping are just too religious about it.  They're following an unecessary dogma.  
+* All these accountants who practice double entry bookkeeping are just too religious about it.  They're following an unnecessary dogma.  
 * Balancing the Assets and Equities with the Liabilities doesn't actually prove that the accounts are correct.  So double entry bookkeeping is too much work for too little benefit.
 * Double entry bookkeeping is a scam promoted by consultants who are just trying to make money by selling books and courses and videos.
 * Double entry bookkeeping is dead.  The guys at Andersen consulting wrote a blog about it.
 * I am against double entry because experience shows that it prevents high quality account design from emerging.
 * I thought double entry was an elaborate practical joke when I first heard of it.  It's monumentally dumb.  
-* Double entry doesn't work.  I don't care what you've heard.  I don't care how much your manager wants it.  I don't care how much the stress-spattered eyes of your coworkers gleam in their endoresement.  It. Doesn't. Work.
+* Double entry doesn't work.  I don't care what you've heard.  I don't care how much your manager wants it.  I don't care how much the stress-spattered eyes of your coworkers gleam in their endorsement.  It. Doesn't. Work.
 * Double entry promotes account design damage.
 * Not everything is accountable.
 * Double entry locks the account design.
@@ -56,7 +56,7 @@ Can you imagine an accountant making excuses like these: (All taken from article
 * What annoys me about double entry is the fact that there are a lot of rules or guidelines about it.
 * On your first double entry project there are two big losses, time and personal freedom.
 
-I could go on.  (And on.  And on.) You will find that there is no lack of silly, misinformed, and begruntled detractors.
+I could go on.  (And on.  And on.) You will find that there is no lack of silly, misinformed, and disgruntled detractors.
 
 The bottom line, for me, is simple.  TDD is a good discipline for ensuring that the complex documents, full of arcane symbols, are crafted in such a way so as to avoid significant negative consequences.  I know of no other discipline that comes close.
 
