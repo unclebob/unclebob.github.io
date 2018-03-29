@@ -5,12 +5,12 @@ tags: ["Software"]
 ---
 ## A Bit of History about Bits.
 
-Memory was always the problem.  Once we had established that we could _process_ information with relays, or vaccuum tubes, or transistors; the problem was where to keep the information we were processing.
+Memory was always the problem.  Once we had established that we could _process_ information with relays, or vacuum tubes, or transistors; the problem was where to keep the information we were processing.
 
 <img src="/assets/Dbtails/core.jpg" width="300" align="right">
-Random Access Memory (RAM) within the computer was tricky during those days.  By the time I became a programmer, in 1968, the move to _core_ memory was pretty well established.  But in the years just before that there were many different schemes, including accoustic waves through tubes of mercury, or magnetic drums, or even using electron beams to store charge on the surface of a Cathode Ray Tube.
+Random Access Memory (RAM) within the computer was tricky during those days.  By the time I became a programmer, in 1968, the move to _core_ memory was pretty well established.  But in the years just before that there were many different schemes, including acoustic waves through tubes of mercury, or magnetic drums, or even using electron beams to store charge on the surface of a Cathode Ray Tube.
 
-Indeed, one of the early programmable calculators that I used in High School, [the Olivetti-Underwood Programma 101](https://en.wikipedia.org/wiki/Programma_101), stored its information in accoustic waves travelling down steel wires.
+Indeed, one of the early programmable calculators that I used in High School, [the Olivetti-Underwood Programma 101](https://en.wikipedia.org/wiki/Programma_101), stored its information in acoustic waves travelling down steel wires.
 
 ### Paper with Holes.
 <img src="/assets/Dbtails/punched_card_file.jpg" width="300" align="right">
@@ -39,7 +39,7 @@ Programmers could format the disk any way they liked.  They could decide that th
 Of course that fixed formal arrangement meant that the disks were specific to a particular application.  When it was time to run the Bill of Materials application, the computer operators would load the Bill of Materials disks into the disk drives. Those disks were formatted just for that Bill of Materials application.
 
 ### File Systems.
-As time went on we realized that we wanted to use the disks in a different way.  We wanted easy access to the capacity and random access that disks afforded without imposing a fixed formal arragnement to our data.  So we invented file systems.  In general, files systems required that we format the disks in a uniform way.  Every track was formatted to hold a relatively small number of records (called sectors).  All tracks were formatted identically.  We invented direcrories, and indexes, and files, and all of the trappings that we have become so used to in our daily work.
+As time went on we realized that we wanted to use the disks in a different way.  We wanted easy access to the capacity and random access that disks afforded without imposing a fixed formal arrangement to our data.  So we invented file systems.  In general, files systems required that we format the disks in a uniform way.  Every track was formatted to hold a relatively small number of records (called sectors).  All tracks were formatted identically.  We invented directories, and indexes, and files, and all of the trappings that we have become so used to in our daily work.
 
 File systems allowed us to view the memory on disk as named arrays of bytes.  They imposed no fixed formal arrangement of the data.  Rather, we could have any number of directories, containing any number of files, containing any number of bytes. The actual structure of the disk itself was invisible to this view.  It did not matter to us which cylinder, head, and record we were accessing.  We simply created, wrote, read, and deleted individual files.  The structure of the disk had been entirely abstracted away and decoupled from the structure of the data.
 
@@ -69,7 +69,7 @@ Relational databases (which often ride on top of file systems nowadays) provided
 
 What does SSD change?  What physical limitation can be abstracted away because of this change?
 
-Well, the one big thing that has changed is _time_.  Accessing SSD is _fast_.  There is no rotaional latency.  There is no seek time.  The time to access a byte in SSD is the same regardless of where that byte is.  
+Well, the one big thing that has changed is _time_.  Accessing SSD is _fast_.  There is no rotational latency.  There is no seek time.  The time to access a byte in SSD is the same regardless of where that byte is.  
 
 So what does this mean for us?  
 
