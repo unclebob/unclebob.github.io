@@ -1,0 +1,102 @@
+---
+layout: post
+title: FP vs. OO
+tags: ["Software"]
+---
+Over the last several years I have paired with people learning Functional Programming who have expressed an anti-OO bias.  This usually comes in the form of statements like: "Oh, that's too much like an Object."
+
+I think this comes from the notion that FP and OO are somehow mutually exclusive.  Many folks seem to think that a program is functional to the extent that it is _not_ object oriented.  I presume this opinion comes as a natural consequence of learning something new.  
+
+When we take on a new technique, we often tend to eschew the old techniques we used before.  This is natural because we believe the new technique to be "better" and therefore the old technique must be "worse".  
+
+In this blog I will make the case that while OO and FP are _orthogonal_, they are not mutually exclusive.  That a good functional program can (and should) be object oriented.  And that a good object oriented program can (and should) be functional.  But to accomplish this goal we are going to have to define our terms very carefully.  
+
+### What is OO?
+
+I am going to take a very reductionist stance here.  There are many valid definitions of OO that cover a rich set of concepts, principles, techniques, patterns, and philosophies.  I am going to ignore all of that here and focus on nuts and bolts.  The reason for this reductionism is that all the richness surrounding OO is actually not specific to OO at all; but is part of the richness of software development overall.  Here, I will focus on that part of OO that is definitive and inextricable.
+
+Consider these two expressions:  
+
+> 1: `f(o);` <br/>2: `o.f();` 
+
+What is the difference?   
+
+Clearly there is no actual semantic difference.  The difference is entirely in the syntax.  But one looks procedural and the other looks object oriented.  This is because we have come to infer a special semantic behavior for expression 2. that we do not infer for expression 1.  The special semantic behavior is: polymorphism.
+
+When we see expression 1. we see a function named `f` being called upon an object named `o`.  We infer that there is only one such function named `f`, and that it may not be a member of the standard cohort of functions, if any, that surrounds `o`. 
+
+On the other hand, when we see expression 2. we see an object named `o` being sent the message named `f`.  We expect that there may be other kinds of objects that can accept the message `f` and that therefore we do not know which particular `f` behavior is actually being invoked.  _The behavior is dependent upon the type of `o`._  i.e. `f` is polymorphic.
+
+This expectation of polymorphism is the essence of OO programming.  It is the reductionist definition; and it is inextricable from OO.  OO without polymorphism is not OO.  All of the other attributes of OO, such as encapsulated data, and methods bound to that data, and even inheritance, are more related to expression 1. than to expression 2.
+
+C and Pascal programmers (and to some extend even Fortran, and Cobol programmers) have always created systems of encapsulated functions and data structures.  It does not require an OOPL to create and use such encapsulated structures.  Encapsulation, and even simple inheritance, is obvious and natural in such languages. (More natural in C and Pascal than the others.)
+
+So the thing that truly differentiates OO programs from non-OO programs is polymorphism.  
+
+You might complain about this by saying that polymorphism can be achieved by using switch statements or long if/else chains within `f`.  This is true, so I must add one more constraint to OO.
+
+> _The mechanism of polymorphism must not create a source code dependency from the caller to the callee._
+
+To explain this, look again at the two expressions.  Expression 1: `f(o)`, seems to have a source code dependency upon the function `f`.  We infer this because we also infer that there is only one `f` and so the caller must know the callee.
+
+However, when we look at Expression 2. `o.f()` we infer something different.  We know that there may be many implementations of `f`, and we don't know which of those `f` functions is really going to be called.   Therefore the source code containing Expression 2 does _not_ have a source code dependency upon the function being called.  
+
+In concrete terms this means that modules (source files) that contain polymorphic calls to functions must not reference, in any way, modules (source files) that contain the implementations of those functions.  There can be no `include` or `use` or `require` or any other such declaration that causes one source file to depend upon another.
+
+So our reductive definition of OO is:
+
+>_The technique of using dynamic polymorphism to call functions without the source code of the caller depending upon the source code of the callee._
+
+### What is FP?
+
+Again, I am going to be very reductive.  FP has a rich history and tradition that goes back well beyond software.  There are principles, techniques, theorems, philosophies, and concepts that pervade the paradigm.  I am going to ignore all of that and drive straight to the bottom, inextricable attribute that separates FP from any other style.  And it is, simply, this:
+
+>_`f(a) == f(b)` when `a == b`._
+
+In a functional program, every time you call a particular function with a particular value, you will get the same result; no matter how long the program has been executing. This is sometimes called _referential transparency_.  
+
+The implication of this is that function `f` must not change any global state that affects the way function `f` behaves.  What's more, if we say that function `f` represents all functions in the system -- that all functions in the system must be referentially transparent -- then no function in the system can change any global state at all.  No function in the system can do anything that will cause another function in the system to return a different value from the same inputs.
+
+The deeper implication of this is that no named value can ever be changed.  That is, _there can be no assignment operator_.  
+
+Now if you think about this very carefully you might come to the conclusion that a program composed of nothing but referentially transparent functions can do nothing at all -- since any useful system behavior changes the state of _something_; even if it is just the state of the printer or display. However, if we exclude the hardware, and any elements of the outside world, from our referential transparency constraint, then it turns out that we can create very useful systems indeed.
+
+The trick, of course, is recursion.  Consider a function that takes a `state` data structure as its argument.  This argument contains all the state information that the function uses for its work.  When the work is done the function creates a new `state` data structure  with updated values.  As its last act, the function calls itself with the new `state` structure.
+
+This is just one of the simple tricks that a functional program can use to track changes in internal state without appearing to actually change any internal state[1].
+
+So, the reductive definition of functional programming is:
+
+>_Referential Transparency -- no reassignment of values._
+
+### FP vs OO
+
+By how I have both the OO and the FP communities gunning for me.  Reductionism is not a good way to win friends.  But it is sometimes useful.  In this case, I think it is useful to shine some light on the FP vs OO meme that seems to be circulating.
+
+It seems clear that the two reductive definitions I have chosen are completely orthogonal.  Polymorphism and Referential Transparency have nothing, whatever, to do with each other.  There is no intersection between them.  
+
+But orthogonality does not imply mutual exclusion (just ask James Clerk Maxwell).  It is perfectly possible to build a system that employs both dynamic polymorphism _and_ referential transparency.  Not only is it possible, it is _desirable_!
+
+Why is it desirable?  For precisely the same reasons that the two aspects are desirable alone!  We desire systems built with dynamic polymorphism because they are strongly decoupled.  Dependencies can be inverted across architectural boundaries.  They are testable using Mocks and Fakes and other kinds of Test Doubles. Modules can be modified without forcing changes to other modules. This makes such systems much easier to change and improve.
+
+We also desire systems that are built with referential transparency because they are predictable.  The inability to change internal state makes systems much easier to understand, to change, and to improve.  It drastically reduces the chances of race conditions and other concurrent update problems.
+
+The bottom line is:
+
+>_There is no FP vs OO._
+
+FP and OO work nicely together.  Both attributes are desirable as part of modern systems.  A system that is built on both OO and FP principles will maximize flexibility, maintainability, testability, simplicity, and robustness.  Excluding one in favor of the other can only weaken the structure of a system.
+
+----
+[1] Since we are using machines with Von Neumann architectures, we must assume that there are memory cells that actually are changing state.  In the recursive mechanism I described; tail call optimization will prevent new stack frames from being created, and will reuse the original stack frame instead.  But this violation of referential transparency is (usually) entirely hidden and irrelevant.
+
+ 
+
+   
+
+
+
+
+
+
+
