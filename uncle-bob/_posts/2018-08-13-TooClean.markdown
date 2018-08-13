@@ -1,0 +1,37 @@
+---
+layout: post
+title: Too Clean?
+tags: ["Software"]
+---
+I just watched [Sarah Mei's](https://twitter.com/sarahmei) talk: [_Livable Code_](https://www.youtube.com/watch?v=8_UoDmJi7U8).  It was very good.  I strongly agreed with the major points of her talk.  On the other hand the theme of her talk was something I hadn't properly considered before.
+
+But before I get to that, I have a quibble.  At one point in the talk she criticized the [craftsmanship movement](http://manifesto.softwarecraftsmanship.org/) for being too focussed on individual, and not team, behavior.  This is an unfortunate mischaracterization of the craftsmanship movement which has _always_ been focussed on building professional and ethical teams.
+
+With that quibble out of the way the notion that software systems need to be "[livable](https://twitter.com/livablecode)" is an interesting insight.  According to Mei, in order to be "livable", the organization of a software system should lie somewhere between the extremes of the horrific tangled mess of [code hoarders](https://blog.cleancoder.com/uncle-bob/2014/04/03/Code-Hoarders.html), and the antiseptic cleanliness seen in the pages of interior decorating magazines and home sales brochures. 
+
+This is not something I had considered or expressed before; though it has always been something I've sheepishly practiced.  
+
+Can a system be too clean?  Is it possible to focus so much on cleanliness that no one can practically work in the system? 
+
+Here is a picture of my office, taken today.  What do you see?
+
+<img src="/assets/myoffice.jpg"/>
+
+It's relatively clean.  There is an obvious organization to it.  You can see my workstation, with the laptop and two screens in the center.  You can also see my flight simulator station to the right.  There are baskets and cubby holes, and all the normal organizational paraphernalia.  
+
+But there's also a bit of mess laying around.  Next to the printer on the far left there is a [BUG-A-SALT](https://www.bugasalt.com/) positioned at the ready in order to deal with an invading fly.  To the right, atop the Tardis peeking over the rightmost screen, is a roll of toilet paper.  It's there in case I spill my coffee or need to sneeze.  Can you find the fidget spinner?  Do you see the pile of drawing utensils to the left?  What about all those post-its and pictures and...  And what in the world is inside all those cubby holes?
+
+The cleanliness and organization of the office makes it useable.  I know where things are.  I know how to access them.  Unrelated elements do not interfere with each other.  There are no unnecessary dependencies.
+
+The slight messiness of the office is _convenient_.  The mess is there because of transient issues.  Flies, coffee, sneezes, doodles, idle moments, changing work priorities, and just general places to put stuff I don't know what to do with.  Without that mess, the office would be harder for me to use.  The _act of using_ the office would reintroduce the mess!
+
+So, clearly, I allow a bit of mess to creep into my office.  The mess provides affordances for transient issues.  But, just as clearly, I fight to keep that mess in check.  I fight to keep the office clean.  And that's not easy!  
+
+Does this rule apply to code?  _It absolutely does!_  When I write code I fight very hard to keep it clean.  But there are also little places where I break the rules specifically because those breakages create affordances for transient issues. 
+
+For example, I am a real stickler about separating presenters from views.  The code that puts the data into presentable form should not reside with the code that puts that data on the screen.  On the other hand, when you are trying to get a screen to look and function properly, it is a pain to be hopping back and forth between two different files.  Sometimes it just makes sense to merge the code back together, get everything working the way you like, and then re-separate the code again.  This technique is known as [Worse is Better](https://www.facebook.com/notes/kent-beck/when-worse-is-better-incrementally-escaping-local-maxima/498576730175196/).
+
+Anyway I think there is value in the notion that code should be livable.  We should not be ashamed if our code looks a little bit _lived in_.  On the other hand, we need to be diligent about cleaning up after ourselves; and not let the mess spin out of control.  
+
+
+
