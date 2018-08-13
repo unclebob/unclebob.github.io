@@ -15,7 +15,7 @@ Can a system be too clean?  Is it possible to focus so much on cleanliness that 
 
 Here is a picture of my office, taken today.  What do you see?
 
-<img src="/assets/myoffice.jpg"/>
+<img src="/assets/myoffice.JPG"/>
 
 It's relatively clean.  There is an obvious organization to it.  You can see my workstation, with the laptop and two screens in the center.  You can also see my flight simulator station to the right.  There are baskets and cubby holes, and all the normal organizational paraphernalia.  
 
