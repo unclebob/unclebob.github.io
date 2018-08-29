@@ -7,11 +7,11 @@ tags: ["Software"]
 
 Yes.  I just read a [transcript](https://martinfowler.com/articles/agile-aus-2018.html) of Martin Fowler's keynote at Agile Australia, 2018.  He called it _The State of Agile in 2018_.  
 
->_Ah, yes, a great talk.  
- * Beware the Agile-Industrial-Complex.  
- * Maintain Technical Excellence.  
- * Products over Projects.  
- Great stuff!  So what bothers you?_
+>_Ah, yes, a great talk._  
+ * _Beware the Agile-Industrial-Complex._  
+ * _Maintain Technical Excellence._  
+ * _Products over Projects._  
+ _Great stuff!  So what bothers you?_
 
 In that talk he said that the formation of the Software Craftsmanship movement was tragic.
 
