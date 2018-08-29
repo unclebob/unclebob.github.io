@@ -47,7 +47,7 @@ Left behind?  Left behind to do what?
 
 >_To promote conferences, certifications, and fancy new project management strategies._
 
-Shouldn't there be certifications for Craftsmanship?
+What's wrong with certifications?
 
 >_Let me put it this way: Anyone who suggested a two-day course to certify Craftsmanship would be laughed out of the room, laughed out of the town, and laughed out of the state.  The very idea is absurd._
 
