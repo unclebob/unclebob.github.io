@@ -1,0 +1,50 @@
+---
+layout: post
+title: SJWJS
+tags: ["Software"]
+---
+Remember when the software SJWs told us that "Software Craftsmanship" was exclusionary to women because it was clearly male?  At first we shrugged off the complaint as coming from silly people who were being offended by silly things. But the complaints continued and we began to listen. Oh, not right away, and not with any enthusiasm; but we listened. 
+
+As we listened we began to see that, perhaps, they had a point. We realized that it was just possible that some people might feel somewhat excluded by the three letters: `m`, `a`, and `n` in "Software Craftsmanship". And so, in the interest of being polite, in the interest of not wanting to exclude anyone, we shifted our language a little. We started saying "Craftspeople" and "Craftsfolk", and "Crafters", and other variations that might soften the blow to those who felt excluded.
+
+Then, sometime later, the software SJWs told us:  "_all the Agile/XP stuff (like pairing, TDD, etc) doesn't seem to work for a heterogenous team_" because: the Agile Manifesto was "_developed by a bunch of white dudes_".  In other words:
+
+ * __The Agile revolution is yet another manifestation of the White Patriarchy imposing their power upon the intersectionally oppressed.__
+
+<img src="/assets/groucho.jpg/" align="left" width="120">
+
+Now most of us thought, and continue to think, that this was an absurd idea. I mean if the race and gender of the authors was the sole determinant of effectiveness, then one would have to condemn the Declaration of Independence, and The Magna Carta, the works of Shakespear, and _The Cat in the Hat_ as being ineffective for the same reason.  So, despite the fact that there were a few folks who considered themselves _woke_ enough to applaud and salute, it was clear to most of us that this was a truly dumb idea.
+
+Perhaps we should have realized, then and there, that the software SJWs were heading over a cliff in their aimless pursuit of: _something to be outraged about_.  Perhaps, then and there, we should have realized that the true goal of the software SJWs was outrage -- _for the sake of outrage_ -- and was no longer, truly, social justice.  But the issue kind of boiled down and we shook it off as an anomaly and kept on coding.
+
+So, yesterday, in order to dispell any doubt about just how irrelevant the software SJWs have become, they declared that _Domain Driven Design_ was exclusionary and offensive because DDD is -- wait for it -- wait for it -- 
+
+<img src="/assets/facepalm.jpg/" align="left" width="200">
+-- _a bra size_.  
+
+No, I'm not joking.  The case that Eric Evan's masterpiece: [_Domain Driven Design_](https://www.amazon.com/Domain-Driven-Design-Tackling-Complexity-Software/dp/0321125215) is responsible for the unmitigated heartache and torture of vast quantities of desperate souls was made, yesterday, by an acclaimed leader of the Software SJWs.  
+
+So now, we are told, for the sake of those intersectionally oppressed folks, we must ban the acronym DDD. But wait!  What about the letter `B` -- with it's obvious breasts -- should that be banned as well?  And what about men with Erectile Dysfunction?  Should they be offended by the letter `R`?  And don't get me started on the letter `Y`!
+
+---
+
+Have we had enough now?  Do we need any more evidence that these misguided warriors have abandoned their cause?  Perhaps, when they started, their goals were laudable.  Perhaps they really wanted to help folks who were disadvantaged in some way.  But now I think it's pretty clear that:
+
+>### The software Social Justice Warriors have Jumped the Shark. 
+ 
+ #SJWJS
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
