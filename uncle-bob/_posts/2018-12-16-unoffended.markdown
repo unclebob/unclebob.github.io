@@ -27,4 +27,4 @@ We, _The Unoffended_:
 
 * Believe that ideas are not harmful, so long as they do not specifically incite harmful actions.
 
-* Are not offended by careful actions that cause inadervtent harm.
+* Are not offended by careful actions that cause inadvertent harm.
