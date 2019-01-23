@@ -29,7 +29,7 @@ So that's A8X, C, Lua, PDP8, and FOCAL. That's five different languages.  Five d
 
 What's up with that?  Why so many languages? In fact, forget the iPad, the PDP-8, C, Lua, and the rest.  Why are there so many languages?
 
-##Why are there so many languages?
+## Why are there so many languages?
 
 Think about it!  How many computer languages can you name?  Here, off the top of my head, let me give you a partial list:
 
