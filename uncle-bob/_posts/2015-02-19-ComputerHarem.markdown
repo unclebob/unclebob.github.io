@@ -44,7 +44,7 @@ And it is that _certainty_ that shall be the topic of the rest of this blog.
 
 Go read Judy Allen's story at the link Tom shared above.  Read three or four of her short chapters, perhaps as far as "The Perkin's Pub Protest".  It won't take you long.  You'll know when you can return here.  But I warn you, you won't want to stop; and you'll almost certainly later return to her fascinating, and inspiring story.
 
-###Whoa!
+### Whoa!
 
 OK, pardon my language, but there's no other way to say this.  
 
@@ -56,14 +56,14 @@ No, this was no ordinary woman.  Judy Allen was a force to be reckoned with.
 
 But lest you think she was unique, lest you think she was a fluke, let me tell you about my early career.
 
-##Almost 50-50
+## Almost 50-50
 I got my first job as a programmer in 1970 when I was 18 years old.  I was hired to help write a large on-line time-sharing union accounting system on a Varian 620i minicomputer.  This was a 16 bit machine with 32K x 16 of Core, and two 16 bit registers.  Our team consisted of three teenage boys, two men, and three women.  That was a pretty typical ratio of men to women in this company.  Just under half the programmers were women who were writing COBOL, BAL, PL/1, and minicomputer assembler.  
 
 After that time, I watched the ratio of women to men in software plunge.  By 1972 I was working for a large company, and the ratio had already dropped to less than 10%.  By 1977 the ratio was virtually zero.  The women had simply disappeared.
 
 Ironically, in the '60s it was _common_ for women to be programmers.  Indeed, in the early '60s there could very well have been more female programmers than male programmers.  And the reason for this was simple: To some extent programming was considered to be _Women's Work_.
 
-##Women's Work
+## Women's Work
 Men were engineers.  They conceived of machines and built them with their hands.  They wielded the creative energies.  The drudgery of tabulating and calculating was left to women.
 
 This is a tradition that goes all the way back to Charles Babbage, and probably beyond.  [Ada Lovelace](http://en.wikipedia.org/wiki/Ada_Lovelace#First_computer_program) had been commissioned to translate into English, the lecture notes written in French by an Italian student of Babbage's.  A drudgery if there ever was one.  And yet, in so doing, she conceived of and documented the notion of programming Babbage's machine with algorithms that could deal with non-mathematical topics.  She may have been the first person to realize that a computer manipulates symbols, not numbers.  She may have been the first person to understand what that implies.
@@ -76,20 +76,20 @@ The women were not allowed to touch the telescopes.  That was _Man's Work_.  But
 
 Those "computers" did fantastic work.  It was the deeply insightful work of Women like Annie Jump Cannon, and Henrietta Levitt, that allowed us to understand and measure nothing less than the scale and composition of the universe. 
 
-##Bletchley Park
+## Bletchley Park
 The tradition continued through the early part of the twentieth century, and into the '30s.  At Bletchley Park, where Alan Turing and his team were breaking the German Enigma ciphers, there were perhaps 10,000 people; two thirds of whom were women. [Teams of these women](https://www.google.com/culturalinstitute/u/0/exhibit/the-women-of-bletchley-park/QQZ2YSRa?hl=en&position=0%2C6) were gathered together to do the vital, but painstaking, work of listening, gathering, and collating the German messages.  They learned to operate and "program" the machines that Turing and his team had built.
 
 <table><tr><td><img src="/assets/bletchleywomen.jpg"/>
 <img src="/assets/bletchley_park.jpg"/></td></tr><tr><td>The Women of Bletchley Park</td></tr></table> 
 
-##Grace Hopper
+## Grace Hopper
 After the second World War, this role for women continued.  [Grace Hopper](http://en.wikipedia.org/wiki/Grace_Hopper#World_War_II), for example, worked in the Navy programming the Mark I computer.  Later she was hired by EMCC to work on the software for the UNIVAC.  In 1952 she conceived of, and wrote, the very first compiler, _and coined the term_.  She was the first Director of Automatic Programming at Remington Rand, and was the visionary behind the development of COBOL.  
 
 <table><tr><td><img src="/assets/Grace_Hopper_and_UNIVAC.jpg"></td></tr><tr><td>Grace Murray Hopper at the UNIVAC keyboard, c. 1960 (Uploaded by Jan Arkesteijn)</td></tr></table>
 
 There were other women in software in those days.  And all these women did fantastic, ground-breaking, work.  And yet it was _Women's Work_.  It was considered appropriate that Women should deal with the drudgery of programming.  _Men_ built the _machines_!  
 
-##The Revelation of Symbols.
+## The Revelation of Symbols.
 When did it change?  When did programming become _Man's_ work?  When did Men invade this traditional role for Women, and drive drive the women out?  
 
 I think there's a clue in one of Grace Hopper's statements.  She had developed the very first compiler but she later said: 
@@ -113,7 +113,7 @@ Power.
 
 Power has a gender, and that gender is _Male_.
 
-###Judy?
+### Judy?
 
 That's when it shifted.  At least that's my hypothesis.  In the late '60s, and early '70s the popular culture began to see computers as more than just calculators. On Star Trek, Captan Kirk could _talk_ to the computer.  In _2001: a Space Odyssey_, a computer was simultaneously sympathetic and malevolent.  As a society we were beginning to see that computers had capabilities that were almost boundless.  And it was becoming clear that it was the software, more than the hardware, from which those boundless possibilities arose.  
 

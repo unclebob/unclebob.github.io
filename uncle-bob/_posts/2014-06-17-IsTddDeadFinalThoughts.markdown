@@ -9,12 +9,12 @@ Seldom has a keynote talk created such a big splash.  I don't ever recall a keyn
 
 The conclusion of the hangout was amicable, respectful, and agreeable.  Martin's and Kent's position was that TDD worked for them in many circumstances; but not all.  David's position was that TDD worked for him in fewer circumstances but still some.  If there was a disagreement, it was simply a matter of degree.  All parties agreed that programmers should try TDD and then tune their use of it to what works _for them_.
 
-###Individuals.
+### Individuals.
 Those last two words: "_for them_", suggest that Martin, Kent, and David were thinking of TDD as an _individual_ practice that some individuals may find more useful than others.  Indeed, the notion of _individual_ was prominent throughout all the episodes.  It seems pretty clear that David, Kent, and Martin tend to work individually on software and not as part of long term teams.  At no point in the hangouts did any of them talk for long about TDD in the context of a _team_.
 
 To be fair, I'm sure that all three of them have worked on teams before.  I'm sure they all _interact_ with teams now.  Still, the fact that teams were barely mentioned in the episodes is striking.  The overriding message of the hangouts was that programmers should do what is right in their own eyes _as individuals_; with nary a word about how they should behave in teams.
 
-###Teams.
+### Teams.
 Yet most software is built by teams.  Well functioning teams are essential if large software projects are to be successful.  Indeed, one of the founding goals of the Agile movement is to enable the creation of high-functioning teams.  And high-functioning teams must have a shared set of values.
 
 Teams that don't enjoy a shared set of values are unstable.  If each member of the team does what is right in their own eyes, without considering the values of the team; then they don't actually comprise a team.  Instead they will behave chaotically, and work at cross purposes to each other.

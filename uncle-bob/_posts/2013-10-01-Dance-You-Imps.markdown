@@ -59,7 +59,7 @@ What is a data structure?  It's a bunch of public data with no methods.  Compare
 
 I could get into a whole theoretical lecture on the nature of data structures and objects, and polymorphism, and switch statements, and...   But I won't.  Because the point of this article is simply to demonstrate that ORMs aren't ORMs.
 
-###What are ORMs?
+### What are ORMs?
 
 ORMs are data structure migrators.  That's all.  They move data from one place to another while making non-semantic changes to the form of that data.  They do _NOT_ create objects out of relational tables.
 
@@ -75,7 +75,7 @@ Now think about your application.  Think about the way it behaves.  Group simila
 
 _Tables are not business objects!_  Tables aren't objects at all.  Tables are just data structures that the true business objects use as a resource.
 
-###Moral
+### Moral
 
 So, designers, feel free to use ORMs to bring data structures from the disk (the disk?  You still using one?) into memory.  But please don't think of those data structures as your business objects.  What's more, please design your business objects without consideration for the relational schema.  Design your applications to _behave_ first.  _Then_ figure out a way to bind those behaviors to the data brought into memory by your ORM.
 

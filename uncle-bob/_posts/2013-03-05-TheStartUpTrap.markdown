@@ -12,7 +12,7 @@ tags: ["Craftsmanship", "Testing"]
 * **You** are _so_ good that the rules don't apply to **you**.
 * **You** are _fucked_.
 
-###The Start-Up Trap.
+### The Start-Up Trap.
 It's a sad story that we've seen over and over again.  A young programmer begins with all the best intensions, learns all the right disciplines, develops all the right skills, and then falls prey to _The Start-Up Trap_.   The Start-Up Trap is the idea that _your_ situation is different -- that everything you've learned about how to do software well somehow doesn't apply to _this_ particular job.  You think it will apply later, once you've succeeded.  But not now.  Not yet.  Not while you are in a race to succeed.  
 
 The Start-Up trap is the thought that the start-up phase is _different_; and that while you are in that phase success depends upon _breaking_ the rules.  This is _stupid_.  The start-up phase is _not_ different.  The start-up phase is simply the first of many phases, and it sets the tone for all those other phases.  Come back to that company in five years and (if they've managed to survive) they'll still have the same attitude towards the rules that they had in the first phase -- except, perhaps, for the overtime. (giggle).  

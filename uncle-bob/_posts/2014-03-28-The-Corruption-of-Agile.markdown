@@ -17,7 +17,7 @@ You know the culture you are in by observing the practices of the people around 
 
 _You can't have a culture without practices; and the practices you follow identify your culture._
 
-###Example
+### Example
 As an example of this I was once a member of a Jiu Jistsu dojo: _Hakko Ryu, the School of the Eight Light_.  We adhered to the practice that, upon entering or leaving the dojo, we would bow to the dojo.  This was an expression of respect for the place in which we learned, and for the knowledge and skills that we gained.  If a new student joined, they would quickly observe and emuluate this practice.  No one had to tell them to do it.  The practice was contagious.
 
 One day, our Sensei proposed a new practice.  If you were late to class, instead of simply bowing, you would also drop down and do 10 pushups.  He asked us if we would accept this new practice.  This created an immediate schism.  The younger folks were all in favor of this new practice because it was an expression of respect for the value of punctuality and also respect for those students who were on time.  Others of us were opposed because this new practice represented a disrespect for those of us who had complex schedules that made regular punctuality impractical.  We valued our professions and our marriages above the dojo and did not want that value punished.
@@ -32,7 +32,7 @@ This is an example of how deeply entangled practices are with values and with cu
 
 Despite Binstock's assertion, if you find yourself in a team who practice continuous integration, short iterations, pair programming, and test driven development, _it is a powerful indication you are in a team who shares the values of the agile manifesto_.  If they did not share those values, they would not follow those practices. 
 
-###Ritualism
+### Ritualism
 Of course it's possible for a team to be so entrenched in practice that, over time, they forget the values expressed by those practices.  This is a common failing of bureaucracies and religions.  They become so strongly defined by their practices, that the practices become rituals, the original values are forgotten, and the rituals _become_ the values. 
 
 The fear of ritualism is appropriate.  In 1999, when Kent Beck and I decided to put our energies into the promotion of Extreme Programming, we feared that we could be starting a religion instead of a movement, and vowed to fight ritualism when it arose.  This concern and vow was expressed again in the 2001 meeting that produced the Agile Manifesto.   
@@ -43,7 +43,7 @@ Perhaps it was the fear of ritualism that motivated Holub and Binstock to sugges
 
 In any case, if you separate the practices from a culture, as Holub and Binstock suggest, then you corrupt the culture.  You simply cannot have a culture devoid of practice.
 
-###TDD
+### TDD
 I raised the specter of TDD because Binstock railed against it rather loudly in his blog.  For example:
 >"It will pain some readers to know that the vast, error-free Internet predates Agile and even predates TDD. Crazy, right?"
 
@@ -54,7 +54,7 @@ These rather snide complaints are disappointing.  Is a practice like TDD, or the
 
 Of course good software was built before TDD.  Good software is being built _today_ without TDD.  _So What?_ Those facts imply nothing at all about the effectiveness of TDD.  After all, many doctors saved lives before the practice of sterile procedure, and many accountants managed to keep reasonable accounts before the practice of double entry bookkeeping.  _So what?_  Past success does not imply the ineffectiveness of new practices; nor does past success imply that the enthusiasm for new practices is inappropriate.
 
-###The Tension of Adoption
+### The Tension of Adoption
 I understand why people might look at new practices with skepticism.  The enthusiastic adoption of a new practice by one group creates tension with others who do not adopt the practice.  The adopters can make the non-adopters feel slighted and invalidated; as if everything they had ever done in the past was wrong.  The adopters, in their enthusiasm, may claim that adoption is a new requirement of professionalism.  The non-adopters may claim that the adopters are fanatics who are detached from reality and ignorant of the past.  
 
 Certainly this happened with sterile procedure in medicine.  The adopters were derided and dismissed by the medical establishment for sixty years before the adopters eventually outnumbered the non-adopters.  Doctors at the time did not like to think that they were _causing_ disease by failing to wash their hands.  They also expressed their concern about the time such washing procedures would require.  Then, as now, doctors were busy people.  Hand-washing rituals would reduce the number of patients that could be treated.
@@ -65,7 +65,7 @@ Nowadays these practices are ingrained in the cultures of medicine and accountin
 
 The new practices won out over the old ones because the population of those who did not wish to change their practices gradually declined while the population of those who were enthusiastic about the new practices grew. The new practices expressed a _shift_ in the values of the cultures that adopted them.  Those practices cannot nowadays be separated from those shifted cultures.
 
-###The True Corruption of Agile
+### The True Corruption of Agile
 The biggest problem I have seen within the Agile movement is the _elimination of the practices_.  One by one, over the years, the practices have been de-emphasized, or even stripped away.  This loss of practice has diluted and changed the Agile culture into something that I don't recognize as Agile any more.  It has been a shift away from excellence towards mediocrity, away from hard realities, towards feel-good platitudes. 
 
 It began with the notion that anyone could become a "master" of anything by sitting in a two day class and getting a piece of paper.  Soon to follow was the dilution and eventual loss of the technical practices. This prompted Martin Fowler to publish his classic and definitive blog: [Flaccid Scrum](http://martinfowler.com/bliki/FlaccidScrum.html).  Then came the emphasis of project management over craftsmanship and the rise of the soft skills (attitudes) over the hard skills (practices).  
