@@ -88,7 +88,7 @@ I thought that perhaps there was something wrong with their noses. After all, if
 Let's just walk through that previous code step by step and really *smell* it!
 
 1.  We start out by initializing ltsCode to null. Fine.
-2.  Then we encounter a double negative (if not null/empty) and an indirection (item.ParentItemNo). We need a comment to understand it. Apparently if the ParentItemNo of the item is null or empty then it means that the item has no parent. If we negate that, then the if statement is trying to say "if this is a child" The comment tries to point this out, but the grammar is bad. It would be nicer if the if statement were if(isChild(item)) or if (item.isChild()).
+2.  Then we encounter a double negative (if not null/empty) and an indirection (item.ParentItemNo). We need a comment to understand it. Apparently if the ParentItemNo of the item is null or empty then it means that the item has no parent. If we negate that, then the if statement is trying to say "if this is a child". The comment tries to point this out, but the grammar is bad. It would be nicer if the if statement were if(isChild(item)) or if (item.isChild()).
 3.  In the body of the if statement we are a child, so we set the ltsCode to PzT.
 4.  Ignore commented out code.
 5.  Set the var isNfoOrDisc to an interesting expression. Oddly, I can't see any place where that variable is used. It *used* to be used, in the commented out code, so maybe someone just forgot to comment out that var too, eh?
