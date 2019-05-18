@@ -1,0 +1,90 @@
+---
+layout: post
+title: 737 Max 8
+tags: ["Software"]
+---
+>_The software within the two doomed 737 Max 8 aircraft physically wrested control away from the pilots and plunged those aircraft into the Earth at speeds approaching Mach 1, killing everyone aboard._
+
+As a pilot, and a software engineer, I have dug pretty deeply into this issue.  I've read many of the reports, and have read or listened to the opinions and commentary offered by others.  Nothing I have read or heard contradicts the statement above.  I believe that statement to be an essential fact.  The software executing within those planes killed everyone aboard.
+
+### No Ill Intent
+
+Before I go any farther I need to make something clear.  _No one had ill intent._  I've read silly statements like: "Boeing put profits above safety."  Such statements are absurd and naive. Everyone at Boeing was well aware that the continued existence of their company, let alone their profits, depended upon their safety record.  Indeed, Boeing now faces the prospect that it may not survive this catastrophe. So it is ridiculous to think that anyone at Boeing carelessly rolled the dice over safety.
+
+On the other hand, it's very clear that a cascade of many critical errors was made. In hindsight those errors seem painfully obvious.
+
+But we've seen errors like this before.  
+
+* On January 27th, 1967, engineers and technicians at NASA locked Gus Grissom, Ed White, and Roger Chaffee into the electrically active Apollo One capsule and pumped it full of _pure Oxygen_ to a pressure of _twenty pounds per square inch_.  In hindsight, the error was breathtakingly obvious.
+
+* On January 28th, 1986, managers at NASA overrode the objections of the engineers and launched the Challenger Space Shuttle even though the temperature overnight had been well below the redline minimum temperature for the solid rocket boosters.  In hindsight, the error was horrifyingly, almost criminally, obvious. 
+
+Nobody at NASA wanted these disasters to happen.  No one acted with ill intent.  Nobody thought they were rolling the dice over safety.  They just screwed up.  Big time.  And people died.
+
+I'm not trying to exonerate anyone.  The mistakes were fatal.  Those who made the mistakes must bear the responsibility for them.  
+
+However, it is important to understand that nobody purposely rolled the dice -- either at NASA or at Boeing.  The stakes were just too high to think that anyone would willingly take such an undue risk.
+
+
+### Boeing's Software Mistakes
+
+I don't know all the mistakes that were made at Boeing.  That will be for others to work out.  However, I'm pretty sure I know some of the mistakes that the software developers made.  I know what those mistakes are because they've been pretty clear about what the fixes are.
+
+My analysis of these mistakes is certainly naive.  I have not looked at the actual software, nor do I have any knowledge about that software other than what I've gleaned from news reports and commentary.  So take this with a grain of salt.
+
+*  _They trusted a single sensor and did not cross check it against the readings of other instruments._  
+
+It appears that in both of the crashes an Angle of Attack (AOA) sensor was providing bad data.  The software trusted this sensor without cross checking it against the airspeed, or the vertical speed, or the altitude, or the attitude, or the secondary AOA sensor -- just to mention a few.   
+
+This is hard to understand.  The discipline of cross checking instruments is baked into the marrow of every instrument pilot.  Instrument pilots are taught to _always_ interpret their instruments by cross checking them against others.  After all, any single instrument can silently fail.
+
+Did the software developers not know this fundamental practice?  Weren't they pilots?  Weren't they steeped in the disciplines of aviation?  If not, why not?
+
+This is a fundamental issue of software.  Programmers must not be treated as requirement robots.  Rather, programmers must hae intimate knowledge of the domain they are programming in.  If you are writing code for aviation, you'd better know a _lot_ about the culture, disciplines, and practices of aviation.
+
+* _They gave the software the power to override and overpower the pilots._
+
+Again, this is hard to understand.  Pilot control is a fundamental principle in aviation.  Software on board an aircraft operates at the pilots' direction and under the pilots' supervision.  
+
+In the airplanes that I fly, I have several different ways to disengage the auto-pilot.  I can also simply overpower it by strongly manipulating the controls.  If the auto pilot does something I don't like (Yes, that happens) I can immediately flick it off and/or physically overpower it.
+
+But the errant software aboard the 737 Max 8 was capable of putting the airplane into a dive that the pilots could not disengage or overpower by using their normal control inputs. This evokes the terrifying mental image of a pilot hauling back on the yoke for all he's worth while the airplane inexorably plunges headlong into the ground.  Was that image evoked in the minds of the developers?  If not, why not?  If so, how did it get ignored?
+
+* _The software ignored the counteracting inputs by the pilots._ 
+
+In the airplanes that I fly, if I countermand the autopilot, _it will disengage_.  This seems to me to be the obviously right thing to do.  But the 737 software did not disengage when the pilots countermanded it.  It continued to drive the nose of the airplane down into a dive despite the desperate attempts of the doomed pilots to regain control.
+
+### How did this happen?
+
+The software in question was called MCAS (Maneuvering Characteristics Augmentation System).  MCAS was a late addition to the 737 Max fleet.  It was added as a minor tweak to the flight characteristics making the aircraft behave more like a standard 737.  
+
+Boeing felt this was necessary in order to avoid having to retrain existing 737 pilots.  Their hope was to save their customers the hassle and expense of that retraining.
+
+It seems to me, from what I have read and heard, that everyone at Boeing considered this to be a truly minor tweak; and not anything particularly flight critical.  In fact they thought it was so minor that they did not inform any of the operators or pilots that MCAS existed.  They figured it would be a simple little background process that would make unnoticeably gentle modifications to the attitude of the aircraft.
+
+I suspect that the idea that MCAS was a minor, nearly inconsequential, tweak infected everyone's attitude.  I suspect that this attitude led them to forget that any software that has the power to manipulate the flight controls is, in fact, flight critical.  And so I suspect that this attitude led them to use far less care than the situation actually called for.
+
+How could such carelessness happen?  It could happen the same way smart engineers and technicians at NASA could pump 20 psi of pure oxgen into an electrically active capsule with three men locked inside.  It could happen the same way smart managers at NASA could ignore their engineers and launch in redline weather conditions.  It could happen because people sometimes screw up really badly.
+
+We could blame lots of things for such screwups:  Groupthink. Overconfidence. Mission focus.  It's a deeply human issue.  And Boeing will be wrestling with that issue for quite some time to come.  If the company survives, it will likely emerge a much better company.
+
+### We are killing people.
+
+But we programmers have to deal with this issue too. We programmers must take a hard look at this accident, and others like it, and decide what kind of future we are going to create for ourselves.
+
+We, programmers, are killing people.  Our errors cause loss, injury, and death.  It's our fingers on the keyboards.  It's our code running in the machines.  No matter who else is involved in these errors, we are the ones who write that code.  
+
+If our code might cause injury, loss, or death, it is up to us to foresee, and then prevent, that harm from occurring.  
+
+* We have to know the business domains we are coding for.  
+* We need to have the knowledge and insight to foresee and manage the risks our code might incur.  
+* We need to employ the practices and disciplines that keep our users, our customers, and our employers safe.  
+* We need to have the courage to say "No" when _we_ assess that the risk of deploying our code is too high.  
+
+This is not a responsibility we can shirk.  It's on us; because it's our code.
+
+
+
+
+
+
