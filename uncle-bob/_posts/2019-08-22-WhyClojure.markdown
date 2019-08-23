@@ -15,7 +15,7 @@ My favorite language of all, the language that I think will outlast all the othe
 
 I have not come to this conclusion casually, nor even willingly.  I was not fan of Lisp.  For 40 years I was not a fan of Lisp.  I saw the `CAR`s and `CDR`s and `CADDADDR`s and thought it was all just academic baloney; interesting but not truly useful.
 
-And then, a decade ago I found [SICP](xxx).  And after that I found Clojure.  Clojure is a Lisp that rides on top of the Java ecosystem (and does not have `CAR`s or `CDR`s, or `CADADAADR` s).  
+And then, a decade ago I found [SICP](https://mitpress.mit.edu/sites/default/files/sicp/index.html).  And after that I found Clojure.  Clojure is a Lisp that rides on top of the Java ecosystem (and does not have `CAR`s or `CDR`s, or `CADADAADR` s).  
 
 I wasn't convinced right away.  It took a few years.  But after the usual stumbling around and frustration, I began to realize that this language was the easiest, most elegant, least imposing language I had ever used -- and not by a small margin.
 
@@ -100,7 +100,7 @@ OK, that's not entirely fair.  We do wind up with a few more parentheses, but th
 
 ### But isn't it slow?
 
-No.  Clojure is not slow.  Oh, look, it's not C.  It's not assembler.  If nanoseconds are your concern than you probably don't want Clojure in your innermost loops.  You also probably don't want Java, or C#.  But 99.9% of the software we write nowadays has no need of nanosecond performance.  I've built a real time, GUI based, animated [space war](xxx) game using Clojure.  I could keep the frame rates up in the high 20s even with hundreds of objects on the screen.  Clojure is not slow.
+No.  Clojure is not slow.  Oh, look, it's not C.  It's not assembler.  If nanoseconds are your concern than you probably don't want Clojure in your innermost loops.  You also probably don't want Java, or C#.  But 99.9% of the software we write nowadays has no need of nanosecond performance.  I've built a real time, GUI based, animated [space war](https://github.com/unclebob/spacewar) game using Clojure.  I could keep the frame rates up in the high 20s even with hundreds of objects on the screen.  Clojure is not slow.
 
 ### But what about Javascript?
 
