@@ -11,7 +11,7 @@ Now you know a lot about the syntax of clojure.  Perhaps you think there's a lot
 
 You might be wondering how you add two numbers.  That's easy, that's just `(+ 1 2)`.  As it happens that's also just the list of the function named `+` followed by a 1 and a 2.  You see, a function call is really just a list.  The function is the first element of the list, and the arguments are just the other elements of that list.  When you want to call a function, you simply invoke the list that represents that function call.  
 
-There are quite a few built-in functions in clojure.  For example there's `+, -, *, and /`.  They do precisely what you'd think.  Well, perhaps not precisely.  `(+ 1 2 3)` evaluations to `6`.  `(- 3 2 1)` evaluates to zero.  `(* 2 3 4)` evalutaes to `6`.  And `(/ 20 2 5)` evaluates to 2.  `(- 5)` evalutates to `-5`.  `(* 5)` evaluates to `5`.  And, get ready for this, `(/ 3)` evaluates to `1/3`.  That last is the clojure syntax for the rational number one-third.
+There are quite a few built-in functions in clojure.  For example there's `+, -, *, and /`.  They do precisely what you'd think.  Well, perhaps not precisely.  `(+ 1 2 3)` evaluations to `6`.  `(- 3 2 1)` evaluates to zero.  `(* 2 3 4)` evaluates to `24`.  And `(/ 20 2 5)` evaluates to 2.  `(- 5)` evaluates to `-5`.  `(* 5)` evaluates to `5`.  And, get ready for this, `(/ 3)` evaluates to `1/3`.  That last is the clojure syntax for the rational number one-third.
 
 `(first 1 2 3)` evaluates to `1`, `(second 1 2 3)` evaluates to 2, and `(last 1 2 3)` evaluates to -- you guessed it -- `3`.  
 
