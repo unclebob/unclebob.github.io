@@ -39,4 +39,3 @@ The last point I'd like to make is this:
 
 >_Disinviting someone from a virtual conference who can draw a potentially large audience away from that virtual conference is not a particularly intelligent tactic._  
 
-I mean, what a bunch of dumbasses.
