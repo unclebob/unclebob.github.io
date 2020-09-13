@@ -19,7 +19,7 @@ Like I said, this guy is a friend of mine, and I don't want to get him into any 
 
 Over the last few days I've been mulling this situation over in my mind, and I've come to a few interesting conclusions.  
 
-1. **The conference organizers are in breech of contract.**  
+1. **The conference organizers are in breach of contract.**  
 
 OK, we didn't have a formal written contract, but we had emails.  And we also had the fact that, for the better part of a year, the conference website had my picture on it, and advertised me as a speaker.  I conclude that the conference organizers derived substantial benefit from those pictures and from promising my virtual presence to their audience.  I, on the other hand, was denied the benefit of actually speaking to that audience.  Therefore, I am the damaged party.  
 
@@ -27,7 +27,7 @@ Could I sue them?  Certainly, though I'd have a difficult time quantifying the d
 
 2. **The speakers who refused to speak if I spoke are guilty of _tortious interference_.**
 
-Those speakers would not have been harmed by speaking in a virtual conference that I also spoke in.  Their intent was to damage me by forcing the conference organizers to breech their contract with me.  That is the definition of tortious interference.  
+Those speakers would not have been harmed by speaking in a virtual conference that I also spoke in.  Their intent was to damage me by forcing the conference organizers to breach their contract with me.  That is the definition of tortious interference.  
 
 Could I sue them?  Certainly.  I won't, for the same reason that I'm not going to sue the conference organizers.  And, frankly, suing people for such small potatoes just isn't worth the trouble.  But, like I said, next time I do a pro-bono talk I'll have the conference organizers agree to the value that I'm deriving in return for using my name and likeness on their website.  Then I can sue them, and any tortious interferers, for that sum and punitive damages too.  
 
