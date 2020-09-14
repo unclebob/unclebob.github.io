@@ -23,7 +23,7 @@ Over the last few days I've been mulling this situation over in my mind, and I'v
 
 OK, we didn't have a formal written contract, but we had emails.  And we also had the fact that, for the better part of a year, the conference website had my picture on it, and advertised me as a speaker.  I conclude that the conference organizers derived substantial benefit from those pictures and from promising my virtual presence to their audience.  I, on the other hand, was denied the benefit of actually speaking to that audience.  Therefore, I am the damaged party.  
 
-Could I sue them?  Certainly, though I'd have a difficult time quantifying the damages.  Had we agreed on a speaking free, I could at least claim that fee as damages.  Next time I do one of these pro-bono events I'll have the organizers agree to paying a hefty cancellation fee.
+Could I sue them?  Certainly, though I'd have a difficult time quantifying the damages.  Had we agreed on a speaking fee, I could at least claim that fee as damages.  Next time I do one of these pro-bono events I'll have the organizers agree to paying a hefty cancellation fee.
 
 2. **The speakers who refused to speak if I spoke are guilty of _tortious interference_.**
 
