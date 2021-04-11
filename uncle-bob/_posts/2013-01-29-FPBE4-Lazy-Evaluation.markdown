@@ -98,12 +98,12 @@ public interface Func<T> {
 
 I'm sure you can work out the rest of the program for yourself now.  Once you know the trick, it's really not that hard.  But if you'd like to see my version of all the code, you can check out my [javasquint](https://github.com/unclebob/javasquint/tree/master/src/squint) repo.
 
-####Woah there Nellie!
+#### Woah there Nellie!
 From the above you might have gotten that idea that I was about to say that you can use Java as a functional language.  Uh... No.  Oh, little programs like `squint` are easy enough to make functional; but more interesting programs are harder.  You see the problem is that Java's data structures are mutable, and are _designed_ to be mutated.  So, in fact, writing functional programs in Java is quite difficult, and generally not practical.
 
 So then why did I show you the iterator trick?  To impress upon you the fact that there's no magic or mystery about lazily evaluated sequences in Clojure or other functional languages.  They're just using iterators like Java would.  
 
-####Walking XML Trees
+#### Walking XML Trees
 I'm sure you've written code that does a depth-first walk through XML documents.  Consider the following simple XML document:
 <pre>
 	
@@ -139,7 +139,7 @@ Now stand back and look at the code and the output.  Forget that you know that t
 
 So if you think about it by considering the way it _looks_, it appears foolish.  Yet if you think about it from the point of view of using an iterator, it makes perfect sense.  It's not wasteful at all, because that absurd list simply does not exist.  
 
-####Clojure
+#### Clojure
 So now check this out.  I have a file with that XML in it.  It's named `doc.xml`.  I can read it into Clojure using the `parse` function from `clojure.xml`, and I can pretty print it with `pprint`:
 
 {% highlight clojure %}
@@ -187,6 +187,6 @@ Look closely. See the opening parenthesis?  Aha!  This is a list!  It's a list o
 
 Oh.  But wait. `xml-seq` returns a _lazy_ sequence!  The nodes aren't evaluated _until they are asked for_.  The list of nodes _does not_ take up extra space!  It's just an efficient and convenient way to walk a depth-first traversal -- rather like our Java iterator.
 
-####Conclusion
+#### Conclusion
 So the moral of the story is simply this:  When you have lazy sequences at your disposal, you can design your data structures for convenience, without undo concern for time and space; because lazy sequences are really just a clever use of iterators.
 

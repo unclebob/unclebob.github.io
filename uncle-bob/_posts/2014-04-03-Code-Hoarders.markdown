@@ -17,7 +17,7 @@ It's also easy to believe that _acquiring_ new stuff is more important than _org
 
 Finally, once the mess starts to grow, it's easy to rationalize away any hope that it _can_ be cleaned.  You quickly conclude that there's no point in cleaning _anything_ because a day's effort, a week's effort, even a month's effort _wouldn't make a dent_.  To quote Dr. Seuss from _The Cat in the Hat_: "...this mess is so big, And so deep and so tall, We cannot pick it up. There is no way at all!"
 
-###Code
+### Code
 
 Now of course you realize that I'm talking about code.  I'm suggesting that the mentality that creates crufty tangled systems is the mentality of a hoarder.  I'm also suggesting that the result is the same: an unhealthy, unworkable, and unlivable environment.  But let's walk step by step through the reasoning.
 
@@ -27,7 +27,7 @@ Do you believe that adding value means adding new features.  Do you believe that
 
 We have a name for the result.  We call it _Legacy Code_.  The very term fills us with disgust and despair.
 
-###Legacies
+### Legacies
 
 Who gets to clean up that horrific mess when the Hoarders die?  Who hires the garbage trucks to haul away the hundreds of tons of junk?  Who hires the HAZMAT team to disfinfect the home?  Who hires the cleanup crew to scrub and wash, and paint, and repair the home?  The children, of course.  Or if not the Children, then the Community.  The legacy that a Hoarder leaves is a legacy of junk, trash, filth, and the huge effort required to get it all cleaned up.  The legacy of a Hoarder gets worse and worse so long as the Hoarder is alive.
 
@@ -35,7 +35,7 @@ But legacies don't have to be that way.  Indeed, most people strive to leave a l
 
 A _true_ legacy gets _better_ with age.
 
-###Better with Age?
+### Better with Age?
 
 And isn't that what humans do?  Don't humans make things better with time?  If you've got an old car in the garage that you are refurbishing, don't you expect that car to get better and better and better with each passing day?  If you are painting a picture, don't you expect that picture to get better and better with age?
 

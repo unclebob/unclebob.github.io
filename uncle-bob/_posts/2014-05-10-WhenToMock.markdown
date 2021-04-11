@@ -5,7 +5,7 @@ tags: ["Testing"]
 ---
 A mock object is a very powerful tool, providing two major benefits: isolation and introspection.  But like all power tools, mocks come with a cost.  So where and when should you use them?  What is the cost/benefit trade off?  Let's look at the extremes.  
 
-##No Mocks.
+## No Mocks.
 Consider the test suite for a large web application.  Let's assume that test suite uses _no_ mocks at all.  What problems will it face?
 
 * The execution of the test suite will probably be very slow: dozens of minutes -- perhaps hours.  Web servers, databases, and services over the network run thousands of times slower than computer instructions; thus impeding the speed of the tests.  The cost of testing just one `if` statement within a business rule may require many database queries and many web server round-trips.  
@@ -16,7 +16,7 @@ Consider the test suite for a large web application.  Let's assume that test sui
 
 So, without mocks, tests tend to be slow, incomplete, and fragile.  That sounds like a strong case for using mocks.  But mocks have costs too.  
 
-##Too Many Mocks
+## Too Many Mocks
 Consider that same large web application, but this time with a test suite that imposes mocks between all the classes.  What problems will it face?
 
 * Ironically, some mocking systems depend strongly on _reflection_, and are therefore very slow.  When you mock out the interaction between two classes with something slower than those two classes, you can pay a pretty hefty price.
@@ -30,7 +30,7 @@ Consider that same large web application, but this time with a test suite that i
 
 So if you mock too much you may wind up with test suites that are slow, fragile, and complicated; and you may also damage the design of your application.  
 
-##Goldilocks Mocks
+## Goldilocks Mocks
 Clearly the answer is somewhere in between these two extremes.  But where?  Here are the heuristics that I have chosen:
 
 * __Mock across architecturally significant boundaries, but not within those boundaries.__  
@@ -63,7 +63,7 @@ Writing your own mocks means you have to _design_ your mocking structure.  And t
 
 When you write your own mocks, you aren't using reflection, so  your mocks will almost always be extremely fast. 
 
-##Conclusion
+## Conclusion
 
 Of course your mileage may vary.  These are _my_ heuristics, not yours.  You may wish to adopt them to one extent or another; but remember that heuristics are just guidelines, not rules.  I violate my own heuristics when given sufficient reason.
 

@@ -5,7 +5,7 @@ tags: ["Craftsmanship", "Coding", "Testing"]
 ---
 I first heard the term "Test First" in 1998.  Back then it was part of the phrase "Test First Design".  We often shortened it to "Test First".  Later, Kent Beck, the originator of the concept, changed the name to Test Driven Development; and it has gone by the acronym TDD ever since. But the words "Test First" have a connotation that the words "Test Driven Development" don't.  That connotation is deeper than most people suspect.  What does "Test First" really mean?
 
-###Tests are Specs.
+### Tests are Specs.
 To answer that we need to look more deeply at our tests.  What are they -- _really_? 
 
 Users of the RSpec test framework don't call them tests.  They call them specs.  Why?  Because, in the language of RSpec, the tests read like specifications.  For those of you who've never seen an RSpec test, you don't know what you are missing.  Here's a simple example:
@@ -42,7 +42,7 @@ Indeed, so long as we keep our tests short, well factored, and well named, they 
 
 One of the goals of TDD is to be able to trust your test suite to the extent that, if it passes, you know you can ship!  If you trust your tests that much, then those tests must describe everything that the system does.  And if the tests describe everything; then the tests are specs.
 
-###Rotten Tests
+### Rotten Tests
 I'm sure you've seen tests that don't look anything like specs.  Perhaps they looked like this (you don't really have to read this):
 
     public void testJsonResponse() throws Exception {    
@@ -96,7 +96,7 @@ It doesn't take much to get tests to read well; just a little refactoring.  And 
 
 But, of course, that's nonsense.  
 
-###Tests are part of the system.
+### Tests are part of the system.
 
 We all know that bad code slows us down.  So why do we write it?  Sometimes we write it because we're in a hurry.  We say to ourselves we'll go back and clean it later; but we know that's a lie.  We know we won't go back and clean the bad code because we know we'll be afraid of breaking it.  So we simply allow it to persist and grow.  The more it grows, the more it slows us down.  The more it slows us down the more we rush, and the more bad code we write, and the slower we go.  
 
@@ -108,7 +108,7 @@ What this means is that your ability to quickly clean, maintain, and modify your
 
 The tests enable the team to go fast and the system to stay healthy.  Therefore those tests are an integral, and critical, part of the system.  As such, they deserve to be maintained to the same level of quality as the production code.  Indeed, perhaps the tests deserve even more attention than the production code since the quality of the production code depends on the tests; but the quality of the tests does not depend on the production code.
 
-###Asymmetry
+### Asymmetry
 
 That last statement was asymmetrical.  The quality of the production code depends on the tests; but the quality of the tests is _independent_ of the production code.  The reason for this is that there is an asymmetry in the way the two execute.  The tests are a program that verifies that the system works as specified.  But the system is _not_ a program that verifies that the tests execute correctly.  You run the tests in order to refactor the system; but you _don't_ run the system in order to refactor the tests.  You refactor the tests by _running the tests!_
 
@@ -120,7 +120,7 @@ However, if I give you a system without tests, it's virtually impossible to crea
 
 So TDD is a trap-door function.  It's easy to go from tests to production code, but hard to go the other direction.  And that implies something fascinating about the tests:  _The tests are the most important component in the system._  They are more important than the production code.   
 
-###The Choice
+### The Choice
 
 I know this sounds ridiculous; but consider.  If somehow all your production code got deleted, but you had a backup of your tests, then you'd be able to recreate the production system with a little work.  Indeed, you'd also enjoy the benefit of _The Second System Effect_.  The code would be better because it was the second time you'd've written it.  So, in the end, you'd wind up with a fully functional and better designed system.
 
@@ -130,7 +130,7 @@ If we lose the production code, we end up with a better designed system that sta
 
 So we can conclude that if it became a choice between the tests or the production code, we'd rather preserve the tests.  And this means that the tests are a more important component of the system than the production code is.  Because the tests are the specs.
 
-###Simple Design
+### Simple Design
 
 Years ago Ron Jeffries codified Kent Beck's rules of simple design.  They are, in order of priority:
 
@@ -147,7 +147,7 @@ Given these guidelines we'd write a failing test and then focus on getting that 
 
 I've used Ron's rules for a long time, and I've grown to trust them.  In the production code it is always better to first make it work, and then clean it up.  However, I think this order is dead wrong for the tests.
 
-###Tests are first in all things.
+### Tests are first in all things.
 
 We have no need to write messy tests.  Indeed, tests can be written cleanly at first.  To prove this to yourself, simply say the three magic words: _Given_, _When_, and _Then_.  Before you write a test, you should be able to describe the test you are about to write using those three words.  
 
@@ -192,7 +192,7 @@ In the TDD cycle, this means that we first write a portion of a test; and before
 
 The red-green-refactor cycle becomes Red -> Clean Test -> Green -> Refactor.
 
-###Being First.
+### Being First.
 
 The bottom line of all this is that we should consider our tests as _being_ first.  We already know we should write them first; but we should also clean them first, maintain them first, think of them first, and keep them first.  We should give our tests the highest priority. 
 

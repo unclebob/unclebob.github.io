@@ -35,7 +35,7 @@ The execution speed is about 4,000 instructions per second.  While that's 1/7th 
 
 And, again, the blinking of the lights during a compile is deeply satisfying.  Watch that and you'll know where all those 1950s sci-fi movies got their ideas from.  
 	
-##MODE-B
+## MODE-B
 Getting the Emulator working was really very easy.  I've probably invested 30 hours in it overall; and that includes learning Codea and Lua.
 
 The development process was lickety-split.  Codea's Lua editor for the iPad is intuitive and powerful (though it has no refactorings `<sob>`).  The edit/test loop was, perhaps, 10 seconds long.  I could add a line or two of code, run the app, see the effect, and then hop back into the editor just like that.  It was a satisfying treat, and I had a ball doing it.
@@ -52,7 +52,7 @@ Of course without refactoring tools the code got a bit messy.  I refactored when
 
 Anyway, for the sake of this article, let's call this style of programming: `MODE-B.`  `MODE-B` is the style that allows you to edit on the screen, and see the results either on the screen, or in a passing test, in seconds.  It's a hyper-speed development loop that doesn't require listings, pencils, compile time, setup time, or any other impediment.  The time between editing the code, and seeing it run, is much less than one minute.  
 
-##MODE-A
+## MODE-A
 Having gotten the PDP8 Emulator to work.  And having gotten all the old tools, like the paper tape editor, and the Pal-3 assembler, up and running.  I set about to write a simple program.  This program would allow the user to type a simple formula on the keyboard, and then it would print the result.  For example, if the user typed: `25+32`, the computer would print `57`.  
 
 On a PDP-8, this is a non-trivial program.  I've included it below for those of you who want to see how a pretty poor PDP-8 programmer has written it.
@@ -102,7 +102,7 @@ In `MODE-A` you take _nothing_ for granted.  You do everything _deliberately_ an
 
 Let's call this carefulness and deliberateness: `MODE-A` behavior.
 
-##`MODE-A` vs `MODE-B`
+## `MODE-A` vs `MODE-B`
 `MODE-A` is a _lot_ slower than `MODE-B`.  The loop time is impossibly large, and the amount you can get done in each loop is ridiculously small.  For example, my first loop through this process was to write, and debug, the subroutine that read in a line of text from the keyboard, terminated with a CR (Carriage Return...  Yes, the teletype had a "carriage", or rather a "print head" that could be "returned".)  
 
 `MODE-B` is fast!  Really, really, fast.  The time through the loop is very short, and you can get a lot done in each loop.  For example, it only took me a few loops around to get the paper tape animation through the reader and punch to work correctly.  Every PDP-8 machine instruction took a loop or two.  Getting the scrolling of the TTY paper took two or three loops.  
@@ -111,7 +111,7 @@ And, of course, I wasn't using listings.  I didn't write the code on paper first
 
 `MODE-B` is fast!
 
-##The `MODE-B` Imperative!
+## The `MODE-B` Imperative!
 So then why do so many programmers still work in `MODE-A`?  They do, you know.  They pile mess upon mess, and framework upon framework, until their loop time grows from seconds to minutes and longer?  They inject so many dependencies that the builds become fragile and error-prone.  They create so many unisolated external dependencies that they might as well be using paper tape.  Why would anybody do _anything_ that increased their loop time?  Why wouldn't everyone _defend their loop time with their lives_?
 
 Isn't avoiding `MODE-A` a guilt-edged priority?  Shouldn't we all do _everything we possibly can_ to keep our development cycle in `MODE-B`?  Isn't `MODE-B` an _imperative_?
@@ -121,7 +121,7 @@ Do you want to know the secret for staying in `MODE-B`?  I know what it is.  I'l
 >The secret for staying in `MODE-B` is to use `MODE-A` behavior.  
 
 ----
-##HOLY STRUCTURED METHODOLOGY BATMAN!
+## HOLY STRUCTURED METHODOLOGY BATMAN!
 
 I just discovered who wrote the PAL III assembler for the PDP-8.  Hold on to your hats.  It was [Ed Yourdon](http://en.wikipedia.org/wiki/Edward_Yourdon).  
 

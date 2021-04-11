@@ -19,7 +19,7 @@ Normally, it should be; but he said he was just using it for some home projects.
 
 The symptoms that most TDD novices experience in the first couple of weeks.  Sommerville spells them out pretty clearly.  His first is a classic -- it even has a name:
 
-###The Fragile Test Problem
+### The Fragile Test Problem
 <div style="margin-left: 5em"><font color="#5F4C0B">* Because you want to ensure that you always pass the majority of tests, you tend to think about this when you change and extend the program. You therefore are more reluctant to make large-scale changes that will lead to the failure of lots of tests. Psychologically, you become conservative to avoid breaking lots of tests.</font></div>
 
 >_This is a common problem?_
@@ -86,7 +86,7 @@ I know it is.  I know this because developers who are experienced with Test Driv
 
 Absolutely.  
 
-###The Design Problem
+### The Design Problem
 <div style="margin-left: 5em"><font color="#5F4C0B">* The most serious problem for me is that it encourages a focus on sorting out detail to pass tests rather than looking at the program as a whole. I started programming at a time where computer time was limited and you had to spend time looking at and thinking about the program as a whole. I think this leads to more elegant and better structured programs. But, with TDD, you dive into the detail in different parts of the program and rarely step back and look at the big picture.</font></div>
 
 >_So what is the connection?_
@@ -111,7 +111,7 @@ The bottom line is that _you must never abandon the big picture!_  Sommerville w
 
 >_OK, so then what about his other complaints?_
 
-##The Testable Design Problem
+## The Testable Design Problem
 <div style="margin-left: 5em"><font color="#5F4C0B">* It is easier to test some program designs than others. Sometimes, the best design is one that's hard to test so you are more reluctant to take this approach because you know that you'll spend a lot more time designing and writing tests (which I, for one, quite a boring thing to do)</font></div>
 <p/>
 The first part of this complaint has an element of truth to it.  Some things are harder to test than others.  GUIs are hard to test.  Device drivers are hard to test.  Indeed just about anything that interacts with an IO device is hard to test.  So we have developed strategies for dealing with that.  Strategies like _The Humble Object_ pattern.
@@ -152,7 +152,7 @@ Yeah.  Forget that, and all is lost.
 
 >_OK, well, Sommerville had one last complaint._
 
-##The Magic Bullet Problem
+## The Magic Bullet Problem
 <div style="margin-left: 5em"><font color="#5F4C0B">* In my experience, lots of program failures arise because the data being processed is not what's expected by the programmer. It's really hard to write 'bad data' tests that accurately reflect the real bad data you will have to process because you have to be a domain expert to understand the data. The 'purist' approach here, of course, is that you design data validation checks so that you never have to process bad data. But the reality is that it's often hard to specify what 'correct data' means and sometimes you have to simply process the data you've got rather than the data that you'd like to have.</font></div>
 
 Of course he's absolutely correct.  My problem with this complaint is that I have no idea what it has to do with TDD.

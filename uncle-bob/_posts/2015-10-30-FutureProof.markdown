@@ -9,7 +9,7 @@ I recently read Christin Gorman's blog [Future Proof](http://kranglefant.tumblr.
 
 She's right about that, of course.  When the requirements change, either some code, or some data is going to have to change.  The Open-Closed Principle cannot apply to every element of the system.  No matter how open you make your system to extension, something, somewhere will need modification.
 
-###External Data
+### External Data
 
 Indeed, Gorman rants rather poetically about the notion that changes to an .xml file, or a database table, are somehow better than changes to source code.  
 
@@ -29,7 +29,7 @@ The answer to that is trivial.  Anything that the programmers don't want to be b
 
 So our rule is: _Anything that changes frequently should be outside the code._
 
-###Decoupling Modules
+### Decoupling Modules
 
 Gorman continues.  
 
@@ -47,7 +47,7 @@ Which modules should be decoupled?  I think the rule is similar to the previous 
 
 How do you decouple one module from another?  That depends on the level of decoupling you need.  Sometimes simply extracting that code into a separate function is enough.  More often, it's better to move all the related code into a separate class, and even a separate source file.  And in extreme cases, you want to put those classes behind polymorphic interfaces.  
 
-###Interfaces
+### Interfaces
 And this is where I part company from Gorman to a certain extent.  Because she goes on:
 
 >_Java interfaces are meant to be used when there are a bunch of implementations available, and your code wants to access them all in the same manner._
@@ -78,7 +78,7 @@ That last point may strike some of you as odd; but it's true.  Mocks are very ea
 
 So in the end, I don't completely agree with Gorman's initial assertion.  Interfaces may not always make testing easier; but at certain boundaries they are absolutely essential.  
 
-###Bottom Line
+### Bottom Line
 For the most part, I think Gorman made some good points.  The goal is not to "Future Proof" your code.  The future will aways find a way to thwart you.
 
 However, that doesn't mean that you shouldn't arrange your code to minimize the impact of frequent change.  And if you can do that by externalizing certain data elements, and putting certain modules behind polymorphic interfaces, there's no reason you shouldn't.   Decoupling shouldn't be gratuitous; but it's not something to actively avoid.  Indeed, strategic decoupling in moderation is a very, very good thing.

@@ -19,7 +19,7 @@ This shouldn't be surprising.  Frameworks are written by people to solve certain
 
 TANSTAAFL!
 
-###Framework Authors
+### Framework Authors
 Remember that frameworks are written by people, and people have their own agendas.  One of the items on such an agenda is to get you to use their framework.  As an author of past frameworks I can tell you that the more people who used my frameworks, the better I felt about _myself_.  A lot of my self-worth got tied up into the acceptance of my frameworks.  
 
 Now I don't want to get too deep into the psycho-analysis of framework authors.  Framework authors are not bad people.  Indeed, for the most part, they are heroes.  Many unselfishly release their code to the open-source community.  Were it not for these people, our programming lives would be far less enjoyable and productive.
@@ -32,7 +32,7 @@ That's perfectly normal, and not at all dishonorable.  They want you in the fold
 
 Once you are in the fold, however, their interest in you might change somewhat.  Here's a picture of one famous framework author telling his users what he thinks about some of their concerns. [(R rated)](https://www.flickr.com/photos/planetargon/127984254/) 
 
-###Arm's Length.
+### Arm's Length.
 Over the years, I've adopted a healthy skepticism about frameworks.  While I acknowledge that they can be extremely useful, and save a boatload of time; I also realize that there are costs.  Sometimes those costs can mount very high indeed.  
 
 So my strategy is to keep frameworks like Spring, Hibernate, and Rails at arm's length; behind architectural boundaries.  I get most of the benefit from them that way; and I can take ruthless advantage of them. 
