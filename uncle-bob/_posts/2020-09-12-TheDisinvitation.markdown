@@ -31,7 +31,7 @@ Those speakers would not have been harmed by speaking in a virtual conference th
 
 Could I sue them?  Certainly.  I won't, for the same reason that I'm not going to sue the conference organizers.  And, frankly, suing people for such small potatoes just isn't worth the trouble.  But, like I said, next time I do a pro-bono talk I'll have the conference organizers agree to the value that I'm deriving in return for using my name and likeness on their website.  Then I can sue them, and any tortious interferers, for that sum and punitive damages too.  
 
-Do I know who those tortiously interfering speakers are?  I've got a pretty good idea.  Myfear of course is that I do not wish to harm my friend.  Nor do I wish to harm the conference organizers, nor the Chicago Software community.  It seems to me that they are all victims of those revolting speakers.
+Do I know who those tortiously interfering speakers are?  I've got a pretty good idea.  My fear of course is that I do not wish to harm my friend.  Nor do I wish to harm the conference organizers, nor the Chicago Software community.  It seems to me that they are all victims of those revolting speakers.
 
 So, this time, I'll let the legal options rest.  Instead, I'm offering a virtual [free talk](https://us02web.zoom.us/webinar/register/WN_Q5Fi-nWkRM6sdhNVY3r6VQ) at 10:00 AM CDT, on September 21st, the first day of the conference.  Those who wanted to hear me speak, still can.    
 
