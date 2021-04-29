@@ -5,7 +5,7 @@ tags: ["Tools"]
 old_tags: ["Functional Programming"]
 ---
 
-h4. What's Functional Programming all about?
+#### What's Functional Programming all about?
 
 By now you've almost certainly heard of functional programming. I mean, how could you miss it? Everybody's talking about it. There are all these new functional languages coming out like Scala, F\# and Clojure. People are talking about older languages too, like Erlang, Haskell, ML, and others.
 

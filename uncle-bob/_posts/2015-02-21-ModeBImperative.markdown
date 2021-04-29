@@ -112,7 +112,7 @@ And, of course, I wasn't using listings.  I didn't write the code on paper first
 `MODE-B` is fast!
 
 ##The `MODE-B` Imperative!
-So then why do so many programmers still work in `MODE-A`?  They do, you know.  They pile mess upon mess, and framework upon framework, until their loop time grows from seconds to minutes and longer?  They inject so many dependencies that the builds become fragile and error-prone.  They create so many unisolated external dependencies that they might as well be using paper tape.  Why would anybody do _anything_ that increased their loop time?  Why wouldn't everyone _defend their loop time with their lives_?
+So then why do so many programmers still work in `MODE-A`?  They do, you know.  They pile mess upon mess, and framework upon framework, until their loop time grows from seconds to minutes and longer.  They inject so many dependencies that the builds become fragile and error-prone.  They create so many unisolated external dependencies that they might as well be using paper tape.  Why would anybody do _anything_ that increased their loop time?  Why wouldn't everyone _defend their loop time with their lives_?
 
 Isn't avoiding `MODE-A` a guilt-edged priority?  Shouldn't we all do _everything we possibly can_ to keep our development cycle in `MODE-B`?  Isn't `MODE-B` an _imperative_?
 
