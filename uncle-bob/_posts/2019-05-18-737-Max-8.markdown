@@ -40,7 +40,7 @@ This is hard to understand.  The discipline of cross checking instruments is bak
 
 Did the software developers not know this fundamental practice?  Weren't they pilots?  Weren't they steeped in the disciplines of aviation?  If not, why not?
 
-This is a fundamental issue of software.  Programmers must not be treated as requirement robots.  Rather, programmers must hae intimate knowledge of the domain they are programming in.  If you are writing code for aviation, you'd better know a _lot_ about the culture, disciplines, and practices of aviation.
+This is a fundamental issue of software.  Programmers must not be treated as requirement robots.  Rather, programmers must have intimate knowledge of the domain they are programming in.  If you are writing code for aviation, you'd better know a _lot_ about the culture, disciplines, and practices of aviation.
 
 * _They gave the software the power to override and overpower the pilots._
 

@@ -19,7 +19,7 @@ I suspected the answer, but I asked the developers why this structure slowed the
 
 I asked them if this was true even if there weren't any schema changes; and they told me that it was because the gems and the services had evolved with the whole application, and only had functions for the current features. New features often require new functions even though there's no schema change.
 
-This is a pretty typical structure. I've seen it many times before. I've seen it in Java apps, C++ apps, and now even Rails apps. The structure seems obvious to system designers who have grown tired of single monolithic systems and want to break those systems up into components and services. What could be more natural than to break the system along the lines of data base managment?
+This is a pretty typical structure. I've seen it many times before. I've seen it in Java apps, C++ apps, and now even Rails apps. The structure seems obvious to system designers who have grown tired of single monolithic systems and want to break those systems up into components and services. What could be more natural than to break the system along the lines of data base management?
 
 Unfortunately this is a huge violation of the Single Responsibility Principle -- or its big brother the Common Closure Principle. These principles tell us to group together things that change together, and keep apart things that change for different reasons. Unfortunately the above design separates things that change for the same reasons, and groups together things that change for different reasons. No wonder the developers feel like they are going slow!
 
