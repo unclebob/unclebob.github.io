@@ -41,7 +41,7 @@ The next test forces us to split a word that’s too long:
     (wrap "xx" 1) => "x\nx"
 
     (defn wrap [s n]
-      (if (<= (length s) n)
+      (if (<= (count s) n)
         s
         (str (subs s 0 n) "\n" (subs s n))))
 
