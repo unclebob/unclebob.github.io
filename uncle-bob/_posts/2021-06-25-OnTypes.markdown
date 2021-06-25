@@ -1,0 +1,64 @@
+---
+layout: post
+title: On Types
+tags: ["Software"]
+---
+
+I wrote my first program in 1964.  The name of the program was: _Mr Patternson\'s Computerized Gate_, and it was implemented on a little plastic computer named DIGICOMP-I, which was a cute little three bit finite state machine with 6 AND gates.
+
+The first electronic computer I ever wrote a program for was an ECP-18 in 1966.  This was a 15 bit wide machine with 1024 words of _drum_ memory.  The programs I wrote were all in binary machine language and were entered through the front-panel switches.  
+
+In the years between 1967 and 1969 my father would drive my friend, Tim Conrad, and I 25 miles to the Digital Equipment Corp sales office, where we would spend our Saturdays entering programs into the PDP-8 that they had on the floor.  They were very gracious to allow us such access and freedom.  The code we wrote was in PAL-D assembler (which was written by Ed Yourdon when he was 21 years old).  
+
+My very first job as a programmer was temporary.  A matter of two weeks.  I was 17, and the year was 1969.  My father went to the CEO of a nearby insurance actuarial firm, ASC Tabulating, and in his inimitable fashion, told them that they would be hiring me for a summer job.  He had a way of being _very_ convincing.
+
+The program I wrote for ASC was named IDSET.  It was written in Honeywell H200 assembler (the language was called Easycoder and was based on IBM 1401 Autocoder).  The purpose was to read student records from a magnetic tape and insert ID codes into those records, and then write them out onto a new tape.  With some coaching, I was able to get that program to work.  
+
+Upon graduating High School, in 1971, I got a job at ASC again; but this time as a third-shift off-line printer operator.  We were printing junk mail, which was a brand new thing back then.
+
+A few months later I was hired as a full-time programmer analyst at ASC, and was assigned to work on huge re-write of a massive accounting and records system for Local 705 Trucker\'s union in Chicago.  The existing system ran on a great big GE Datanet 30.  ASC wanted to reimplement it on a Varian 620F mini-computer.  
+
+The 620F was a lovely little 16 bit computer with 32K of core memory and a 1us cycle time.  The primary IO devices were a teletype, a slow card reader, two magnetic tape drives, and two 2314 20MB disks.  The machine also had 16 (or was it 32) RS232 ports for talking to teletypes that were remotely connected through 300BPS modems.  
+
+Although the 620F came with a stand-alone assembler, there was no operating system.  So every bit of that real time union accounting system was built from assembler code, with no frameworks, platforms, or operating systems to help.
+
+In 1973 I took a job at Chicago Laser Systems, programming a PDP-8-like machine, in assembler, to control pulsed lasers, galvonometer driven mirrors, and step-and-repeat tables to trim electronic components to high degrees of tolerance.
+
+In 1975 I took a job at Outboard Marine Corporation, programming a real time aluminum die cast system in IBM System 7 assembler.
+
+In 1977 I took a job at Teradyne Central, programming a PDP-8-like machine, in assembler (again), to control a distributed system for testing and monitoring the quality of all the telephone lines in a telephone company service area.  A year later we started using 8085 micro-computers and wrote all that code in assembler too.
+
+Suffice it to say that I was steeped in assembler, and thought that all high-level languages were a joke. My forays into COBOL, Fortran, and PL/1 did not convince me otherwise.  Real programmers programmed in assembler.
+
+Between 1977 and 1980 I was introduced to Pascal.  I rejected it as a viable language almost immediatly.  I found the type system far too constraining, and didn\'t trust all the magic behind the scenes.
+
+In 1980 I read a copy of Kernighan and Ritchie, and for the first time I began to see that a high-level language could possibly be an appropriate engineering language.  I spent many years writing in that wonderful language which, by the way, was as untyped as assembler.
+
+Oh, that\'s not to say that C didn\'t have declared types.  It\'s just that the compiler didn\'t bother to check that you were using those types properly.  This made the language untyped for all intents and purposes.
+
+In 1986, after several nightmare scenarios having to do with the typlessness of C, I was an enthusiastic early adopter of C++.  Unfortunately I could not get my hands on a C++ compiler until 1987.  I became quite an expert in the languge, and engaged in many (many (many)) arguments on comp.lang.c++ and comp.object (in those heady days of USENET, a very early social networking platform).
+
+C++ is a statically typed language.  Many, today, would consider it to be relatively weakly typed; but from my point of view, after a decade and a half of untyped languages, I thought the type enforcement was very strong.  I had overcome the feeling of being handcuffed by a strong type system and became quite adept at building type models.
+
+In 1990 I took a contracting job at Rational, working in C++ on the first release of Rational Rose.  This is where I met Grady Booch, and came up with the plan for my first book.
+
+By 1991 I was a consultant, selling my services to companies, all over the US and Europe, who wanted to learn about object-oriented programming and C++.  It was a lucrative affair for me, and I continued building that business for several years. Eventually I became the editor-in-chief of _The C++ Report_ (does anybody remember print magazines?)
+
+In 1999 I realized that C++ was a waning technolgy, and that the action was really happening in Java.  Java was similar enough to C++ for me to make the transition with relative ease.  The type system of Java was a bit weaker than C++, and I refused to use the stronger features (like `final` though I had been an avid consumer of `const` in C++).  
+
+By 2003 I had grown tired of Java\'s static type system and started playing around with Python.  I found the language to be primitive and somewhat haphazard; so after a few excursions with the language I switched to Ruby. 
+
+In Ruby I found a home for several years.  The dynamic type system was robust.  The object-oriented facilities were well thought through and very easy to use.  It was an elegant language with very few warts.  
+
+Then, in 2010 or so, I bumped into Clojure.  I had just recently read [_The Structure and Interpretation of Computer Programs_](https://mitpress.mit.edu/sites/default/files/sicp/index.html) and so was interested in playing around with a LISP derivative.
+
+It has been 11 years now, and I feel no urge to change languages.  I reckon that Clojure may be my last programming language.  Oh, not that I haven\'t looked around.  I\'ve had some daliances with Golang, Elixr, and Kotlin, and have looked with trepidation at Haskel.  I\'ve even played with Scala and F#.  I keep looking as new languages arise; but have found nothing that calls me to switch away from Clojure.
+
+Notice the pathway of my career.  I went from untyped languages like assembler and C, to statically typed languages like C++ and Java, to dynamically typed languages like Python and Ruby, and now to Clojure.
+
+The type system in Clojure is as dynamic as Python or Ruby, but there is a library in Clojure called `clojure/spec` that provides all the strong typing anyone would ever need.  However, instead of that typing being controlled by the compiler, it is controlled by _me_.  I can enforce simple types, or very complex data relationships.  You might think of it as a kind of pre-condition/post-condition language.  Eifel programmers would feel very much at home with it.  It\'s an almost perfect way to engage in Design by Contract.
+
+So what do I conclude from this?  Not much other than that static typing is not for me.  I prefer the flexibility of dynamic typing, and the ability to enforce types if, and when, I need such enforcement.  
+
+
+
