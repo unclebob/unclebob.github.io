@@ -18,7 +18,7 @@ For example, this is how you might draw a square:
 	forward 100
 	right 90.
 
-Recently I had a need to explore some interesting geometrical designs.  Turtle graphics would be perfect for my purposes.  So I wrote a turtle graphics processor in Clojure.
+Recently I had a need to explore some interesting geometrical designs.  Turtle graphics would be perfect for my purposes.  So I wrote a turtle graphics processor in Clojure.  [\[code\]](https://github.com/unclebob/Euler/tree/main/e2_Fibonacci/Turtle)
 
 I used the [`quil`](http://quil.info/) framework which is based on the [`Processing`](http://processing.org) framework in Java. This framework makes it very easy to create simple GUIs in Clojure.
 
