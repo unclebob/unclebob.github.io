@@ -9,7 +9,7 @@ I sat down with a group of developers today to do a retrospective on a project. 
 
 I asked them to draw the system on the whiteboard. Here's what they drew.
 
-<img src="http://dl.dropbox.com/u/4730299/blog_images/service-oriented-agony.jpg" width="80%"/>
+<img src="/assets/service-oriented-agony.jpg" width="80%"/>
 
 The system has several front end processes, each is its own Rails app. They talk to each other by throwing URLs at each other, and loading cookies, etc. Pretty normal.
 
