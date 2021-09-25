@@ -1,0 +1,665 @@
+---
+layout: post
+title: Roots
+tags: ["Software"]
+---
+When I was 15 or so, my father would drive me, and my best friend, Tim Conrad, to the Digital Equipment Corporation (DEC) sales office each Saturday.  This was a 30 min drive.  My father would drop us off in the morning and pick us up in the late afternoon.  He spend two hours in his car each Saturday hauling us around.  
+
+> _Thanks Dad!_
+
+Tim and I would spend our day \"playing\" with the floor model of the PDP-8 they had at the office.  The office staff were very accommodating and accepting of our presence, and they helped us out if we needed any fresh rolls of teleprinter paper, or paper tape.  
+
+Several years later, at the age of 20, I found myself working at Teradyne Applied Systems in Chicago.  The computer we used there was called an M365; but it was really just an upgraded PDP-8.  We used it to control lasers in order to trim electronic components to very precise values.
+
+Forty four years later, in May of 2015, I started playing with a cute little Lua environment on my iPad called [Codea](https://codea.io/).  I wrote several fun little programs, like lunar lander, etc.  But then I thought: \"Wouldn\'t it be fun to write a PDP-8 Emulator?\"
+
+A few days/weeks later I had a nice little PDP-8 emulator running on my iPad.  I found some archived binary images of ancient paper tapes and managed to load them into my emulator.  This allowed me to run the suite of development tools that I had used back in those early days.
+
+Then Apple decided it didn\'t want people writing code on the Ipad that was not distributed through the App store, so they blocked the means by which Codea users could share source code.   Indeed, I couldn\'t even move Lua source code to my new iPads.  So the emulator was lost.
+
+Fortunately I had put the last working version up on GitHub.
+
+At some point, Apple reopened the channel, perhaps due to a court case.  I discovered this a few weeks back, and loaded that old source code back into my iPad.  It worked like a champ.  
+
+I made a few changes to deal with the bigger screen, and the faster processor, and then announced it on twitter.  I think many people have played with it since.  
+
+>**You can get the emulator [here](https://github.com/unclebob/PDP8EmulatorIpad).**  You\'ll find a lot of good tutorial information, and several demonstration videos in that repository.
+
+### Euler 4
+As you may know I have a [youtube series](https://www.youtube.com/playlist?list=PLmsuNLXeDr6Y1-a9ASu4mfxqDIgr-oaU6) on the [cleancoders.com channel](https://www.youtube.com/c/Cleancoders/playlists), in which I walk through the problems in the [Euler project](https://projecteuler.net/) solving them in Clojure and then taking them to the max, Myth-buster style.  
+
+Euler 4 is a simple little problem of finding the factors of palindromic numbers.  I quickly solved it in Clojure, and then I thought it would be fun to write a PDP-8 program to solve it.  
+
+>_Down the rathole I went._  
+
+I used TDD to get the individual subroutines working.  Among the subroutines I wrote were single and double precision multiply and divide routines. (We didn\'t use the word \"functions\" back then.)  The poor PDP-8 could only add.  It couldn\'t even subtract.  Subtraction was accomplished by using twos-complement addition (let the reader understand;-)
+
+Was this fun?  Yes, at first it was kinda cool to reminisce, and to feel all the old knowledge and instincts come flooding back into my brain.  But once the \"novelty\" wore off, it stopped being fun, and just turned into work \-\- grinding, tedious, work.
+
+It took me several hours, over a period of a few days, but I got the blasted thing working.  It\'s not an experience I\'d like to repeat.  Working on a PDP-8 is a **PITA**, even when with all the cheats I supply in my Emulator.  
+
+Here, for your edification, is my solution to Euler 4 on a PDP-8.  This code solves the problem; but I\'m quite sure it has some really nasty bugs anyway.  I am in no way proud of this code.  I\'m just not willing to improve it.  If you study it you\'ll see just how awful it is.  I mean, among other sins I used truly naive algorithms for multiplying and dividing numbers.  
+
+Anyway, be careful.  The lure of the rathole is very compelling.
+
+	/EULER 4 SOLUTION
+
+	        PZERO=20
+
+	        *200
+        
+	MAIN,   CLA
+	        TLS
+	        TAD SEED
+	        ISZ SEED
+	        CIA
+	        JMS CALL
+	        MKPAL
+        
+	        JMS CALL
+	        PRDOT
+    
+	        CLA
+	        TAD MAXFAC
+	        DCA FAC
+    
+	FACLUP, 
+	        CLA
+	        TAD FAC
+	        TAD K100
+	        SMA CLA
+	        JMP MAIN
+        
+	        JMS CALL
+	        DLOAD
+	        DPAL
+	        TAD FAC
+	        CIA
+	        JMS CALL
+	        ISFAC
+	        SKP
+	        JMP GOTFAC
+        
+	        CLA
+	        TAD I OFP /OTHER FAC > 999 TRY NEXT PAL.
+	        TAD MAXFAC
+	        SMA CLA
+	        JMP MAIN
+	        ISZ FAC
+	        JMP FACLUP
+        
+	GOTFAC,
+	        CLA
+	        TAD I OFP
+	        TAD MAXFAC
+	        SMA CLA
+	        JMP MAIN
+    
+	        JMS CRLF
+	        CLA
+	        TAD FAC
+	        CIA
+	        JMS CALL
+	        PRAC
+	        JMS CALL
+	        PRDOT
+	        CLA
+	        TAD I OFP
+	        JMS CALL
+	        PRAC
+	        JMS CRLF
+	        JMS CALL
+	        DLOAD
+	        DPAL
+	        JMS CALL
+	        PRDACC
+	        JMS CRLF
+	        HLT     
+
+	        DECIMAL
+	SEED,   -999
+	MAXFAC, -999
+	        OCTAL
+	FAC,    0
+	OFP,    OTHFAC+1
+
+	        *400
+
+	/MAKE A PALINDROMIC  NUMBER FROM A SEED.
+	/ABC->ABCCBA IN DECIMAL IN DACC AND STORED IN DPAL
+
+	MKPAL,  0
+	        DCA DPAL+1
+	        DCA DPAL
+	        TAD DPAL+1
+	        JMS CALL
+	        DIV
+	        K10
+	        DCA WRK
+	        TAD REM
+	        DCA DIGS
+	        TAD WRK
+	        JMS CALL
+	        DIV
+	        K10
+	        DCA DIGS+2
+	        TAD REM
+	        DCA DIGS+1
+	        JMS CALL
+	        DLOAD
+	        DPAL
+	        TAD K1000
+	        JMS CALL
+	        DMUL
+	        JMS CALL
+	        DSTORE
+	        DPAL
+	        CLA
+	        TAD DIGS
+	        JMS CALL
+	        MUL
+	        K10
+	        TAD DIGS+1
+	        JMS CALL
+	        MUL
+	        K10
+	        TAD DIGS+2
+	        DCA DWRK+1
+	        DCA DWRK
+	        JMS CALL
+	        DLOAD
+	        DPAL
+	        JMS CALL
+	        DADD
+	        DWRK
+        
+	        JMS CALL
+	        DSTORE
+	        DPAL
+	        JMP I MKPAL
+        
+	/SKIP IF AC IS A FACTOR OF DACC. AC=0
+	ISFAC,  0
+	        DCA DFAC+1
+	        DCA DFAC
+        
+	        JMS CALL
+	        DDIV
+	        DFAC
+        
+	        JMS CALL
+	        DSTORE
+	        OTHFAC
+        
+	        JMS CALL
+	        DLOAD
+	        DREM
+	        JMS CALL
+	        DSKEQ
+	        D0
+	        SKP
+	        ISZ ISFAC
+	        JMP I ISFAC
+
+	DFAC,   0
+	        0
+	OTHFAC, 0
+	        0
+        
+	        OCTAL
+	DPAL,   0
+	        0
+        
+
+	DIGS,   0
+	        0
+	        0
+        
+	WRK,    0
+
+	DWRK,   0
+	        0
+        
+	// PZERO FOR EULER
+	        *PZERO
+	        DECIMAL
+	K100,   100
+	K1000,  1000
+	K10,    10
+	        OCTAL
+
+	PZERO = .
+
+
+	~   
+
+	*1000
+	/DMATHLIB 
+	/DLOAD - LOAD ARG INTO DACC, AC=0
+	DLOAD,  0
+	        CLA
+	        TAD I DLOAD
+	        ISZ DLOAD
+	        DCA DARGP
+	        TAD I DARGP
+	        DCA DACC
+	        ISZ DARGP
+	        TAD I DARGP
+	        DCA DACC+1
+	        JMP I DLOAD
+
+	/DOUBLE PRECISION STORE ACCUMULATOR POINTED TO BY ARG
+	DSTORE, 0
+	        CLA
+	        TAD I DSTORE
+	        DCA DARGP
+	        ISZ DSTORE
+        
+	        TAD DACC
+	        DCA I DARGP
+	        ISZ DARGP
+	        TAD DACC+1
+	        DCA I DARGP
+	        JMP I DSTORE
+
+	/SKIP IF DOUBLE PRECISION ARGUMENT IS EQUAL TO DACC. AC=0
+	DSKEQ,  0
+	        CLA
+	        TAD I DSKEQ
+	        DCA DARGP
+	        ISZ DSKEQ
+        
+	        TAD DACC
+	        CIA
+	        TAD I DARGP
+	        SZA CLA
+	        JMP I DSKEQ
+        
+	        ISZ DARGP
+	        TAD DACC+1
+	        CIA
+	        TAD I DARGP
+	        SNA CLA 
+	        ISZ DSKEQ
+	        JMP I DSKEQ
+        
+	/DOUBLE PRECISION ADD ARGUMENT TO DACC. AC=0
+
+	DADD,   0
+	        CLA CLL
+	        TAD I DADD
+	        ISZ DADD
+	        DCA DARGP
+	        TAD DARGP
+	        IAC
+	        DCA DARGP2
+        
+	        TAD I DARGP2
+	        TAD DACC+1
+	        DCA DACC+1
+	        RAL
+	        TAD I DARGP
+	        TAD DACC
+	        DCA DACC
+        
+	        JMP I DADD
+
+	/COMPLEMENT AND INCREMENT DACC      
+	DCIA,   0
+	        CLA CLL
+	        TAD DACC+1
+	        CMA IAC
+	        DCA DACC+1
+	        TAD DACC
+	        CMA
+	        SZL
+	        IAC
+	        DCA DACC
+	        JMP I DCIA
+        
+	/MULTIPY DACC BY AC
+	DMUL,   0
+	        CIA
+	        DCA PLIERD
+	        JMS DSTORE
+	        DCAND
+	        JMS DLOAD
+	        D0
+	        TAD PLIERD
+	        SNA CLA
+	        JMP I DMUL
+	DMUL1,  JMS DADD
+	        DCAND
+	        ISZ PLIERD
+	        JMP DMUL1
+	        JMP I DMUL
+        
+	PLIERD, 0
+	DCAND,  0
+	        0
+        
+	/DIV DACC BY DARG (AWFUL) R IN DREM AC=0
+	DDIV,   0
+	        CLA
+	        TAD I DDIV
+	        ISZ DDIV
+	        DCA .+4
+	        JMS DSTORE
+	        DVDEND
+	        JMS DLOAD
+	        0
+	        JMS DCIA /NEGATE DIVISOR
+	        JMS DSTORE
+	        DVSOR
+	        JMS DLOAD
+	        DVDEND
+        
+	        DCA DQUOT 
+	        DCA DQUOT+1
+	        JMP DDIV1
+        
+	DDIV2,  ISZ DQUOT+1 // INCREMENT DQUOT
+	        SKP
+	        ISZ DQUOT
+        
+	DDIV1,  JMS DSTORE
+	        DREM
+	        JMS DADD
+	        DVSOR
+	        TAD DACC
+	        SMA CLA
+	        JMP DDIV2
+        
+	        JMS DLOAD
+	        DQUOT
+	        JMP I DDIV
+        
+        
+	DARGP,  0
+	DARGP2, 0       
+        
+	DVSOR,  0
+	        0
+	DVDEND, 0
+	        0
+	DQUOT,  0
+	        0
+            
+	/PAGE ZERO DATA FOR DMATHLIB
+
+	*PZERO
+	DACC,   0
+	        0
+	D0,     0
+	        0
+	DREM,   0
+	        0
+	PZERO=.
+	~
+
+	/SINGLE PRECISION MATH LIBRARY
+	        *2000
+	/DIVIDE AC BY ARGP (SLOW AND NAIVE)
+	/Q IN AC, R IN REM
+	DIV,    0
+	        DCA REM
+	        TAD I DIV
+	        ISZ DIV
+	        DCA ARGP
+	        TAD I ARGP
+	        CIA
+	        DCA MDVSOR
+	        DCA QUOTNT
+	        TAD REM
+	DIVLUP, TAD MDVSOR
+	        SPA
+	        JMP DIVDUN
+	        ISZ QUOTNT
+	        JMP DIVLUP
+	DIVDUN, CIA
+	        TAD MDVSOR
+	        CIA
+	        DCA REM
+	        TAD QUOTNT
+	        JMP I DIV
+	MDVSOR, 0
+	QUOTNT, 0
+	ARGP,   0
+
+	/MULTIPLY AC BY ARGP (SLOW AND NAIVE)
+	/GIVING SINGLE PRECISION PRODUCT IN AC
+
+	MUL,    0
+	        DCA CAND
+	        TAD I MUL
+	        ISZ MUL
+	        DCA ARGP
+	        TAD I ARGP
+	        SNA
+	        JMP I MUL
+	        CIA
+	        DCA PLIER
+	        TAD CAND
+	        ISZ PLIER
+	        JMP .-2
+	        JMP I MUL
+	CAND,   0
+	PLIER,  0
+
+	/PZERO FOR SMATHLIB
+	        *PZERO
+	REM,    0
+	PZERO=.
+	~
+
+	/TTY UTILS
+	        *3000
+	/PRINT ONE CHAR IN AC.  IF CR THEN PRINT LF.  
+	PRTCHAR,0
+	        TSF
+	        JMP .-1
+	        TLS
+	        DCA CH
+	        TAD CH
+	        TAD MCR
+	        SZA
+	        JMP RETCHR
+	        TAD KLF
+	        TSF
+	        JMP .-1
+	        TLS
+	RETCHR, CLA
+	        TAD CH
+	        JMP I PRTCHAR
+	CH,     0
+	MCR,    -215
+
+	/PRINT AC AS ONE DECIMAL DIGIT AC=0
+	PRDIG,  0
+	        TAD K260
+	        TSF
+	        JMP .-1
+	        TLS
+	        CLA
+	        JMP I PRDIG
+            
+	K260,   260
+
+	/PRINT THE DACC IN DECIMAL
+
+	PRDACC, 0
+	        JMS CALL
+	        DSTORE
+	        DACSV
+	        JMS CALL
+	        DDIV
+	        D1E6
+	        TAD DACC+1
+	        JMS PRDIG
+	        JMS CALL
+	        DLOAD
+	        DREM
+	        JMS CALL
+	        DDIV
+	        D1E5
+	        TAD DACC+1
+	        JMS PRDIG
+	        JMS CALL
+	        DLOAD
+	        DREM
+	        JMS CALL
+	        DDIV
+	        D1E4
+	        TAD DACC+1
+	        JMS PRDIG
+	        JMS CALL
+	        DLOAD
+	        DREM
+	        JMS CALL
+	        DDIV
+	        D1E3
+	        TAD DACC+1
+	        JMS PRDIG
+	        JMS CALL
+	        DLOAD
+	        DREM
+	        JMS CALL
+	        DDIV
+	        D1E2
+	        TAD DACC+1
+	        JMS PRDIG
+	        JMS CALL
+	        DLOAD
+	        DREM
+	        JMS CALL
+	        DDIV
+	        D1E1
+	        TAD DACC+1
+	        JMS PRDIG
+	        JMS CALL
+	        DLOAD
+	        DREM
+	        TAD DACC+1
+	        JMS PRDIG
+	        JMS CALL
+	        DLOAD
+	        DACSV
+	        JMP I PRDACC
+        
+            
+	DACSV,  0
+	        0
+	D1E6,   0364
+	        1100
+	D1E5,   0030
+	        3240
+	D1E4,   2
+	        3420
+	D1E3,   0
+	        1750
+	D1E2,   0
+	        144
+	D1E1,   0
+	        12
+        
+	/PRINT AC, AC=AC
+	PRAC,   0
+	        DCA SAC
+	        TAD SAC
+	        JMS CALL
+	        DIV
+	        D1E3+1
+	        JMS PRDIG
+	        TAD REM
+	        JMS CALL
+	        DIV
+	        D1E2+1
+	        JMS PRDIG
+	        TAD REM
+	        JMS CALL
+	        DIV
+	        D1E1+1
+	        JMS PRDIG
+	        TAD REM
+	        JMS PRDIG
+	        TAD SAC
+	        JMP I PRAC
+	SAC,    0
+
+	/PRINT DOT AC=AC
+	PRDOT,  0
+	        DCA SAC
+	        TAD KDOT
+	        JMS TYPE
+	        TAD SAC
+	        JMP I PRDOT
+        
+	/----------------------
+	/PZERO TEST LIBRARY
+	        *PZERO     
+	TYPE,   0 / AC=0
+	        TSF
+	        JMP .-1
+	        TLS
+	        CLA
+	        JMP I TYPE
+        
+	CRLF,   0 / AC=0
+	        CLA
+	        TAD KCR
+	        JMS TYPE
+	        TAD KLF
+	        JMS TYPE
+	        JMP I CRLF
+
+	/SOUND BELL AND HALT WITH ADDR OF BAD TEST IN AC    
+	ERROR,  0
+	        CLA
+	        TAD KBELL
+	        JMS TYPE
+	        CLA CMA
+	        TAD ERROR
+	        HLT
+
+	/PRINT DOT, COUNT ERROR     
+	PASS,   0
+	        CLA
+	        TAD KDOT
+	        JMS TYPE
+	        ISZ TESTS
+	        JMP I PASS
+
+	/TESTS COMPLETE, PRINT ZERO AND HALT WITH # OF TESTS IN AC. 
+	TSTDUN,
+	        JMS CRLF
+	        TAD KZERO
+	        JMS TYPE
+	        JMS CRLF
+	        TAD TESTS
+	        HLT
+        
+	/CALL SUBROUTINE
+	CALL,   0
+	        DCA AC
+	        TAD I CALL
+	        DCA CALLEE
+	        TAD CALL
+	        IAC
+	        DCA I CALLEE
+	        ISZ CALLEE
+	        TAD AC
+	        JMP I CALLEE
+	AC,     0
+	CALLEE, 0
+
+	TESTS, 0           
+	KZERO,  260
+	KBELL,  207
+	KCR,    215
+	KLF,    212
+	KDOT,   256
+
+	PZERO=.
+	~
+	$
+	
