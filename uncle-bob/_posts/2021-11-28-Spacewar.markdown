@@ -1,0 +1,65 @@
+---
+layout: post
+title: Space War
+tags: ["Software"]
+---
+For the last month I\'ve been spending a lot of time working on [Space War](https://github.com/unclebob/spacewar).  I know, I know, I should have been working on [_Clean Code Episode 67: Legacy Code_](https://cleancoders.com), and [_Euler 5_](https://www.youtube.com/playlist?list=PLmsuNLXeDr6Y1-a9ASu4mfxqDIgr-oaU6), and [_Countest and Curmugeon 3_](https://www.youtube.com/channel/UCThitpd5RCB2J5b_HlcseMw).  I should have been working on a blog, or a new book, or\...  But I couldn\'t let go of Space War.  It kept calling me.
+
+The first time I wrote Space War was in 1978.  I wrote it in _Alcom_, which was a simple derivative of [_Focal_](https://en.wikipedia.org/wiki/FOCAL_(programming_language)), which was an analog of _Basic_ for the [PDP-8](https://en.wikipedia.org/wiki/PDP-8).  The computer was an _M365_ which was an augmented version of a PDP-8 and was proprietery to Teradyne, my employer at the time.  
+
+The UI was screen based, using character graphics, similar to _curses_.  Screen updates took on the order of a second.  All input was through the keyboard.
+
+We used to play it on one machine while waiting for a compile on another.  
+
+Forty years later, in September of 2018, I started working on _this_ version of Space War.  It\'s an animated GUI driven system with a frame rate of 30fps.  It is written entirely in Clojure and uses the [Quil](http://www.quil.info) shim for the [Processing](https://processing.org) GUI framework.
+
+My justification for writing it was so that I could use it as the case study for my cleancoders.com videos on _Functional Programming_.  Once that series of videos was complete, I set Space War aside and started working on other things.
+
+Then, a month ago, the program called to me.  I don\'t know why.  Perhaps it was because I\'d left it in a partially completed state.  Perhaps it was because I had just finished [_Clean Craftsmanship_](https://www.amazon.com/Clean-Craftsmanship-Disciplines-Standards-Ethics/dp/013691571X) and I needed a way to decompress.  Or, perhaps it was just because I felt like it.  Whatever the reason, I loaded up the project and started goofing around with it.  
+
+Now I\'m sure you\'ve had that feeling of trepidation when you pick up a code base that you haven\'t seen in three years.  I certainly felt it.  I mean, what was I going to find in there?  Would I be able to get my bearings and understand the code?  Or would I flail around aimlessly for weeks?
+
+I needn\'t have worried.  The code base was nicely organized.  There was a very nice suite of tests that covered the vast majority of the game logic.  The GUI code, though not tested, was simple enough to understand at a glance.  
+
+But, perhaps most importantly, this code was written to be 100% functional.  No variables were mutated, anywhere in the code.  This meant that every function did exactly what it said it did; and left no detritus around to confound other functions.  No function could be impacted by the state of the system because the system did not have \"a state\".  
+
+Now maybe you are rolling your eyes at that last paragraph.  Several years ago I might have rolled my eyes too.  But the relief I experienced coming back into this code base after three years of not touching it, and knowing it was functional, was palpable.  
+
+Another thing that gave me a significant amount of help was that all the critical data structures in the system were described and tested using `clojure/spec`.  This was profoundly helpful because it gave me the kind of declarative help that is usually reserved for statically typed languages.  
+
+For example, This is a Klingon:
+
+	(s/def ::x number?)
+	(s/def ::y number?)
+	(s/def ::shields number?)
+	(s/def ::antimatter number?)
+
+	(s/def ::kinetics number?)
+	(s/def ::torpedos number?)
+	(s/def ::weapon-charge number?)
+	(s/def ::velocity (s/tuple number? number?))
+	(s/def ::thrust (s/tuple number? number?))
+	(s/def ::battle-state-age number?)
+	(s/def ::battle-state #{:no-battle :flank-right :flank-left :retreating :advancing})
+	(s/def ::cruise-state #{:patrol :guard :refuel :mission})
+	(s/def ::mission #{:blockade :seek-and-destroy :escape-corbomite})
+
+	(s/def ::klingon (s/keys :req-un [::x ::y ::shields ::antimatter
+	                                  ::kinetics ::torpedos ::weapon-charge
+	                                  ::velocity ::thrust
+	                                  ::battle-state-age ::battle-state
+	                                  ::cruise-state
+	                                  ::mission]
+	                         :opt-un [::hit/hit]))
+
+These kinds of `clojure/spec` descriptions gave me the documentation I needed to reaquaint myself with the critical data structures of the system.  They also gave me the ability to check that any functions I wrote kept those data structures conformant to the spec.  
+
+All of this means that I was able to make progress in this code base quickly, and with a high degree of confidence. _I never had that feeling of wading through bogs of legacy code._
+
+Anyway, I\'m done now, for the time being.  I\'ve given the player a mission to complete, and made it challenging, but possible, to complete that mission.  A game requires 2-3 hours of intense play, is tactially and strategically challenging, and is often punctuated by moments of sheer panic.  
+
+I hope you enjoy downloading it, firing up Clojure, and playing it.  Consider it my Christmas present to you.
+
+One last thing.  Three years ago [Mike Fikes](https://github.com/mfikes) saw my Space War program and converted it from Clojure to [ClojureScript](https://clojurescript.org).  The change was so miniscule that the two are now a single code base with a tiny smattering of conditional compilation for the very few differences.  So if you want to play the game on-line you can just click on [http://spacewar.fikesfarm.com/spacewar.html](http://spacewar.fikesfarm.com/spacewar.html).  Mike has kindly kept this version up to date so \-- have at it!  
+
+
