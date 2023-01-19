@@ -16,7 +16,7 @@ __Trigger Warning__:
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/1KRqeDEQcYk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-(R.I.P. Kirstie Ally)
+(R.I.P. Kirstie Alley
 
 OK, so, once again...
 
