@@ -12,7 +12,11 @@ __Trigger Warning__:
  - Mixed Metaphors.
  - Distracting Animations.
 
->To all the adherents of the _Statically Typed_ Functional Programming religion:  I know that you believe that _Static Typing_ is an essential aspect of Functional Programming and that no mere dynamically typed language could ever begin to approach the heights and glory of _The One True and Holy TYPED Functional Apotheotic Paradigm_.  But we lowly programmers quivering down here at the base of _Orthanc_ can only hope to meekly subsist on the dregs that fall from on high. 
+>To all the adherents of the _Statically Typed_ Functional Programming religion:  I know that you believe that _Static Typing_ is an essential aspect of Functional Programming and that no mere dynamically typed language could ever begin to approach the heights and glory of _The One True and Holy TYPED Functional Apotheotic Paradigm_.  But we lowly programmers quivering down here at the base of _Orthanc_ can only hope to meekly subsist on the dregs that fall from on high.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/1KRqeDEQcYk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+(R.I.P. Kirstie Alley 
 
 OK, so, once again...
 
