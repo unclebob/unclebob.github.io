@@ -28,6 +28,8 @@ For example -- it's time we talked about clouds (which I have looked at from bot
 
 So... Here come your father's parentheses!
 
+<img src="https://i.pinimg.com/originals/4f/1e/26/4f1e261d1afa9d58fd1125db5a5a4a12.jpg">
+
 	(ns spacewar.game-logic.clouds
 	  (:require [clojure.spec.alpha :as s]
 	            [spacewar.geometry :as geo]
