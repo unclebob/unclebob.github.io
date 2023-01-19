@@ -95,12 +95,17 @@ Some years back I wrote a nice little [spacewar game](http://blog.cleancoder.com
 The code you see above is the _class_ that represents the _Dilithium Cloud_.  
 
 The first thing to notice is that I defined the _TYPE_ of the `cloud` _class_ -- _dynamically_.  
+<img src="https://yt3.ggpht.com/a/AATXAJxJ07NzOxzlMLuiV6SGv808JXSCrALLJMXJ1w=s900-c-k-c0xffffffff-no-rj-mo" width="150">
 
 A `cloud` is an object with an `x` and `y` coordinate, and a `concentration`; all of which must be numbers.  I also created a little type checking function named `valid-cloud?` that is used by my unit tests (not shown) to make sure the _TYPE_ is not violated by any of the _methods_.
 
-Next comes `make-cloud` the _constructor_ of the `cloud` _class_.  
+Next comes `make-cloud` the _constructor_ of the `cloud` _class_.
+
+<iframe src="https://giphy.com/embed/vyTnNTrs3wqQ0UIvwE" width="480" height="400" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/theoffice-the-office-tv-frame-toby-vyTnNTrs3wqQ0UIvwE">via GIPHY</a></p>  
 
 There are two overloads of the _constructor_.  The first takes no arguments and simply creates a `cloud` at (0,0) with no _Dilithium_ in it.  The second takes three arguments and loads the _instance variables_ of the _class_.
+
+<iframe src="https://giphy.com/embed/2yP1jNgjNAkvu" width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/monty-python-2yP1jNgjNAkvu">via GIPHY</a></p>
 
 There are two primary _methods_ of the `cloud` _class_: `update-clouds-age` and `update-dilithium-harvest`.  The `update-clouds-age` _method_ finds all the `cloud` _instances_ in the `world` _object_ and decreases their concentration by the `decay` factor -- which is a function of the number of milliseconds (`ms`) since the last time they were updated. The `update-dilithium-harvest` _method_ finds all the `cloud` _objects_ that are within the `ship` _object_'s harvesting range and transfers _Dilithium_ from those `cloud` _objects_ to the `ship` _object_.
 
@@ -109,6 +114,8 @@ Now, you might notice that these _methods_ are not the traditional style of meth
 So are these really _methods_ of the `cloud` _class_?  Sure!  Why not?  They are a set of narrowly cohesive functions that manipulate an internal data structure within an intentionally named abstraction.  
 
 For all intents and purposes `cloud` is a °°°°°° °°°°°°° _class_.
+
+<iframe src="https://giphy.com/embed/TcdpZwYDPlWXC" width="480" height="240" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/reaction-laughing-lotr-TcdpZwYDPlWXC">via GIPHY</a></p>
 
 So there.
 
