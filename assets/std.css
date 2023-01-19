@@ -1647,6 +1647,10 @@ select {
     padding: 0
 }
 
+.main-sidebar ul a:visited {
+    color: #77d277;
+}
+
 @media screen and (max-width: 480px) {
     .branding {
         text-align: center
