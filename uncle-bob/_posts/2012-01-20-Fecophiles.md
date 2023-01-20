@@ -87,8 +87,8 @@ I thought that perhaps there was something wrong with their noses. After all, if
 <hr/>
 Let's just walk through that previous code step by step and really *smell* it!
 
-1.  We start out buy initializing ltsCode to null. Fine.
-2.  Then we encounter a double negative (if not null/empty) and an indirection (item.ParentItemNo). We need a comment to understand it. Apparently if the ParentItemNo of the item is null or empty then it means that the item has no parent. If we negate that, then the if statement is trying to say "if this is a child" The comment tries to point this out, but the grammar is bad. It would be nicer if the if statement were if(isChild(item)) or if (item.isChild()).
+1.  We start out by initializing ltsCode to null. Fine.
+2.  Then we encounter a double negative (if not null/empty) and an indirection (item.ParentItemNo). We need a comment to understand it. Apparently if the ParentItemNo of the item is null or empty then it means that the item has no parent. If we negate that, then the if statement is trying to say "if this is a child". The comment tries to point this out, but the grammar is bad. It would be nicer if the if statement were if(isChild(item)) or if (item.isChild()).
 3.  In the body of the if statement we are a child, so we set the ltsCode to PzT.
 4.  Ignore commented out code.
 5.  Set the var isNfoOrDisc to an interesting expression. Oddly, I can't see any place where that variable is used. It *used* to be used, in the commented out code, so maybe someone just forgot to comment out that var too, eh?
@@ -99,11 +99,11 @@ Let's just walk through that previous code step by step and really *smell* it!
 10. And in that else clause, we set ltsCode to null. Wait… Wasn't it already null?
 11. (pant, pant, pant) ok, we've reached an else. What else is it? It's the else from the double negative if statement in point 2 above. Ah, so this is where we have an item with no parent. That //parent comment is strange. Does it mean that the item is a parent? How would we know that. All we know is that the item does not have non-null or empty parent item number. So what's with the //parent comment? It's a lie, or at least a wild mistruth. I think that comment needs to be commented out. (grrrr).
 12. We set the ltsCode to null. Hmmm. Let's see. What was the ltsCode be before we set it to null? Why, I believe it must be null already! Is there any pathway through this horrible rats nest of code that might set ltsCode to something other than null at this point? No!
-13. and now the coup-de-gras! Another if statement that checks whether the item is nfo or Disconnected. And what does this if statement do if that's so? Why, it sets the ltsCode to … NULL. Of course! NULL. Brilliant!
+13. and now the coup-de-gras! Another if statement that checks whether the item is nfo or Discontinued. And what does this if statement do if that's so? Why, it sets the ltsCode to … NULL. Of course! NULL. Brilliant!
 
 Summary. This code is a mess. A whole-hearted unmitigated indisputable mess. It's full of inaccurate and ambiguous comments, useless variables, if statements that have no purpose, and some truly convoluted logic. And what was the goal? The goal was:
 
-> return PzT if the item exists and has a parent that is not nfo or Disconnected. Otherwise return null.
+> return PzT if the item exists and has a parent that is not nfo or Discontinued. Otherwise return null.
 
 OR, to put it in simple code:
 
