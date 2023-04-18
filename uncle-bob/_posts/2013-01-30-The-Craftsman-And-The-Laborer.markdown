@@ -67,7 +67,7 @@ Ted's dichotomy is false in the following way.
 
 2. There are few "laborers" who fit the mold that Ted describes.  While there are many 9-5 programmers, and many others who write cut-paste code, and still others who write big, ugly, bloated code, these aren't always the same people.  I know lots of 12-12 programmers who work hellish hours, and write bloated, ugly, cut-paste code.  I also know many 9-5 programmers who write clean and elegant code.  I know 9-5ers who don't give a rat's ass, and I know 9-5ers who care deeply.  I know 12-12ers who's only care is to climb the corporate ladder, and others who work long hours for the sheer joy of making something beautiful.  
 
-####Conclusion
+#### Conclusion
 _There is no white-collar / blue-collar dichotomy!_  We do not have two programming Americas.  The appeal to populism is badly misplaced.  
 
 What we have, instead, is a _very young_ industry.  Programming is barely 60 years old.  I, personally, have been programming for 43+ of those years.  When I started, the number of programmers could likely have been numbered in the thousands.  Nowadays it's in the tens of millions.   What that means is that most programmers are _young_; and few have had the benefit of an experienced mentor.  Most have graduated from college with the idea that the experience prepared them to be a professional.  In most cases, it has not.

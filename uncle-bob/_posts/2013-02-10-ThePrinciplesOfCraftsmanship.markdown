@@ -21,7 +21,7 @@ The result is quite amazing. It is simple, brief, and powerful. It has been craf
 
 At 8th Light, we are principled. These are things that we will and will not do.  Each principle ties to a specific value in the Manifesto for Software Craftsmanship
 
-###Well-Crafted Software
+### Well-Crafted Software
 
 * We humbly demonstrate our expertise by delivering quality software.
     * We do not inflate our abilities or claim expertise where we have none.
@@ -30,7 +30,7 @@ At 8th Light, we are principled. These are things that we will and will not do. 
 * We take responsibility for the correctness of our code by testing it thoroughly.
     * We do not tolerate preventable defects.
 
-###Steadily Adding Value
+### Steadily Adding Value
 * We estimate with diligence.
     * We do not let fear or pressure make us promise what we can’t deliver.
 * We always apply our best efforts to complete our work.
@@ -38,7 +38,7 @@ At 8th Light, we are principled. These are things that we will and will not do. 
 * We work at a sustainable pace.
     * We do not burn out.
 
-###A Community of Professionals
+### A Community of Professionals
 * We embrace differences of opinion and personality.
     * We do not allow our current practice to impede improvement.
 * We prefer open source tools that we can inspect, evaluate, and improve.
@@ -46,7 +46,7 @@ At 8th Light, we are principled. These are things that we will and will not do. 
 * We teach anyone with a willingness to learn.
     * We do not hoard our knowledge or practices.
 
-###Productive Partnerships
+### Productive Partnerships
 * We show respect for our customers and fellow craftsmen.
     * We do not act unprofessionally or unethically.
 * We communicate our progress honestly and openly with our customers.

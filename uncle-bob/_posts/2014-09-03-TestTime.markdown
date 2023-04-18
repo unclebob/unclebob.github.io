@@ -33,7 +33,7 @@ To attain those speeds we stub out all the slow things like the persistence fram
 
 Of course not all the tests stub those things out.  Some of the tests go all the way through from web server to database.  But well over 90% of those tests bypass the slow stuff.  After all, how many times do you need to tests the database to know that it works?  How many times do you need to test the web server to know that it works?  The answer to both questions is pretty close to one.  So testing those slow things much more than once is a waste of time.
 
-###Conclusion
+### Conclusion
 Programmers who care about their systems, care about the tests for those systems.  Programmers who care about the tests, make sure those tests run _fast_.  Slow running tests represent a design flaw that reflects on the experience and professionalism of the team.  A slow running test suite is either a freshman error, or just plain carelessness.
 
 

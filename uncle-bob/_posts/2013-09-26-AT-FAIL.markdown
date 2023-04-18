@@ -85,7 +85,7 @@ Yeah.  I know.  What _were_ we thinking?  I mean, _really_.  Business people are
 
 Hmmm.  What _do_ they do instead?  I mean, to make sure that the system works and can be deployed?  What do they do?
 
-###Q.A.
+### Q.A.
 
 They get _QA_ to do it!  Right?  I mean, they hire a zillion people in India, or South America, or Eastern Europe, and get _them_ to do it.  
 
@@ -125,7 +125,7 @@ __Me:__ _"And so, let me get this straight.  You write a formal, unambiguous sui
 
 __QA Manager:__ _"Precisely!"_ 
 
-###Absurdities
+### Absurdities
 
 So it appears that the business already _does_ write the tests; they simply use the most inefficient execution platform possible: _Humans._
 
@@ -147,7 +147,7 @@ When you abandon the unit tests in favor of acceptance tests, you are abandoning
 
 The other option, which was chosen by James Shore, and Kevin Liddle, is better; but still bad.  At least the programmers are doing what they are supposed to do; but we still have the problem that requirements aren't being communicated properly.
 
-###Design Flaws.
+### Design Flaws.
 
 The other major mistake that the programmers made was to somehow conclude that tests aren't software and don't need to be designed.  Again, it was the Cucumber community that led the charge.  They integrated the use of [_Capybara_](http://jnicklas.github.io/capybara/) with Cucumber so they could tightly couple their systems into zillions of little tiny, impossible to untie, knots.
 
@@ -159,7 +159,7 @@ Of course the problem with this is that, when the UI changes, a whole load of te
 
 >Hey!  IOS 99 just came out.  They changed all the icons, and buttons, and text, and...  IT's really cool.  It doesn't actually do anything new or different, but it's much more modern now...  It only took the QA team 152 man years to rework all the tests too!
 
-###The Illogical Conclusion.
+### The Illogical Conclusion.
 
 So, now, what conclusion are programmers drawing from this cacophony of errors?  Simple.  _Acceptance Tests Suck!_
 

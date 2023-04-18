@@ -34,14 +34,14 @@ If you'd like proof that `jar`s can be independently deployable, just look at th
 
 So what have you gained by taking your `jar` file and putting it behind a socket and communicating with REST?
 
-##Freedom's just another word for...
+## Freedom's just another word for...
 One thing you lose is time.  It takes _time_ to communicate through a socket.  It takes _time_ to decode REST messages.  And that time means you cannot use micro-services with the impunity of a `jar`.  If I want two `jar`s to get into a rapid chat with each other, I can.  But I don't dare do that with a MS because the communication time will kill me.  
 
 On my laptop it takes 50ms to set up a socket connection, and then about 3us per byte transmitted through that connection.  And that's all in a single process on a single machine.  Imagine the cost when the connection is over the wire!
 
 Another thing you lose (and I hate to say this) is debuggability.  You can't single step across a REST call, but you can single step across `jar` files.  You can't follow a stack trace across a REST call.  Exceptions get lost across a REST interface.  
 
-##Backpedal
+## Backpedal
 After reading this you might think I'm totally against the whole notion of Micro-Services.  But, of course, I'm not.  I've built applications that way in the past, and I'll likely build them that way in the future.  It's just that I don't want to see a big fad tearing through the industry leaving lots of broken systems in it's wake.  
 
 For most systems the independent deployability of `jar` files (or DLLS, or Gems, or Shared Libraries) is more than adequate.  For most systems the cost of communicating over sockets using REST is quite restrictive; and will force uncomfortable trade-offs.  
